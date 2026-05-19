@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "vivonix-website",
+  "builds": [
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    }
+  ]
+}

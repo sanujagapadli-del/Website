@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>VIVONIX — Business Automation Agency | Stop Firefighting. Start Growing.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & ROOT ─── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+:root{
+  --white:#ffffff;
+  --bg:#f8f9ff;
+  --surface:#ffffff;
+  --ink:#0a0d1a;
+  --ink2:#1e2235;
+  --muted:#6b7394;
+  --muted2:#a0a8c0;
+  --p:#6c3fff;
+  --p2:#4f6bff;
+  --pa:rgba(108,63,255,.08);
+  --pa2:rgba(108,63,255,.14);
+  --border:#e8eaf4;
+  --border2:rgba(108,63,255,.18);
+  --grad:linear-gradient(130deg,#6c3fff,#4f6bff);
+  --grad2:linear-gradient(135deg,#6c3fff 0%,#9b59ff 50%,#4f6bff 100%);
+  --sh:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(108,63,255,.06);
+  --sh-lg:0 4px 6px rgba(0,0,0,.05),0 12px 40px rgba(108,63,255,.12);
+}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:'Syne',sans-serif;letter-spacing:-.025em;line-height:1.1}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+
+/* ─── DECORATIVE BG ─── */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 65% 45% at 95% 5%,rgba(108,63,255,.07),transparent),
+    radial-gradient(ellipse 50% 35% at 5% 95%,rgba(79,107,255,.05),transparent)}
+.dot-grid{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(108,63,255,.13) 1px,transparent 1px);
+  background-size:28px 28px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%)}
+
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.85rem 5.5%;
+  background:rgba(248,249,255,.92);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow .3s}
+nav.up{box-shadow:var(--sh)}
+
+.nav-center{display:flex;gap:2rem;list-style:none}
+.nav-center a{font-size:.84rem;font-weight:500;color:var(--muted);transition:color .2s;padding:.25rem 0;
+  border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav-center a:hover{color:var(--p);border-color:var(--p)}
+
+/* ─── BUTTONS ─── */
+.btn{display:inline-flex;align-items:center;gap:.4rem;
+  font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.03em;
+  padding:.58rem 1.4rem;border-radius:8px;border:none;cursor:pointer;
+  text-decoration:none;transition:all .22s;white-space:nowrap}
+.btn-ghost{background:transparent;border:1.5px solid var(--border);color:var(--muted)}
+.btn-ghost:hover{border-color:var(--p);color:var(--p);background:var(--pa)}
+.btn-purple{background:var(--grad);color:#fff;box-shadow:0 4px 18px rgba(108,63,255,.3)}
+.btn-purple:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(108,63,255,.45)}
+.btn-white{background:var(--white);color:var(--p);font-weight:800;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.15)}
+.btn-outline-white{background:transparent;border:1.5px solid rgba(255,255,255,.4);color:rgba(255,255,255,.9)}
+.btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.7)}
+.btn-lg{padding:.75rem 2rem;font-size:.9rem;border-radius:10px}
+
+/* ─── STICKY DEMO BAR ─── */
+.demo-bar{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:400;
+  background:var(--ink);color:#fff;
+  display:flex;align-items:center;gap:1rem;
+  padding:.75rem 1.5rem .75rem 1.25rem;
+  border-radius:99px;box-shadow:0 8px 32px rgba(0,0,0,.25);
+  white-space:nowrap;opacity:0;pointer-events:none;
+  transition:opacity .4s,transform .4s;transform:translateX(-50%) translateY(10px)}
+.demo-bar.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.demo-bar-text{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.75)}
+.demo-bar a{background:var(--grad);color:#fff;padding:.4rem 1.2rem;border-radius:99px;
+  font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;transition:opacity .2s}
+.demo-bar a:hover{opacity:.85}
+.demo-bar .close{background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;
+  padding:.2rem;font-size:1rem;line-height:1;margin-left:.25rem}
+
+/* ─── HERO ─── */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  padding:9rem 5.5% 5rem;position:relative;overflow:hidden}
+
+.hero-tag{display:inline-flex;align-items:center;gap:.55rem;
+  background:var(--pa);border:1.5px solid var(--border2);
+  border-radius:99px;padding:.32rem 1rem;margin-bottom:2rem;
+  font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--p);font-weight:700;
+  width:fit-content}
+.pulsedot{width:6px;height:6px;border-radius:50%;background:var(--p);
+  box-shadow:0 0 0 0 rgba(108,63,255,.4);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(108,63,255,.4)}70%{box-shadow:0 0 0 8px rgba(108,63,255,0)}100%{box-shadow:0 0 0 0 rgba(108,63,255,0)}}
+
+.hero-h1{font-size:clamp(3rem,6vw,5.4rem);font-weight:800;max-width:860px;
+  margin-bottom:1.5rem;color:var(--ink);line-height:1.06}
+.grad-text{background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.1rem;color:var(--muted);max-width:580px;line-height:1.82;font-weight:300;margin-bottom:1rem}
+.hero-framework{display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.82rem;color:var(--muted);margin-bottom:2.5rem}
+.hero-framework strong{color:var(--p)}
+.hero-acts{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:4rem}
+
+.hproof-item:last-child{border-right:none}
+
+/* ─── TRUST TICKER ─── */
+.ticker-wrap{background:var(--surface);border-top:1.5px solid var(--border);border-bottom:1.5px solid var(--border);
+  padding:.85rem 0;overflow:hidden}
+.ticker-track{display:flex;gap:2.5rem;animation:tickleft 25s linear infinite;width:max-content}
+.ti{font-size:.79rem;color:var(--muted);white-space:nowrap;flex-shrink:0;font-weight:400}
+.ts{color:var(--p);opacity:.35}
+@keyframes tickleft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ─── GENERIC SECTION ─── */
+.sec{padding:7rem 5.5%;position:relative;z-index:1}
+.sec-surface{background:var(--surface)}
+.sec-ink{background:var(--ink);color:#fff}
+
+.eyebrow{display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--p);font-weight:700;margin-bottom:.9rem}
+.eyebrow::before{content:'';width:16px;height:2px;background:var(--p);border-radius:2px}
+.h2{font-size:clamp(2rem,3.8vw,2.9rem);font-weight:800;margin-bottom:.85rem;color:var(--ink)}
+.h2.light{color:#fff}
+.body-text{font-size:.97rem;color:var(--muted);max-width:540px;line-height:1.78;font-weight:300}
+.body-text.light{color:rgba(255,255,255,.65)}
+
+/* ─── PAIN HOOK ─── */
+.pain-hero{text-align:center;max-width:760px;margin:0 auto 4rem}
+.pain-hero .h2{font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:1.2rem}
+
+.pain-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem}
+.pain-card{background:var(--surface);border:1.5px solid var(--border);border-radius:18px;padding:2rem;
+  position:relative;overflow:hidden;transition:box-shadow .3s,border-color .3s,transform .3s}
+.pain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.pain-card:hover{box-shadow:var(--sh-lg);border-color:rgba(108,63,255,.3);transform:translateY(-5px)}
+.pain-card:hover::before{transform:scaleX(1)}
+.pain-card-icon{font-size:2.2rem;margin-bottom:1.1rem;display:block}
+.pain-card-head{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:.6rem;color:var(--ink)}
+.pain-card-body{font-size:.84rem;color:var(--muted);line-height:1.7;font-weight:300}
+
+.pain-statements{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;
+  background:var(--border);border:1.5px solid var(--border);border-radius:16px;overflow:hidden}
+.pstat{background:var(--surface);padding:1.75rem 2rem;transition:background .2s}
+.pstat:hover{background:var(--bg)}
+.pstat-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);font-weight:600;margin-bottom:.6rem}
+.pstat-quote{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.4}
+.pstat-sub{font-size:.8rem;color:var(--muted);margin-top:.5rem;line-height:1.55;font-weight:300}
+
+/* ─── SERVICES ─── */
+.svc-layout{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
+.svc-sticky{position:sticky;top:7rem}
+.svc-tagline{font-size:1.4rem;font-family:'Syne',sans-serif;font-weight:700;line-height:1.4;
+  margin-bottom:1.25rem;color:var(--ink)}
+.svc-list{display:flex;flex-direction:column;gap:.85rem}
+.svc-item{background:var(--surface);border:1.5px solid var(--border);border-radius:14px;
+  padding:1.6rem;transition:border-color .25s,box-shadow .25s}
+.svc-item:hover{border-color:rgba(108,63,255,.3);box-shadow:var(--sh)}
+.svc-row{display:flex;align-items:flex-start;gap:1rem}
+.svc-icon-box{width:44px;height:44px;border-radius:10px;background:var(--pa);
+  display:grid;place-items:center;font-size:1.2rem;flex-shrink:0;border:1.5px solid var(--border2)}
+.svc-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
+.svc-desc{font-size:.8rem;color:var(--muted);line-height:1.65;font-weight:300}
+.svc-pills{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem}
+.stag{padding:.18rem .58rem;border-radius:4px;background:var(--pa);
+  font-size:.66rem;color:var(--p);font-weight:600;border:1px solid var(--border2)}
+
+/* ─── TRANSFORMATION ─── */
+.transform-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);
+  border:1.5px solid var(--border);border-radius:20px;overflow:hidden}
+.trans-side{padding:3rem;background:var(--surface)}
+.trans-side.before{background:#fffbf5}
+.trans-side.after{background:#f5f3ff}
+.trans-label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:1.25rem;
+  display:flex;align-items:center;gap:.5rem}
+.trans-label.b{color:#f59e0b}
+.trans-label.a{color:var(--p)}
+.trans-items{display:flex;flex-direction:column;gap:.7rem}
+.trans-row{display:flex;align-items:flex-start;gap:.75rem;
+  background:rgba(255,255,255,.7);border-radius:10px;padding:.9rem 1rem;
+  border:1px solid rgba(0,0,0,.05)}
+.trans-row.a{background:rgba(255,255,255,.8);border-color:rgba(108,63,255,.1)}
+.trans-emoji{font-size:1.1rem;flex-shrink:0;margin-top:.05rem}
+.trans-text{font-size:.82rem;line-height:1.55;font-weight:300}
+.trans-text strong{font-weight:600;color:var(--ink)}
+
+/* ─── RESULTS ─── */
+.results-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-bottom:4rem}
+.rnum-card{background:var(--surface);border:1.5px solid var(--border);border-radius:14px;
+  padding:1.75rem;text-align:center;box-shadow:var(--sh);transition:border-color .25s,transform .25s}
+.rnum-card:hover{border-color:rgba(108,63,255,.3);transform:translateY(-3px)}
+.rnum-val{font-family:'Syne',sans-serif;font-size:2.6rem;font-weight:800;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;margin-bottom:.2rem}
+.rnum-label{font-size:.77rem;color:var(--muted);line-height:1.55;font-weight:300}
+
+/* ─── PRODUCTS ─── */
+.prod-band{background:var(--grad2);border-radius:24px;padding:4rem;position:relative;overflow:hidden}
+.prod-band::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='white' opacity='.12'/%3E%3C/svg%3E") repeat}
+.prod-band-head{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem;margin-bottom:2.5rem}
+.prod-band-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#fff;margin-bottom:.6rem}
+.prod-band-sub{font-size:.92rem;color:rgba(255,255,255,.72);max-width:480px;line-height:1.72;font-weight:300}
+.prod-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;position:relative;z-index:1}
+.prod-mini{background:rgba(255,255,255,.1);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:1.6rem;
+  transition:background .25s,transform .25s;color:#fff;text-decoration:none;display:block}
+.prod-mini:hover{background:rgba(255,255,255,.18);transform:translateY(-3px)}
+.prod-mini-badge{font-size:.64rem;letter-spacing:.07em;font-weight:700;text-transform:uppercase;
+  margin-bottom:.65rem;display:flex;align-items:center;gap:.35rem;color:rgba(255,255,255,.65)}
+.live-green{width:5px;height:5px;border-radius:50%;background:#4ade80;flex-shrink:0}
+.soon-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.5);flex-shrink:0}
+.prod-mini-name{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;margin-bottom:.45rem}
+.prod-mini-desc{font-size:.79rem;color:rgba(255,255,255,.68);line-height:1.62;font-weight:300}
+.prod-mini-link{font-size:.75rem;color:rgba(255,255,255,.8);font-weight:700;margin-top:.85rem;
+  display:inline-flex;align-items:center;gap:.3rem;font-family:'Syne',sans-serif}
+
+/* ─── HOW ─── */
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.how-card{background:var(--surface);border:1.5px solid var(--border);border-radius:16px;
+  padding:2rem;transition:border-color .25s,box-shadow .25s}
+.how-card:hover{border-color:rgba(108,63,255,.3);box-shadow:var(--sh)}
+.how-step{width:44px;height:44px;border-radius:50%;background:var(--grad);
+  display:grid;place-items:center;font-family:'Syne',sans-serif;font-size:.85rem;font-weight:800;color:#fff;
+  margin-bottom:1.1rem;box-shadow:0 4px 12px rgba(108,63,255,.28)}
+.how-title{font-family:'Syne',sans-serif;font-size:.96rem;font-weight:700;color:var(--ink);margin-bottom:.45rem}
+.how-desc{font-size:.8rem;color:var(--muted);line-height:1.65;font-weight:300}
+
+/* ─── FOUNDER ─── */
+.founder-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.fcard{background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:2.5rem;
+  box-shadow:var(--sh-lg);position:relative;overflow:hidden}
+.fcard::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% -20%,rgba(108,63,255,.06),transparent);pointer-events:none}
+.f-avatar{width:76px;height:76px;border-radius:50%;background:var(--grad);
+  display:grid;place-items:center;font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;
+  margin:0 auto 1.25rem;box-shadow:0 6px 20px rgba(108,63,255,.35);position:relative;z-index:1}
+.f-name{text-align:center;font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--ink);margin-bottom:.2rem}
+.f-role{text-align:center;font-size:.8rem;color:var(--muted);margin-bottom:1.75rem;line-height:1.6}
+.f-exp{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.5rem}
+.f-exp-row{display:flex;align-items:center;gap:.9rem;padding:.85rem 1rem;
+  background:var(--bg);border-radius:10px;border:1px solid var(--border)}
+.f-exp-icon{font-size:1rem;flex-shrink:0}
+.f-exp-title{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:var(--ink)}
+.f-exp-sub{font-size:.72rem;color:var(--muted);margin-top:.08rem}
+.f-skills{display:flex;flex-wrap:wrap;gap:.35rem}
+.fsk{padding:.22rem .65rem;border-radius:4px;background:var(--pa);border:1px solid var(--border2);
+  font-size:.7rem;color:var(--p);font-weight:600}
+
+.fw-left h2{margin-bottom:1.2rem}
+.fw-highlight{background:linear-gradient(135deg,#f5f3ff,#ede9ff);
+  border:1.5px solid rgba(108,63,255,.2);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1.75rem}
+.fw-hl-top{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:.2rem}
+.fw-hl-sub{font-size:.8rem;color:var(--muted);line-height:1.55;font-weight:300}
+.fw-body{font-size:.93rem;color:var(--muted);line-height:1.85;font-weight:300;margin-bottom:1.1rem}
+.fw-checklist{list-style:none;margin-bottom:2rem}
+.fw-checklist li{font-size:.88rem;color:var(--muted);padding:.4rem 0;
+  display:flex;gap:.7rem;align-items:flex-start;border-bottom:1px solid var(--border);font-weight:300}
+.fw-checklist li::before{content:'✓';color:var(--p);font-weight:700;flex-shrink:0;margin-top:.07rem}
+
+/* ─── CTA SECTION ─── */
+.cta-section{background:var(--ink);border-radius:24px;padding:5rem;text-align:center;
+  position:relative;overflow:hidden;margin:0 5.5% 5rem}
+.cta-section::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(108,63,255,.2),transparent);pointer-events:none}
+.cta-section h2{font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;color:#fff;margin-bottom:1.1rem;position:relative;z-index:1}
+.cta-section p{font-size:.97rem;color:rgba(255,255,255,.6);max-width:480px;margin:0 auto 2.5rem;line-height:1.78;font-weight:300;position:relative;z-index:1}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;margin-bottom:1.25rem}
+.cta-note{font-size:.75rem;color:rgba(255,255,255,.35);position:relative;z-index:1}
+.cta-features{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:2.5rem;position:relative;z-index:1}
+.cta-feat{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.5)}
+.cta-feat::before{content:'✓';color:var(--p);font-weight:700}
+
+/* ─── FOOTER ─── */
+footer{background:var(--ink2);padding:4rem 5.5% 2.5rem;position:relative;z-index:1}
+.foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:3.5rem;margin-bottom:3rem}
+.foot-logo-svg{margin-bottom:1rem;display:block}
+.foot-desc{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.72;font-weight:300;margin-bottom:1.25rem}
+.foot-small{font-size:.72rem;color:rgba(255,255,255,.28);line-height:1.7}
+.foot-small a{color:rgba(108,63,255,.8);text-decoration:none}
+.foot-col h4{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.9rem}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.foot-col a{font-size:.82rem;color:rgba(255,255,255,.45);transition:color .2s}
+.foot-col a:hover{color:rgba(108,63,255,.9)}
+.foot-contact-link{font-size:.82rem;color:rgba(108,63,255,.8)!important;display:block;margin-bottom:.4rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}
+.foot-bottom-txt{font-size:.72rem;color:rgba(255,255,255,.25)}
+
+/* ─── UTILS ─── */
+.center{text-align:center}
+.center .body-text{margin:0 auto}
+.flex-gap{display:flex;gap:1rem;flex-wrap:wrap}
+.rev{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.rev.in{opacity:1;transform:none}
+
+
+/* Hero 2-col layout */
+@media(min-width:1024px){
+  #hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem}
+  #hero>*{z-index:1;position:relative}
+  #heroVis{display:block!important;position:static!important;transform:none!important;width:100%!important;max-width:100%!important}
+}
+/* ─── MOBILE ─── */
+@media(max-width:1024px){
+  .svc-layout{grid-template-columns:1fr}
+  .svc-sticky{position:static}
+  .founder-grid{grid-template-columns:1fr}
+  [style*="grid-template-columns:1.15fr"]{grid-template-columns:1fr!important}
+}
+@media(max-width:900px){
+  nav .nav-center{display:none}
+  .pain-cards,.prod-3,.how-grid,.results-nums{grid-template-columns:1fr 1fr}
+  .pain-statements,.transform-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .hero-h1{font-size:clamp(2.5rem,8vw,3.5rem)}
+}
+@media(max-width:600px){
+  .pain-cards,.results-nums,.prod-3,.how-grid{grid-template-columns:1fr}
+      .hproof-item:nth-child(odd){border-right:1.5px solid var(--border)}
+  .cta-section{padding:3rem 1.5rem;margin:0 1rem 3rem}
+}
+</style>
+</head>
+<body>
+
+<div class="dot-grid"></div>
+
+<!-- ─── STICKY DEMO BAR ─── -->
+<div class="demo-bar" id="demoBar">
+  <span class="demo-bar-text">🚀 Automate your business today</span>
+  <a href="#cta">Book Free Demo</a>
+  <button class="close" onclick="document.getElementById('demoBar').classList.remove('show')">✕</button>
+</div>
+
+<!-- ─── NAV ─── -->
+<nav id="mainnav">
+  <a href="#"><svg width="148" height="40" viewBox="0 0 148 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="36" height="36" rx="8" fill="none" stroke="#7c4dff" stroke-width="2"/>
+  <rect x="8" y="8" width="24" height="24" rx="5" fill="#7c4dff"/>
+  <text x="20" y="25" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" font-weight="800" fill="white">VX</text>
+  <text x="48" y="19" font-family="Syne,sans-serif" font-size="16" font-weight="800" fill="#0d0f1e" letter-spacing="1">VIVONIX</text>
+  <text x="49" y="33" font-family="sans-serif" font-size="8" letter-spacing="2.8" fill="#888">DIGITAL SOLUTIONS</text>
+</svg></a>
+  <ul class="nav-center">
+    <li><a href="#pain">Why Automate</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#founder">About</a></li>
+    <li><a href="#framework">Framework</a></li>
+  </ul>
+  <div class="flex-gap">
+    <a href="https://wa.me/919079649289" target="_blank" class="btn btn-ghost" style="font-size:.78rem">💬 WhatsApp</a>
+    <a href="#cta" class="btn btn-purple">Book Free Demo →</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero" style="z-index:1;position:relative">
+  
+  <!-- Hero Visual -->
+  <div style="position:absolute;right:4%;top:50%;transform:translateY(-50%);width:42%;max-width:520px;pointer-events:none;display:none" id="heroVis">
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:1.5rem;box-shadow:0 20px 60px rgba(108,63,255,.12);position:relative">
+      <!-- Dashboard mockup -->
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem">
+        <span style="font-family:Syne,sans-serif;font-size:.82rem;font-weight:700;color:var(--ink)">VIVONIX Dashboard</span>
+        <div style="display:flex;gap:.4rem">
+          <div style="width:8px;height:8px;border-radius:50%;background:#ff5f57"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:#febc2e"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:#28c840"></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem">
+        <div style="background:linear-gradient(135deg,#6c3fff,#4f6bff);border-radius:12px;padding:1rem;color:#fff">
+          <div style="font-size:.65rem;opacity:.75;margin-bottom:.3rem;font-weight:500">WhatsApp Sent</div>
+          <div style="font-family:Syne,sans-serif;font-size:1.5rem;font-weight:800">4,812</div>
+          <div style="font-size:.62rem;opacity:.7;margin-top:.2rem">↑ 68% this week</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1rem">
+          <div style="font-size:.65rem;color:var(--muted);margin-bottom:.3rem;font-weight:500">Tasks Done</div>
+          <div style="font-family:Syne,sans-serif;font-size:1.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">91%</div>
+          <div style="font-size:.62rem;color:var(--muted);margin-top:.2rem">Team score today</div>
+        </div>
+      </div>
+      <!-- Chart bars -->
+      <div style="background:var(--bg);border-radius:12px;padding:1rem;margin-bottom:.75rem">
+        <div style="font-size:.65rem;color:var(--muted);font-weight:600;margin-bottom:.75rem">MIS Report — Live</div>
+        <div style="display:flex;align-items:flex-end;gap:.4rem;height:52px">
+          <div style="flex:1;background:var(--grad);border-radius:4px 4px 0 0;height:60%"></div>
+          <div style="flex:1;background:var(--grad);border-radius:4px 4px 0 0;height:80%;opacity:.8"></div>
+          <div style="flex:1;background:var(--grad);border-radius:4px 4px 0 0;height:45%;opacity:.6"></div>
+          <div style="flex:1;background:var(--grad);border-radius:4px 4px 0 0;height:95%;opacity:.9"></div>
+          <div style="flex:1;background:var(--grad);border-radius:4px 4px 0 0;height:70%;opacity:.7"></div>
+          <div style="flex:1;background:var(--grad);border-radius:4px 4px 0 0;height:88%"></div>
+          <div style="flex:1;background:var(--grad);border-radius:4px 4px 0 0;height:55%;opacity:.6"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:.4rem">
+          <span style="font-size:.58rem;color:var(--muted2)">Mon</span>
+          <span style="font-size:.58rem;color:var(--muted2)">Tue</span>
+          <span style="font-size:.58rem;color:var(--muted2)">Wed</span>
+          <span style="font-size:.58rem;color:var(--muted2)">Thu</span>
+          <span style="font-size:.58rem;color:var(--muted2)">Fri</span>
+          <span style="font-size:.58rem;color:var(--muted2)">Sat</span>
+          <span style="font-size:.58rem;color:var(--muted2)">Sun</span>
+        </div>
+      </div>
+      <!-- Status rows -->
+      <div style="display:flex;flex-direction:column;gap:.5rem">
+        <div style="display:flex;align-items:center;justify-content:space-between;background:var(--bg);border-radius:8px;padding:.6rem .85rem">
+          <span style="font-size:.72rem;color:var(--ink);font-weight:500">WhatsApp Campaign</span>
+          <span style="font-size:.65rem;background:#dcfce7;color:#16a34a;padding:.2rem .6rem;border-radius:99px;font-weight:600">Active ●</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;background:var(--bg);border-radius:8px;padding:.6rem .85rem">
+          <span style="font-size:.72rem;color:var(--ink);font-weight:500">MIS Auto Report</span>
+          <span style="font-size:.65rem;background:#dcfce7;color:#16a34a;padding:.2rem .6rem;border-radius:99px;font-weight:600">Running ●</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;background:var(--bg);border-radius:8px;padding:.6rem .85rem">
+          <span style="font-size:.72rem;color:var(--ink);font-weight:500">Team Tasks Synced</span>
+          <span style="font-size:.65rem;background:#ede9ff;color:var(--p);padding:.2rem .6rem;border-radius:99px;font-weight:600">24 done</span>
+        </div>
+      </div>
+    </div>
+    <!-- floating badges -->
+    <div style="position:absolute;top:-16px;right:-16px;background:var(--grad);color:#fff;border-radius:10px;padding:.6rem .9rem;font-size:.72rem;font-weight:700;font-family:Syne,sans-serif;box-shadow:0 4px 14px rgba(108,63,255,.35)">🚀 Live Automation</div>
+    <div style="position:absolute;bottom:-14px;left:-14px;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:.6rem .9rem;font-size:.72rem;color:var(--ink);font-weight:600;box-shadow:var(--sh)">✅ 48h Go-Live</div>
+  </div>
+
+<h1 class="hero-h1">
+    Stop Firefighting.<br>
+    Start <span class="grad-text">Scaling.</span>
+  </h1>
+
+  <p class="hero-sub">
+    We automate Indian businesses end-to-end — replacing manual work, broken workflows, and dependency on key people with smart, always-on digital systems.
+  </p>
+
+  <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem">
+    <div style="display:flex;align-items:center;gap:.5rem;background:var(--pa);border:1.5px solid var(--border2);border-radius:99px;padding:.35rem 1rem">
+      <span style="font-family:Syne,sans-serif;font-size:1rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">10+</span>
+      <span style="font-size:.75rem;color:var(--muted);font-weight:500">Years Experience</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:.5rem;background:var(--pa);border:1.5px solid var(--border2);border-radius:99px;padding:.35rem 1rem">
+      <span style="font-family:Syne,sans-serif;font-size:1rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">30+</span>
+      <span style="font-size:.75rem;color:var(--muted);font-weight:500">Projects Delivered</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:.5rem;background:var(--pa);border:1.5px solid var(--border2);border-radius:99px;padding:.35rem 1rem">
+      <span style="font-family:Syne,sans-serif;font-size:1rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">48h</span>
+      <span style="font-size:.75rem;color:var(--muted);font-weight:500">Go-Live</span>
+    </div>
+  </div>
+  <div class="hero-framework">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 4V10L7 13L1 10V4Z" stroke="#6c3fff" stroke-width="1.5" fill="rgba(108,63,255,.1)"/></svg>
+    Working on &nbsp;<strong>Rahul Jain's Tachknowledgy Framework</strong>&nbsp;·&nbsp;Business Coaching India
+  </div>
+
+  <div class="hero-acts">
+    <a href="#cta" class="btn btn-purple btn-lg">🚀 Book Free Business Audit</a>
+    <a href="#services" class="btn btn-ghost btn-lg">See What We Do →</a>
+  </div></div>
+</section>
+
+<!-- ─── TRUST TICKER ─── -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ti">🏗️ Construction</span><span class="ts"> · </span>
+    <span class="ti">💒 Wedding Planners</span><span class="ts"> · </span>
+    <span class="ti">🏭 Manufacturing</span><span class="ts"> · </span>
+    <span class="ti">📦 Trading & Distribution</span><span class="ts"> · </span>
+    <span class="ti">🏠 Real Estate</span><span class="ts"> · </span>
+    <span class="ti">🎓 Coaching & Education</span><span class="ts"> · </span>
+    <span class="ti">💊 Pharma & Healthcare</span><span class="ts"> · </span>
+    <span class="ti">🚚 Logistics</span><span class="ts"> · </span>
+    <span class="ti">💎 Gems & Jewellery</span><span class="ts"> · </span>
+    <span class="ti">🎭 Events</span><span class="ts"> · </span>
+    <span class="ti">☀️ Solar & Energy</span><span class="ts"> · </span>
+    <span class="ti">🍽️ F&B</span><span class="ts"> · </span>
+    <span class="ti">💰 Finance & NBFC</span><span class="ts"> · </span>
+    <span class="ti">🧵 Textile</span><span class="ts"> · </span>
+    <!-- dupe -->
+    <span class="ti">🏗️ Construction</span><span class="ts"> · </span>
+    <span class="ti">💒 Wedding Planners</span><span class="ts"> · </span>
+    <span class="ti">🏭 Manufacturing</span><span class="ts"> · </span>
+    <span class="ti">📦 Trading & Distribution</span><span class="ts"> · </span>
+    <span class="ti">🏠 Real Estate</span><span class="ts"> · </span>
+    <span class="ti">🎓 Coaching & Education</span><span class="ts"> · </span>
+    <span class="ti">💊 Pharma & Healthcare</span><span class="ts"> · </span>
+    <span class="ti">🚚 Logistics</span><span class="ts"> · </span>
+    <span class="ti">💎 Gems & Jewellery</span><span class="ts"> · </span>
+    <span class="ti">🎭 Events</span><span class="ts"> · </span>
+    <span class="ti">☀️ Solar & Energy</span><span class="ts"> · </span>
+    <span class="ti">🍽️ F&B</span><span class="ts"> · </span>
+    <span class="ti">💰 Finance & NBFC</span><span class="ts"> · </span>
+    <span class="ti">🧵 Textile</span>
+  </div>
+</div>
+
+<!-- ─── PAIN HOOK ─── -->
+<section id="pain" class="sec sec-surface">
+  <div class="pain-hero rev">
+    <div class="eyebrow center" style="justify-content:center">Why This Matters</div>
+    <h2 class="h2" style="font-size:clamp(2.2rem,4vw,3.2rem)">
+      Your Business is Running You.<br>
+      <span class="grad-text">It Should Be the Other Way Around.</span>
+    </h2>
+    <p class="body-text center" style="margin-top:.75rem">
+      Every day without automation, you're losing hours to tasks a system should handle. Here's what we hear from Indian business owners every single week.
+    </p>
+  </div>
+
+
+  <!-- Visual: 80% firefighting bar -->
+  <div class="rev" style="background:linear-gradient(135deg,#fffbf5,#fff5e6);border:1.5px solid #fde68a;border-radius:20px;padding:2.5rem;margin-bottom:3rem;display:flex;align-items:center;gap:3rem;flex-wrap:wrap">
+    <div style="flex:1;min-width:200px">
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#92400e;margin-bottom:.75rem">How You Currently Spend Your Day</div>
+      <div style="margin-bottom:.85rem">
+        <div style="display:flex;justify-content:space-between;font-size:.8rem;color:#78350f;font-weight:500;margin-bottom:.4rem"><span>🔥 Firefighting & Operations</span><span>80%</span></div>
+        <div style="height:10px;background:#fef3c7;border-radius:99px;overflow:hidden;border:1px solid #fde68a"><div style="height:100%;width:80%;background:linear-gradient(90deg,#f59e0b,#ef4444);border-radius:99px"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:.8rem;color:#1e40af;font-weight:500;margin-bottom:.4rem"><span>📈 Actual Growth Work</span><span>20%</span></div>
+        <div style="height:10px;background:#eff6ff;border-radius:99px;overflow:hidden;border:1px solid #bfdbfe"><div style="height:100%;width:20%;background:linear-gradient(90deg,#6c3fff,#4f6bff);border-radius:99px"></div></div>
+      </div>
+    </div>
+    <div style="text-align:center;flex-shrink:0">
+      <div style="font-family:Syne,sans-serif;font-size:3.5rem;font-weight:800;line-height:1;background:linear-gradient(135deg,#f59e0b,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">80%</div>
+      <div style="font-size:.78rem;color:#78350f;margin-top:.3rem;font-weight:500">of your time<br>is firefighting</div>
+      <div style="font-size:.72rem;color:#92400e;margin-top:.5rem;font-style:italic">VIVONIX flips this</div>
+    </div>
+  </div>
+
+  <div class="pain-cards rev">
+    <div class="pain-card">
+      <span class="pain-card-icon">📊</span>
+      <div class="pain-card-head">Remove Dependence from Your MIS Person</div>
+      <p class="pain-card-body">If your MIS executive is absent for a day, your entire reporting stops. That's not a system — that's a single point of failure. Your business data should be automated, live, and independent of any one person.</p>
+    </div>
+    <div class="pain-card">
+      <span class="pain-card-icon">📂</span>
+      <div class="pain-card-head">It's Time to Move from Google Sheets to ERP</div>
+      <p class="pain-card-body">You've outgrown Excel and Google Sheets. Data is scattered across files, versions are mismatched, and nothing is real-time. It's time for a proper business system that scales with you — not against you.</p>
+    </div>
+    <div class="pain-card">
+      <span class="pain-card-icon">📲</span>
+      <div class="pain-card-head">Stop Managing Your Team on WhatsApp</div>
+      <p class="pain-card-body">Assigning tasks, chasing follow-ups, sending reminders — all on WhatsApp. Messages get buried, tasks get forgotten, accountability is zero. Your team needs a system, not a chat group.</p>
+    </div>
+  </div>
+
+  <div class="pain-statements rev">
+    <div class="pstat">
+      <div class="pstat-label">The Reality</div>
+      <div class="pstat-quote">"I'm working 12 hours a day but the business isn't growing."</div>
+      <p class="pstat-sub">You're doing operator work, not owner work. Automation frees you to focus on strategy, not operations.</p>
+    </div>
+    <div class="pstat">
+      <div class="pstat-label">The Problem</div>
+      <div class="pstat-quote">"My team has no accountability. Same mistakes every week."</div>
+      <p class="pstat-sub">Without a task system, delegation is just hope. Checklists, FMS, and scoring make accountability automatic.</p>
+    </div>
+    <div class="pstat">
+      <div class="pstat-label">The Fix</div>
+      <div class="pstat-quote">"I want to run this business working just one day a week."</div>
+      <p class="pstat-sub">That's exactly the Rahul Jain Tachknowledgy framework. VIVONIX builds the tech that makes it possible.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ─── -->
+<section id="services" class="sec">
+  <div class="svc-layout">
+    <div class="svc-sticky">
+      <div class="eyebrow">What We Build</div>
+      <div class="svc-tagline">Every service we offer exists to buy back your <span class="grad-text">time and attention.</span></div>
+      <p class="body-text" style="margin-bottom:2rem">From your first automation to a fully running digital business — we design, build, and deploy the systems that set you free.</p>
+      <a href="#cta" class="btn btn-purple">Start With Free Audit →</a>
+
+    <!-- Service proof numbers -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-top:2.5rem">
+      <div style="background:var(--pa);border:1.5px solid var(--border2);border-radius:12px;padding:1.1rem;text-align:center">
+        <div style="font-family:Syne,sans-serif;font-size:1.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">7+</div>
+        <div style="font-size:.72rem;color:var(--muted);margin-top:.15rem">Automation Services</div>
+      </div>
+      <div style="background:var(--pa);border:1.5px solid var(--border2);border-radius:12px;padding:1.1rem;text-align:center">
+        <div style="font-family:Syne,sans-serif;font-size:1.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">30+</div>
+        <div style="font-size:.72rem;color:var(--muted);margin-top:.15rem">Projects Done</div>
+      </div>
+      <div style="background:var(--pa);border:1.5px solid var(--border2);border-radius:12px;padding:1.1rem;text-align:center">
+        <div style="font-family:Syne,sans-serif;font-size:1.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">94%</div>
+        <div style="font-size:.72rem;color:var(--muted);margin-top:.15rem">ML Model Accuracy</div>
+      </div>
+      <div style="background:var(--pa);border:1.5px solid var(--border2);border-radius:12px;padding:1.1rem;text-align:center">
+        <div style="font-family:Syne,sans-serif;font-size:1.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">48h</div>
+        <div style="font-size:.72rem;color:var(--muted);margin-top:.15rem">Avg. Delivery Time</div>
+      </div>
+    </div>
+    </div>
+    <div class="svc-list rev">
+
+      <div class="svc-item">
+        <div class="svc-row">
+          <div class="svc-icon-box">📱</div>
+          <div>
+            <div class="svc-name">WhatsApp & Email Marketing Automation</div>
+            <p class="svc-desc">Personalised bulk WhatsApp campaigns to thousands of customers in one click. No Meta approval needed. Auto-follow-ups, drip sequences, broadcast lists — all on autopilot.</p>
+            <div class="svc-pills"><span class="stag">WhatsApp API</span><span class="stag">Bulk Messaging</span><span class="stag">Email Sequences</span><span class="stag">Chatbots</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-row">
+          <div class="svc-icon-box">📊</div>
+          <div>
+            <div class="svc-name">MIS Dashboard & Business Analytics</div>
+            <p class="svc-desc">Live Power BI dashboards replacing your MIS person. Sales pipeline, HR attrition, KPI tracking, inventory — all real-time, all automated, accessible from your phone 24/7.</p>
+            <div class="svc-pills"><span class="stag">Power BI</span><span class="stag">Python</span><span class="stag">MySQL</span><span class="stag">DAX</span><span class="stag">Auto Reports</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-row">
+          <div class="svc-icon-box">🤖</div>
+          <div>
+            <div class="svc-name">AI Chatbots & Voice Agents</div>
+            <p class="svc-desc">WhatsApp and Telegram AI bots + voice agents powered by OpenAI and RAG. Your business answers customer queries, qualifies leads, and books demos — automatically, 24/7.</p>
+            <div class="svc-pills"><span class="stag">OpenAI</span><span class="stag">LangChain</span><span class="stag">RAG</span><span class="stag">ElevenLabs</span><span class="stag">Vapi</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-row">
+          <div class="svc-icon-box">⚙️</div>
+          <div>
+            <div class="svc-name">Business Process Automation (Move to ERP)</div>
+            <p class="svc-desc">Replace Google Sheets and manual processes with a real ERP-style system — inventory, approvals, purchase orders, employee management, automated document generation. Scale without chaos.</p>
+            <div class="svc-pills"><span class="stag">AppSheet</span><span class="stag">AppScript</span><span class="stag">Google APIs</span><span class="stag">No-Code ERP</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-row">
+          <div class="svc-icon-box">📋</div>
+          <div>
+            <div class="svc-name">Team Management & Accountability Systems</div>
+            <p class="svc-desc">Task delegation, SOPs, smart checklists, FMS, leave tracking, help tickets, and daily MIS scoring — your team runs itself without you having to remind anyone of anything.</p>
+            <div class="svc-pills"><span class="stag">FMS</span><span class="stag">Delegation</span><span class="stag">Checklists</span><span class="stag">MIS Score</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-row">
+          <div class="svc-icon-box">📈</div>
+          <div>
+            <div class="svc-name">Predictive Analytics & Demand Forecasting</div>
+            <p class="svc-desc">ML-powered demand forecasting, inventory optimisation, fraud detection (94% accuracy), and supplier scorecards. Data-driven decisions instead of gut-feel guesswork.</p>
+            <div class="svc-pills"><span class="stag">Python</span><span class="stag">Prophet</span><span class="stag">XGBoost</span><span class="stag">Flask</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-row">
+          <div class="svc-icon-box">🛠️</div>
+          <div>
+            <div class="svc-name">Custom SaaS & Web Application Development</div>
+            <p class="svc-desc">Full-stack custom web apps built for Indian business realities — CRMs, booking systems, client portals, internal tools. React + Node.js + Next.js, deployed and maintained.</p>
+            <div class="svc-pills"><span class="stag">React</span><span class="stag">Next.js</span><span class="stag">Node.js</span><span class="stag">MySQL</span><span class="stag">Flask</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRANSFORMATION ─── -->
+<section class="sec sec-surface">
+  <div class="rev center" style="margin-bottom:3.5rem">
+    <div class="eyebrow" style="justify-content:center">The Shift</div>
+    <h2 class="h2">Before VIVONIX vs After VIVONIX</h2>
+    <p class="body-text center" style="margin-top:.65rem">This is the exact transformation we deliver. Every. Single. Time.</p>
+  </div>
+  <div class="transform-grid rev">
+    <div class="trans-side before">
+      <div class="trans-label b">⚠ Before VIVONIX</div>
+      <div class="trans-items">
+        <div class="trans-row"><span class="trans-emoji">😤</span><div class="trans-text"><strong>MIS depends on one person.</strong> Absent? Reporting stops. Business blind.</div></div>
+        <div class="trans-row"><span class="trans-emoji">📂</span><div class="trans-text"><strong>50 Google Sheets.</strong> Different versions, manual updates, no single truth.</div></div>
+        <div class="trans-row"><span class="trans-emoji">📲</span><div class="trans-text"><strong>Copy-pasting WhatsApp</strong> to 500 customers one by one. 3 hours wasted daily.</div></div>
+        <div class="trans-row"><span class="trans-emoji">🗂️</span><div class="trans-text"><strong>Team has no accountability.</strong> Same task missed every week. Same excuses.</div></div>
+        <div class="trans-row"><span class="trans-emoji">⏰</span><div class="trans-text"><strong>You can't take a day off.</strong> Business stops the moment you stop.</div></div>
+        <div class="trans-row"><span class="trans-emoji">📉</span><div class="trans-text"><strong>No live dashboard.</strong> "Boss, give me 2 days to prepare the MIS report."</div></div>
+      </div>
+    </div>
+    <div class="trans-side after">
+      <div class="trans-label a">✦ After VIVONIX</div>
+      <div class="trans-items">
+        <div class="trans-row a"><span class="trans-emoji">📊</span><div class="trans-text"><strong>MIS runs automatically.</strong> Live dashboard on your phone. Zero dependency.</div></div>
+        <div class="trans-row a"><span class="trans-emoji">🏢</span><div class="trans-text"><strong>ERP system replaces Sheets.</strong> One platform. Real-time. Always accurate.</div></div>
+        <div class="trans-row a"><span class="trans-emoji">📱</span><div class="trans-text"><strong>Bulk WhatsApp in 1 click.</strong> 1000 personalised messages sent in seconds.</div></div>
+        <div class="trans-row a"><span class="trans-emoji">✅</span><div class="trans-text"><strong>Team runs itself.</strong> Tasks delegated, tracked, scored — automatically every day.</div></div>
+        <div class="trans-row a"><span class="trans-emoji">🏖️</span><div class="trans-text"><strong>You work one day a week.</strong> Business runs while you're away. Rahul Jain framework live.</div></div>
+        <div class="trans-row a"><span class="trans-emoji">📈</span><div class="trans-text"><strong>Real-time KPI dashboard.</strong> Sales, ops, HR — all visible from your phone. Always.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RESULTS ─── -->
+<section class="sec">
+  <div class="rev center" style="margin-bottom:3.5rem">
+    <div class="eyebrow" style="justify-content:center">Real Numbers</div>
+    <h2 class="h2">The Impact of Automation,<br>in Plain Numbers</h2>
+  </div>
+  <div class="results-nums rev">
+    <div class="rnum-card"><span class="rnum-val">80%</span><div class="rnum-label">Average reduction in manual work within 90 days of implementation</div></div>
+    <div class="rnum-card"><span class="rnum-val">2x</span><div class="rnum-label">Team output improvement with delegation systems and MIS scoring</div></div>
+    <div class="rnum-card"><span class="rnum-val">48h</span><div class="rnum-label">Average time to go live with your first automation after audit</div></div>
+    <div class="rnum-card"><span class="rnum-val">₹0</span><div class="rnum-label">Cost of your complete business system audit. Zero strings. Zero pressure.</div></div>
+  </div>
+</section>
+
+<!-- ─── PRODUCTS ─── -->
+<section id="products" class="sec sec-surface">
+  <div class="rev" style="margin-bottom:2.5rem">
+    <div class="eyebrow">Product Suite</div>
+    <h2 class="h2">We Build Products, Not Just Services.</h2>
+    <p class="body-text" style="margin-top:.65rem">Three live products that prove our capability. Every product in this suite came from a real client problem — and became a scalable solution for the market.</p>
+  </div>
+  <div class="prod-band rev">
+    <div class="prod-band-head">
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.5rem">VIVONIX PRODUCT SUITE</div>
+        <div class="prod-band-title">One Suite. Real Problems. Real Solutions.</div>
+        <p class="prod-band-sub">These aren't demos — they're live products being used by real businesses today. Each one is a module you can plug into your own business stack.</p>
+      </div>
+      <a href="https://vivah-virid-nine.vercel.app/" target="_blank" class="btn btn-white">Explore All Products →</a>
+    </div>
+    <div class="prod-3">
+      <a href="https://vivah-virid-nine.vercel.app/" target="_blank" class="prod-mini">
+        <div class="prod-mini-badge"><span class="live-green"></span> Live Now</div>
+        <div class="prod-mini-name">💒 Vivah Pro</div>
+        <p class="prod-mini-desc">India's smartest Wedding Planner CRM. Manage 10+ weddings, dedicated WhatsApp per event, bulk RSVPs, vendor payments, kanban tasks, and auto reminders — all in one dashboard.</p>
+        <span class="prod-mini-link">View Live →</span>
+      </a>
+      <div class="prod-mini">
+        <div class="prod-mini-badge"><span class="live-green"></span> Live Now</div>
+        <div class="prod-mini-name">📲 MYAPI</div>
+        <p class="prod-mini-desc">WhatsApp Bulk Messaging API with no Meta approval needed. Send thousands of personalised messages in one click. Full REST API, templates, scheduling, and delivery analytics.</p>
+        <span class="prod-mini-link">Get Access →</span>
+      </div>
+      <div class="prod-mini">
+        <div class="prod-mini-badge"><span class="soon-dot"></span> Launching Soon</div>
+        <div class="prod-mini-name">🗂️ Task Manager Pro</div>
+        <p class="prod-mini-desc">Flow management, checklists, delegation, help tickets, leave tracker, and MIS scoring. Run your entire team operations from one screen — without micromanaging anyone.</p>
+        <span class="prod-mini-link">Join Waitlist →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ─── -->
+<section id="how" class="sec">
+  <div class="rev center" style="margin-bottom:3.5rem">
+    <div class="eyebrow" style="justify-content:center">How It Works</div>
+    <h2 class="h2">From Chaos to Clarity in 4 Steps</h2>
+    <p class="body-text center" style="margin-top:.65rem">A proven process. Fast delivery. Zero technical headache on your end.</p>
+  </div>
+  <div class="how-grid rev">
+    <div class="how-card">
+      <div class="how-step">01</div>
+      <div class="how-title">Free Business Audit</div>
+      <p class="how-desc">We map every workflow, identify every bottleneck, and show you exactly where you're losing time and money. 30 minutes. Zero cost. Zero commitment.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-step">02</div>
+      <div class="how-title">Custom Blueprint</div>
+      <p class="how-desc">A tailored automation roadmap designed for your specific business — WhatsApp API, MIS dashboards, ERP migration, team systems. Nothing generic, everything specific.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-step">03</div>
+      <div class="how-title">Build & Deploy Fast</div>
+      <p class="how-desc">We implement your complete automation stack — tested, trained, and live within 48 hours. No technical knowledge needed from your team. We handle everything.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-step">04</div>
+      <div class="how-title">Grow & Scale</div>
+      <p class="how-desc">Dedicated ongoing support keeps your systems running 24/7. As your business grows, your automation grows with it. We're your long-term digital partner — not a one-time vendor.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOUNDER + FRAMEWORK ─── -->
+<section id="founder" class="sec sec-surface">
+  <div class="rev" style="display:grid;grid-template-columns:1.15fr 1fr;gap:5rem;align-items:start">
+    <div id="framework">
+      <div class="eyebrow">Our Foundation</div>
+      <h2 class="h2">Built on the<br><span class="grad-text">Rahul Jain<br>Tachknowledgy Framework</span></h2>
+      <div class="fw-highlight">
+        <div class="fw-hl-top">🏆 Run Your Business Working One Day a Week</div>
+        <div class="fw-hl-sub">& Double Your Profits Every Year — The Rahul Jain Mission, Business Coaching India LLP</div>
+      </div>
+      <p class="fw-body">India's pioneer of Business Coaching — <strong style="color:var(--ink)">Rahul Jain</strong> — has spent 23+ years and coached 26,000+ business owners across every industry to achieve a single mission: a business that runs itself while profits keep doubling.</p>
+      <p class="fw-body"><strong style="color:var(--ink)">VIVONIX is the technology arm of that vision.</strong> We implement the Tachknowledgy framework digitally — building systems, dashboards, and automation tools that make "work one day a week" a real, measurable outcome for Indian businesses.</p>
+      <ul class="fw-checklist">
+        <li>Remove dependence from your MIS person — automation takes over</li>
+        <li>Move from Google Sheets to a proper ERP system</li>
+        <li>Team accountability without daily micromanagement</li>
+        <li>Real-time dashboards replacing manual reporting</li>
+        <li>WhatsApp automation replacing manual follow-ups forever</li>
+      </ul>
+      <div class="flex-gap">
+        <a href="https://businesscoachingindia.com/" target="_blank" class="btn btn-ghost">Learn Rahul Jain's Framework ↗</a>
+        <a href="#cta" class="btn btn-purple">Implement It →</a>
+      </div>
+    </div>
+
+      <!-- RJ Card -->
+      <div style="background:linear-gradient(135deg,#f5f3ff,#ede9ff);border:1.5px solid rgba(108,63,255,.2);border-radius:20px;padding:2.5rem;text-align:center;box-shadow:var(--sh-lg)">
+        <div style="width:80px;height:80px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:Syne,sans-serif;font-size:1.7rem;font-weight:800;color:#fff;margin:0 auto 1rem;box-shadow:0 6px 20px rgba(108,63,255,.35)">RJ</div>
+        <div style="font-family:Syne,sans-serif;font-size:1.2rem;font-weight:800;color:var(--ink);margin-bottom:.2rem">Rahul Jain</div>
+        <div style="font-size:.78rem;color:var(--muted);margin-bottom:1.75rem;line-height:1.6">India's Pioneer Business Coach<br>23+ Years · Founder Director, Business Coaching India LLP</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem">
+          <div style="background:var(--surface);border-radius:10px;padding:.9rem;border:1px solid rgba(108,63,255,.15)">
+            <div style="font-family:Syne,sans-serif;font-size:1.35rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">26,000+</div>
+            <div style="font-size:.68rem;color:var(--muted);margin-top:.15rem;line-height:1.4">Business Owners Coached</div>
+          </div>
+          <div style="background:var(--surface);border-radius:10px;padding:.9rem;border:1px solid rgba(108,63,255,.15)">
+            <div style="font-family:Syne,sans-serif;font-size:1.35rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">23 Yrs</div>
+            <div style="font-size:.68rem;color:var(--muted);margin-top:.15rem;line-height:1.4">Coaching in India</div>
+          </div>
+          <div style="background:var(--surface);border-radius:10px;padding:.9rem;border:1px solid rgba(108,63,255,.15)">
+            <div style="font-family:Syne,sans-serif;font-size:1.35rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">1 Day</div>
+            <div style="font-size:.68rem;color:var(--muted);margin-top:.15rem;line-height:1.4">Work Week System</div>
+          </div>
+          <div style="background:var(--surface);border-radius:10px;padding:.9rem;border:1px solid rgba(108,63,255,.15)">
+            <div style="font-family:Syne,sans-serif;font-size:1.35rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">2x</div>
+            <div style="font-size:.68rem;color:var(--muted);margin-top:.15rem;line-height:1.4">Profits Every Year</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<div class="cta-section rev" id="cta">
+  <h2>Ready to Build a Business<br>That Runs <span class="grad-text">Without You?</span></h2>
+  <p>Book a free 30-minute business audit. We'll map your workflows, find the exact bottlenecks, and show you the automation roadmap — specific to your business. Zero commitment. Zero cost.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/919079649289" target="_blank" class="btn btn-white btn-lg">📞 WhatsApp for Free Audit</a>
+    <a href="mailto:contact@vivonix.in" class="btn btn-outline-white btn-lg">✉️ Send an Email</a>
+  </div>
+  <p class="cta-note">No credit card · No sales pressure · 30-min call · Live in 48 hours</p>
+  <div class="cta-features">
+    <span class="cta-feat">Free business system audit</span>
+    <span class="cta-feat">Custom automation blueprint</span>
+    <span class="cta-feat">48h go-live guarantee</span>
+    <span class="cta-feat">Ongoing support included</span>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <svg class="foot-logo-svg" width="160" height="44" viewBox="0 0 160 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="36" height="36" rx="8" fill="none" stroke="#7c4dff" stroke-width="2"/>
+  <rect x="8" y="8" width="24" height="24" rx="5" fill="#7c4dff"/>
+  <text x="20" y="25" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" font-weight="800" fill="white">VX</text>
+  <text x="48" y="21" font-family="Syne,sans-serif" font-size="16" font-weight="800" fill="#eef2ff" letter-spacing="1">VIVONIX</text>
+  <text x="49" y="35" font-family="sans-serif" font-size="8" letter-spacing="2.8" fill="#5b6280">DIGITAL SOLUTIONS</text>
+</svg>
+      <p class="foot-desc">VIVONIX builds business automation systems for Indian SMEs — replacing manual work, broken workflows, and spreadsheet chaos with smart digital systems.<br><br>Working on the Rahul Jain Tachknowledgy Framework.</p>
+      <p class="foot-small">© 2025 VIVONIX Digital Solutions · Bhopal, Madhya Pradesh, India<br>
+        <a href="https://businesscoachingindia.com/" target="_blank">businesscoachingindia.com</a> framework partner</p>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">WhatsApp Automation</a></li>
+        <li><a href="#services">MIS Dashboard</a></li>
+        <li><a href="#services">AI Chatbots</a></li>
+        <li><a href="#services">ERP / AppSheet</a></li>
+        <li><a href="#services">Team Management</a></li>
+        <li><a href="#services">Predictive Analytics</a></li>
+        <li><a href="#services">Free Audit</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="https://vivah-virid-nine.vercel.app/" target="_blank">Vivah Pro ↗</a></li>
+        <li><a href="#products">MYAPI</a></li>
+        <li><a href="#products">Task Manager Pro</a></li>
+      </ul>
+      <h4 style="margin-top:1.5rem">Company</h4>
+      <ul>
+        <li><a href="#founder">About Vishal</a></li>
+        <li><a href="#framework">Rahul Jain Framework</a></li>
+        <li><a href="#how">How We Work</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Get In Touch</h4>
+      <a href="https://wa.me/919079649289" target="_blank" class="foot-contact-link">📱 +91 90796 49289</a>
+      <a href="mailto:contact@vivonix.in" class="foot-contact-link">✉️ contact@vivonix.in</a>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.3);margin-top:.65rem;line-height:1.7">📍 Bhopal, Madhya Pradesh, India</p>
+      <a href="#cta" class="btn btn-purple" style="margin-top:1.25rem;font-size:.78rem">Book Free Demo →</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-bottom-txt">© 2025 VIVONIX Digital Solutions · All rights reserved</span>
+    <span class="foot-bottom-txt">Founder: Vishal Daharwal · Bhopal, MP</span>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav=document.getElementById('mainnav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('up',scrollY>20)})
+
+// Demo bar — show after 4s
+setTimeout(()=>document.getElementById('demoBar').classList.add('show'),4000)
+
+// Reveal on scroll
+const ro=new IntersectionObserver(es=>{
+  es.forEach((e,i)=>{if(e.isIntersecting){
+    e.target.querySelectorAll('.rev').forEach((el,j)=>{
+      el.style.transitionDelay=(j*.08)+'s';el.classList.add('in')
+    })
+    e.target.classList.add('in');ro.unobserve(e.target)
+  }})
+},{threshold:.06,rootMargin:'0px 0px -20px 0px'})
+document.querySelectorAll('.rev').forEach(el=>{ro.observe(el)})
+
+// Counters on hero
+const co=new IntersectionObserver(es=>{
+  if(!es[0].isIntersecting)return
+  document.querySelectorAll('[data-to]').forEach(el=>{
+    const t=+el.dataset.to,s=el.dataset.suf||'',dur=1800,st=performance.now()
+    const tick=n=>{const p=Math.min((n-st)/dur,1),e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(e*t)+s;if(p<1)requestAnimationFrame(tick)}
+    requestAnimationFrame(tick)
+  });co.disconnect()
+},{threshold:.5})
+co.observe(document.getElementById('hero'))
+
+// Highlight active nav link
+const sections=document.querySelectorAll('section[id]')
+const links=document.querySelectorAll('.nav-center a')
+window.addEventListener('scroll',()=>{
+  let curr=''
+  sections.forEach(s=>{if(scrollY>=s.offsetTop-200)curr=s.id})
+  links.forEach(a=>{
+    a.style.color=a.getAttribute('href')==='#'+curr?'var(--p)':'var(--muted)'
+    a.style.borderColor=a.getAttribute('href')==='#'+curr?'var(--p)':'transparent'
+  })
+})
+</script>
+</body>
+</html>
