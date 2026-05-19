@@ -169,7 +169,8 @@ nav.up{box-shadow:var(--sh)}
 .svc-item:hover{border-color:rgba(108,63,255,.3);box-shadow:var(--sh)}
 .svc-row{display:flex;align-items:flex-start;gap:1rem}
 .svc-icon-box{width:44px;height:44px;border-radius:10px;background:var(--pa);
-  display:grid;place-items:center;font-size:1.2rem;flex-shrink:0;border:1.5px solid var(--border2)}
+  display:grid;place-items:center;font-size:1.2rem;flex-shrink:0;border:1.5px solid var(--border2);color:var(--p)}
+.svc-icon-box svg{width:22px;height:22px;stroke-width:2}
 .svc-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
 .svc-desc{font-size:.8rem;color:var(--muted);line-height:1.65;font-weight:300}
 .svc-pills{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem}
@@ -230,9 +231,13 @@ nav.up{box-shadow:var(--sh)}
 .how-card{background:var(--surface);border:1.5px solid var(--border);border-radius:16px;
   padding:2rem;transition:border-color .25s,box-shadow .25s}
 .how-card:hover{border-color:rgba(108,63,255,.3);box-shadow:var(--sh)}
+.how-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem}
 .how-step{width:44px;height:44px;border-radius:50%;background:var(--grad);
   display:grid;place-items:center;font-family:'Syne',sans-serif;font-size:.85rem;font-weight:800;color:#fff;
-  margin-bottom:1.1rem;box-shadow:0 4px 12px rgba(108,63,255,.28)}
+  box-shadow:0 4px 12px rgba(108,63,255,.28);flex-shrink:0}
+.how-icon{width:44px;height:44px;border-radius:10px;background:var(--pa);border:1.5px solid var(--border2);
+  display:grid;place-items:center;color:var(--p);flex-shrink:0}
+.how-icon svg{width:22px;height:22px;stroke-width:2}
 .how-title{font-family:'Syne',sans-serif;font-size:.96rem;font-weight:700;color:var(--ink);margin-bottom:.45rem}
 .how-desc{font-size:.8rem;color:var(--muted);line-height:1.65;font-weight:300}
 
@@ -609,7 +614,7 @@ footer{background:var(--ink2);padding:4rem 5.5% 2.5rem;position:relative;z-index
 
       <div class="svc-item">
         <div class="svc-row">
-          <div class="svc-icon-box">📱</div>
+          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M7 9h10"/><path d="M7 13h6"/></svg></div>
           <div>
             <div class="svc-name">WhatsApp & Email Marketing Automation</div>
             <p class="svc-desc">Personalised bulk WhatsApp campaigns to thousands of customers in one click. No Meta approval needed. Auto-follow-ups, drip sequences, broadcast lists — all on autopilot.</p>
@@ -620,7 +625,7 @@ footer{background:var(--ink2);padding:4rem 5.5% 2.5rem;position:relative;z-index
 
       <div class="svc-item">
         <div class="svc-row">
-          <div class="svc-icon-box">📊</div>
+          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div>
           <div>
             <div class="svc-name">MIS Dashboard & Business Analytics</div>
             <p class="svc-desc">Live Power BI dashboards replacing your MIS person. Sales pipeline, HR attrition, KPI tracking, inventory — all real-time, all automated, accessible from your phone 24/7.</p>
@@ -631,7 +636,7 @@ footer{background:var(--ink2);padding:4rem 5.5% 2.5rem;position:relative;z-index
 
       <div class="svc-item">
         <div class="svc-row">
-          <div class="svc-icon-box">🤖</div>
+          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
           <div>
             <div class="svc-name">AI Chatbots & Voice Agents</div>
             <p class="svc-desc">WhatsApp and Telegram AI bots + voice agents powered by OpenAI and RAG. Your business answers customer queries, qualifies leads, and books demos — automatically, 24/7.</p>
@@ -642,7 +647,7 @@ footer{background:var(--ink2);padding:4rem 5.5% 2.5rem;position:relative;z-index
 
       <div class="svc-item">
         <div class="svc-row">
-          <div class="svc-icon-box">⚙️</div>
+          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
           <div>
             <div class="svc-name">Business Process Automation (Move to ERP)</div>
             <p class="svc-desc">Replace Google Sheets and manual processes with a real ERP-style system — inventory, approvals, purchase orders, employee management, automated document generation. Scale without chaos.</p>
@@ -653,7 +658,7 @@ footer{background:var(--ink2);padding:4rem 5.5% 2.5rem;position:relative;z-index
 
       <div class="svc-item">
         <div class="svc-row">
-          <div class="svc-icon-box">📋</div>
+          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></div>
           <div>
             <div class="svc-name">Team Management & Accountability Systems</div>
             <p class="svc-desc">Task delegation, SOPs, smart checklists, FMS, leave tracking, help tickets, and daily MIS scoring — your team runs itself without you having to remind anyone of anything.</p>
@@ -664,7 +669,7 @@ footer{background:var(--ink2);padding:4rem 5.5% 2.5rem;position:relative;z-index
 
       <div class="svc-item">
         <div class="svc-row">
-          <div class="svc-icon-box">📈</div>
+          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
           <div>
             <div class="svc-name">Predictive Analytics & Demand Forecasting</div>
             <p class="svc-desc">ML-powered demand forecasting, inventory optimisation, fraud detection (94% accuracy), and supplier scorecards. Data-driven decisions instead of gut-feel guesswork.</p>
@@ -675,7 +680,7 @@ footer{background:var(--ink2);padding:4rem 5.5% 2.5rem;position:relative;z-index
 
       <div class="svc-item">
         <div class="svc-row">
-          <div class="svc-icon-box">🛠️</div>
+          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></div>
           <div>
             <div class="svc-name">Custom SaaS & Web Application Development</div>
             <p class="svc-desc">Full-stack custom web apps built for Indian business realities — CRMs, booking systems, client portals, internal tools. React + Node.js + Next.js, deployed and maintained.</p>
@@ -783,22 +788,34 @@ footer{background:var(--ink2);padding:4rem 5.5% 2.5rem;position:relative;z-index
   </div>
   <div class="how-grid rev">
     <div class="how-card">
-      <div class="how-step">01</div>
+      <div class="how-head">
+        <div class="how-step">01</div>
+        <div class="how-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m8 11 2 2 4-4"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+      </div>
       <div class="how-title">Free Business Audit</div>
       <p class="how-desc">We map every workflow, identify every bottleneck, and show you exactly where you're losing time and money. 30 minutes. Zero cost. Zero commitment.</p>
     </div>
     <div class="how-card">
-      <div class="how-step">02</div>
+      <div class="how-head">
+        <div class="how-step">02</div>
+        <div class="how-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><path d="M9 3v15"/><path d="M15 6v15"/></svg></div>
+      </div>
       <div class="how-title">Custom Blueprint</div>
       <p class="how-desc">A tailored automation roadmap designed for your specific business — WhatsApp API, MIS dashboards, ERP migration, team systems. Nothing generic, everything specific.</p>
     </div>
     <div class="how-card">
-      <div class="how-step">03</div>
+      <div class="how-head">
+        <div class="how-step">03</div>
+        <div class="how-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+      </div>
       <div class="how-title">Build & Deploy Fast</div>
       <p class="how-desc">We implement your complete automation stack — tested, trained, and live within 48 hours. No technical knowledge needed from your team. We handle everything.</p>
     </div>
     <div class="how-card">
-      <div class="how-step">04</div>
+      <div class="how-head">
+        <div class="how-step">04</div>
+        <div class="how-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+      </div>
       <div class="how-title">Grow & Scale</div>
       <p class="how-desc">Dedicated ongoing support keeps your systems running 24/7. As your business grows, your automation grows with it. We're your long-term digital partner — not a one-time vendor.</p>
     </div>
