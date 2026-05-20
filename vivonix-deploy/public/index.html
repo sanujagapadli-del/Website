@@ -3,1785 +3,694 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>VIVONIX — Business Automation Agency | Stop Firefighting. Start Growing.</title>
-<meta name="description" content="VIVONIX automates Indian businesses end-to-end — WhatsApp, MIS, ERP, AI bots, and team systems. Working on Rahul Jain's Tachknowledgy Framework.">
-<meta property="og:title" content="VIVONIX — Stop Firefighting. Start Scaling.">
-<meta property="og:description" content="Business automation for Indian SMEs. Live in 48 hours.">
+<title>VIVONIX — Business automation for Indian SMBs</title>
+<meta name="description" content="VIVONIX builds the WhatsApp, dashboard, and workflow systems that run your business while you focus on growth. Live in 48 hours.">
+<meta property="og:title" content="VIVONIX — Your business should run without you.">
+<meta property="og:description" content="Business automation for Indian SMBs. Live in 48 hours.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ─── RESET & ROOT ─── */
+/* ─── RESET ─── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
 :root{
-  --white:#ffffff;
-  --bg:#faf7f0;
-  --bg2:#f3eee2;
-  --bg3:#e8e1cf;
-  --surface:#ffffff;
-  --surface2:#fdfbf6;
-  --ink:#0a0a0a;
-  --ink2:#1a1a1a;
-  --ink3:#3a3a3a;
-  --muted:#6a6a6a;
-  --muted2:#9a9a9a;
-  --line:#e6dfd0;
-  --line-soft:#efeadd;
-  --hero-bg:var(--bg);
-  --accent:#6c3fff;
-  --accent-dk:#5a32d9;
-  --accent-soft:rgba(108,63,255,.08);
-  --accent-soft2:rgba(108,63,255,.14);
-  /* legacy aliases (kept to avoid breaking older rules) */
-  --p:#6c3fff;
-  --p2:#5a32d9;
-  --pa:rgba(108,63,255,.08);
-  --pa2:rgba(108,63,255,.14);
-  --purple:#6c3fff;
-  --purple-dk:#5a32d9;
-  --coral:#6c3fff;
-  --coral-dk:#5a32d9;
-  --teal:#6c3fff;
-  --teal-dk:#5a32d9;
-  --yellow:#6c3fff;
-  --yellow-dk:#5a32d9;
-  --pink:#6c3fff;
-  --border:#e6dfd0;
-  --border-soft:#efeadd;
-  --border2:rgba(10,10,10,.06);
-  --grad:linear-gradient(130deg,#6c3fff,#5a32d9);
-  --grad2:linear-gradient(135deg,#6c3fff 0%,#5a32d9 100%);
-  --grad3:linear-gradient(135deg,#0a0a0a,#1a1a1a);
-  --grad-anim:linear-gradient(110deg,#6c3fff,#5a32d9,#6c3fff);
-  --sh:0 1px 2px rgba(10,10,10,.04),0 2px 8px rgba(10,10,10,.04);
-  --sh-md:0 2px 6px rgba(10,10,10,.05),0 10px 28px rgba(10,10,10,.06);
-  --sh-lg:0 4px 12px rgba(10,10,10,.06),0 18px 44px rgba(10,10,10,.08);
-  --sh-xl:0 12px 28px rgba(10,10,10,.08),0 30px 70px rgba(10,10,10,.10);
-  --sh-glow:0 0 0 1px rgba(108,63,255,.10),0 14px 36px rgba(108,63,255,.14);
-  --sh-coral-glow:0 14px 36px rgba(108,63,255,.14);
-  --sh-teal-glow:0 14px 36px rgba(108,63,255,.14);
+  --bg:#0A0A0A;
+  --surface:#141414;
+  --surface2:#1c1c1c;
+  --border:rgba(255,255,255,.08);
+  --border2:rgba(255,255,255,.14);
+  --text:#F5F5F5;
+  --muted:rgba(245,245,245,.62);
+  --muted2:rgba(245,245,245,.42);
+  --accent:#FF6B35;
+  --accent-dk:#E45A26;
+  --accent-soft:rgba(255,107,53,.10);
+  --accent-soft2:rgba(255,107,53,.18);
+  --red:#ef4444;
+  --red-soft:rgba(239,68,68,.08);
+  --green:#10b981;
+  --green-soft:rgba(16,185,129,.08);
   --rad:14px;
   --rad-lg:20px;
-  --rad-xl:28px;
   --t:.3s cubic-bezier(.4,0,.2,1);
-  --t-slow:.5s cubic-bezier(.4,0,.2,1);
-  --t-bounce:.5s cubic-bezier(.34,1.56,.64,1);
 }
-body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4,h5{font-family:'Syne',sans-serif;letter-spacing:-.025em;line-height:1.1}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(circle at 12% -10%,rgba(255,107,53,.07),transparent 45%)}
+h1,h2,h3,h4{font-family:'Syne',sans-serif;letter-spacing:-.025em;line-height:1.06;font-weight:700}
 img{display:block;max-width:100%;height:auto}
-a{text-decoration:none;color:inherit}
-button{font-family:inherit;border:none;cursor:pointer;background:none}
-::selection{background:var(--yellow);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;border:none;background:none;color:inherit;cursor:pointer}
+::selection{background:var(--accent);color:#000}
 
-/* ─── DECORATIVE BG ─── */
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 50% 35% at 92% 8%,rgba(124,58,237,.06),transparent 60%),
-    radial-gradient(ellipse 40% 30% at 8% 92%,rgba(251,113,133,.05),transparent 60%)}
-.dot-grid{display:none}
-.blob{display:none}
+.container{max-width:1280px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2rem)}
+.sec{padding:clamp(4rem,9vw,7.5rem) 0;position:relative}
 
-/* highlight accent — animated gradient underline */
-.hl{position:relative;display:inline-block;color:var(--ink);
-  background:var(--grad);background-size:200% 200%;
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  animation:gradFlow 7s ease infinite;font-style:italic;font-weight:800}
-.hl.coral{background:linear-gradient(120deg,#fb7185,#ec4899,#fb7185);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.hl.teal{background:linear-gradient(120deg,#14b8a6,#06b6d4,#14b8a6);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.hl.purple{background:linear-gradient(120deg,#7c3aed,#a855f7,#7c3aed);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-@keyframes gradFlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-bottom:1.25rem}
+.eyebrow::before{content:'';width:14px;height:1.5px;background:var(--accent);border-radius:2px}
+.h2{font-size:clamp(2rem,4.5vw,3.4rem);letter-spacing:-.03em;margin-bottom:1rem}
+.body-text{color:var(--muted);font-size:1.02rem;max-width:58ch;line-height:1.65}
 
-.grad-text{background:var(--grad);background-size:200% 200%;
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  animation:gradFlow 8s ease infinite}
+/* ─── BUTTONS ─── */
+.btn{display:inline-flex;align-items:center;gap:.5rem;
+  font-family:'DM Sans',sans-serif;font-size:.94rem;font-weight:600;letter-spacing:.005em;
+  padding:.85rem 1.5rem;border-radius:99px;cursor:pointer;
+  transition:transform var(--t),background var(--t),border-color var(--t),box-shadow var(--t);
+  white-space:nowrap;position:relative;overflow:hidden}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 28px rgba(255,107,53,.28)}
+.btn-primary:hover{background:var(--accent-dk);transform:translateY(-2px);box-shadow:0 12px 36px rgba(255,107,53,.4)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.btn-ghost:hover{border-color:var(--text);background:rgba(255,255,255,.04)}
+.btn-lg{padding:1rem 1.85rem;font-size:1rem}
+.btn-sm{padding:.6rem 1.15rem;font-size:.86rem}
 
 /* ─── NAV ─── */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;
-  display:flex;align-items:center;justify-content:space-between;
-  gap:1rem;flex-wrap:nowrap;
-  padding:.85rem 4%;min-height:64px;
-  background:rgba(250,250,247,.72);
-  backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);
-  border-bottom:1px solid transparent;
-  transition:background var(--t),border-color var(--t),box-shadow var(--t)}
-nav.up{background:rgba(250,250,247,.92);border-bottom-color:var(--line);box-shadow:0 1px 0 rgba(10,14,26,.02)}
-nav>a:first-child{flex-shrink:0}
-nav .flex-gap{flex-wrap:nowrap!important;flex-shrink:0}
-
-.nav-center{display:flex;gap:1.8rem;list-style:none;flex-shrink:0}
-.nav-center a{font-size:.88rem;font-weight:500;color:var(--ink3);padding:.3rem 0;
-  position:relative;transition:color var(--t)}
-.nav-center a::after{content:'';position:absolute;left:50%;right:50%;bottom:-2px;height:2px;background:var(--grad);
-  transition:left .3s ease,right .3s ease;border-radius:2px}
-.nav-center a:hover{color:var(--ink)}
-.nav-center a:hover::after{left:0;right:0}
-
-.mobile-toggle{display:none;width:42px;height:42px;border-radius:12px;background:var(--surface);
-  border:1px solid var(--line);align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--sh)}
-.mobile-toggle span{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;position:relative}
-.mobile-toggle span::before,.mobile-toggle span::after{content:'';position:absolute;left:0;width:18px;height:2px;background:var(--ink);border-radius:2px}
+  display:flex;align-items:center;justify-content:space-between;gap:1.25rem;
+  padding:1rem clamp(1.25rem,4vw,2rem);min-height:68px;
+  background:rgba(10,10,10,.55);
+  backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);
+  border-bottom:1px solid transparent;transition:background var(--t),border-color var(--t)}
+nav.up{background:rgba(10,10,10,.88);border-bottom-color:var(--border)}
+.logo{display:inline-flex;align-items:center;gap:.5rem;flex-shrink:0;
+  font-family:'Syne',sans-serif;font-size:1.18rem;font-weight:800;letter-spacing:.04em;color:var(--text);
+  white-space:nowrap}
+.logo .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px rgba(255,107,53,.6)}
+.nav-links{display:flex;gap:2rem;list-style:none;flex-shrink:0}
+.nav-links a{font-size:.92rem;font-weight:500;color:var(--muted);transition:color var(--t);position:relative}
+.nav-links a::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:1.5px;background:var(--accent);
+  transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{flex-shrink:0}
+.mobile-toggle{display:none;width:42px;height:42px;border-radius:10px;
+  border:1px solid var(--border2);background:transparent;align-items:center;justify-content:center;color:var(--text)}
+.mobile-toggle span{display:block;width:18px;height:1.5px;background:currentColor;position:relative}
+.mobile-toggle span::before,.mobile-toggle span::after{content:'';position:absolute;left:0;width:18px;height:1.5px;background:currentColor}
 .mobile-toggle span::before{top:-6px}.mobile-toggle span::after{top:6px}
-
-/* ─── BUTTONS (premium) ─── */
-.btn{display:inline-flex;align-items:center;gap:.5rem;
-  font-family:'Syne',sans-serif;font-size:.86rem;font-weight:700;letter-spacing:.01em;
-  padding:.72rem 1.5rem;border-radius:12px;border:none;cursor:pointer;
-  text-decoration:none;transition:transform var(--t),box-shadow var(--t),background var(--t);white-space:nowrap;
-  position:relative;overflow:hidden}
-.btn-ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line);box-shadow:var(--sh)}
-.btn-ghost:hover{transform:translateY(-2px);box-shadow:var(--sh-md);border-color:rgba(124,58,237,.3)}
-.btn-purple{background:var(--ink);color:#fff;box-shadow:0 6px 20px rgba(10,14,26,.18),0 0 0 1px rgba(255,255,255,.04) inset}
-.btn-purple::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity .35s ease;z-index:-1}
-.btn-purple::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.16) 50%,transparent 70%);
-  transform:translateX(-120%);transition:transform .7s ease;pointer-events:none}
-.btn-purple:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(124,58,237,.28),0 0 0 1px rgba(255,255,255,.06) inset}
-.btn-purple:hover::before{opacity:1}
-.btn-purple:hover::after{transform:translateX(120%)}
-.btn-white{background:var(--white);color:var(--ink);font-weight:800;border:1px solid var(--line);box-shadow:var(--sh-md)}
-.btn-white:hover{transform:translateY(-2px);box-shadow:var(--sh-lg)}
-.btn-outline-white{background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.btn-outline-white:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
-.btn-lg{padding:.88rem 2rem;font-size:.95rem;border-radius:14px}
-
-/* ─── STICKY DEMO BAR ─── */
-.demo-bar{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:400;
-  background:rgba(10,14,26,.92);color:#fff;border:1px solid rgba(255,255,255,.08);
-  display:flex;align-items:center;gap:1rem;
-  padding:.65rem 1.5rem .65rem 1.25rem;
-  border-radius:99px;box-shadow:0 12px 36px rgba(10,14,26,.35),0 0 0 1px rgba(255,255,255,.04) inset;
+.mobile-menu{display:none;position:fixed;inset:68px 0 auto 0;background:rgba(10,10,10,.96);
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  white-space:nowrap;opacity:0;pointer-events:none;
-  transition:opacity .4s,transform .4s;transform:translateX(-50%) translateY(10px)}
-.demo-bar.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.demo-bar-text{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.78)}
-.demo-bar a{background:var(--grad);color:#fff;padding:.42rem 1.2rem;border-radius:99px;
-  font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;transition:transform .2s,filter .2s}
-.demo-bar a:hover{transform:scale(1.04);filter:brightness(1.1)}
-.demo-bar .close{background:none;color:rgba(255,255,255,.4);cursor:pointer;
-  padding:.2rem;font-size:1rem;line-height:1;margin-left:.25rem}
+  border-bottom:1px solid var(--border);padding:1.5rem clamp(1.25rem,4vw,2rem) 2rem;z-index:499}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:1rem 0;border-bottom:1px solid var(--border);font-size:1.05rem;color:var(--text);font-weight:500}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu .btn{margin-top:1.25rem;width:100%;justify-content:center}
 
 /* ─── HERO ─── */
-#hero{min-height:92vh;display:grid;grid-template-columns:1fr;align-items:center;
-  padding:8rem 5.5% 5rem;position:relative;overflow:hidden;background:var(--bg);color:var(--ink)}
-#hero::before{content:'';position:absolute;right:-10%;top:10%;width:55%;height:80%;z-index:0;pointer-events:none;
-  background:radial-gradient(ellipse 50% 50% at 50% 50%,var(--accent-soft),transparent 65%);filter:blur(20px)}
-#hero>*{position:relative;z-index:1}
+#hero{padding-top:9rem;padding-bottom:4rem;min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;right:-10%;top:0;width:60%;height:100%;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 50% 60% at 50% 50%,rgba(255,107,53,.16),transparent 65%);filter:blur(40px)}
+#hero .container{position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:.55rem;font-size:.74rem;
+  padding:.42rem 1rem .42rem .82rem;border:1px solid var(--border2);border-radius:99px;
+  margin-bottom:2rem;color:var(--muted);font-weight:500;letter-spacing:.06em;
+  background:rgba(255,255,255,.025);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.pulsedot{width:7px;height:7px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 0 rgba(255,107,53,.55);animation:ping 2.2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,107,53,.55)}70%{box-shadow:0 0 0 10px rgba(255,107,53,0)}100%{box-shadow:0 0 0 0 rgba(255,107,53,0)}}
+.hero-h1{font-size:clamp(2.6rem,7vw,5.6rem);font-weight:700;max-width:14ch;letter-spacing:-.038em;margin-bottom:1.5rem}
+.hero-h1 .accent{color:var(--accent)}
+.hero-sub{font-size:clamp(1.02rem,1.3vw,1.18rem);color:var(--muted);max-width:54ch;margin-bottom:2.5rem;line-height:1.6}
+.hero-acts{display:flex;gap:.85rem;flex-wrap:wrap;align-items:center;margin-bottom:3rem}
+.hero-stats{display:flex;gap:.6rem;flex-wrap:wrap}
+.hero-stat{display:inline-flex;align-items:baseline;gap:.5rem;padding:.5rem 1.1rem;
+  background:var(--surface);border:1px solid var(--border);border-radius:99px;
+  transition:transform var(--t),border-color var(--t)}
+.hero-stat:hover{transform:translateY(-2px);border-color:var(--border2)}
+.hero-stat b{font-family:'Syne',sans-serif;font-size:1.02rem;font-weight:800;color:var(--text)}
+.hero-stat span{font-size:.84rem;color:var(--muted)}
 
-.hero-tag{display:inline-flex;align-items:center;gap:.55rem;
-  background:transparent;color:var(--ink2);
-  border:1px solid var(--line);
-  border-radius:99px;padding:.4rem 1rem .4rem .8rem;margin-bottom:1.75rem;
-  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
-  width:fit-content}
-.hero-tag::after{display:none}
-.pulsedot{width:6px;height:6px;border-radius:50%;background:var(--accent);
-  box-shadow:0 0 0 0 rgba(108,63,255,.5);animation:ping 2.4s infinite}
-@keyframes ping{0%{box-shadow:0 0 0 0 rgba(108,63,255,.45)}70%{box-shadow:0 0 0 8px rgba(108,63,255,0)}100%{box-shadow:0 0 0 0 rgba(108,63,255,0)}}
+/* ─── MARQUEE ─── */
+.marquee{padding:2rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  background:rgba(255,255,255,.015);overflow:hidden;position:relative}
+.marquee::before,.marquee::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:1;pointer-events:none}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.marquee::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
+.marquee-track{display:flex;gap:3rem;animation:slide 30s linear infinite;width:max-content}
+.marquee span{font-family:'Syne',sans-serif;font-size:1.1rem;color:var(--muted);font-weight:600;letter-spacing:-.01em;white-space:nowrap}
+.marquee i{color:var(--accent);font-style:normal;opacity:.5}
+@keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-.hero-h1{font-size:clamp(2.6rem,6.2vw,5.4rem);font-weight:700;max-width:18ch;
-  margin-bottom:1.5rem;color:var(--ink);line-height:1.04;letter-spacing:-.035em}
-.hero-h1 .hl{margin:0;background:none;-webkit-text-fill-color:var(--accent);
-  color:var(--accent);font-style:normal;font-weight:700;animation:none}
-.hero-h1 .hl.coral,.hero-h1 .hl.teal,.hero-h1 .hl.purple{background:none;-webkit-text-fill-color:var(--accent);color:var(--accent)}
-.hero-sub{font-size:1.18rem;color:var(--muted);max-width:52ch;line-height:1.65;font-weight:400;margin-bottom:2.5rem}
-.hero-stats,.hero-framework{display:none}
-.hero-acts{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
-.hero-acts .secondary{font-size:.92rem;color:var(--muted);text-decoration:none;
-  padding:.5rem .25rem;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
-.hero-acts .secondary:hover{color:var(--ink);border-bottom-color:var(--ink)}
+/* ─── SECTION HEAD ─── */
+.sec-head{max-width:680px;margin-bottom:3.5rem}
+.sec-head.center{text-align:center;margin-left:auto;margin-right:auto}
+.sec-head.center .eyebrow{justify-content:center}
 
-/* HERO VISUAL - DASHBOARD MOCKUP (dark glassmorphic) */
-.hero-vis{position:relative;display:none}
-.hero-dash{background:linear-gradient(155deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
-  border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:1.5rem;
-  box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.04) inset;
-  position:relative;z-index:2;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
-.hero-dash-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
-.hero-dash-title{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:#fff}
-.hero-dash-dots{display:flex;gap:.4rem}
-.hero-dash-dots span{width:8px;height:8px;border-radius:50%}
-.hero-dash-dots span:nth-child(1){background:#ff5f57}
-.hero-dash-dots span:nth-child(2){background:#febc2e}
-.hero-dash-dots span:nth-child(3){background:#28c840}
-.hero-kpis{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem}
-.hero-kpi{border-radius:14px;padding:1rem;border:1px solid transparent}
-.hero-kpi.p{background:var(--grad);color:#fff;box-shadow:0 8px 24px rgba(124,58,237,.35)}
-.hero-kpi.n{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}
-.hero-kpi-lbl{font-size:.66rem;margin-bottom:.35rem;font-weight:500}
-.hero-kpi.p .hero-kpi-lbl{opacity:.85}
-.hero-kpi.n .hero-kpi-lbl{color:rgba(255,255,255,.55)}
-.hero-kpi-val{font-family:'Syne',sans-serif;font-size:1.55rem;font-weight:800;color:#fff}
-.hero-kpi.n .hero-kpi-val{background:linear-gradient(135deg,#fff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.hero-kpi-sub{font-size:.64rem;margin-top:.25rem;opacity:.7}
-.hero-kpi.n .hero-kpi-sub{color:rgba(255,255,255,.5)}
-.hero-chart{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:1rem;margin-bottom:.75rem}
-.hero-chart-lbl{font-size:.66rem;color:rgba(255,255,255,.55);font-weight:600;margin-bottom:.75rem}
-.hero-chart-bars{display:flex;align-items:flex-end;gap:.4rem;height:54px}
-.hero-chart-bars div{flex:1;background:var(--grad);border-radius:4px 4px 0 0;animation:barRise .8s cubic-bezier(.4,0,.2,1) both;box-shadow:0 -4px 12px rgba(124,58,237,.4)}
-@keyframes barRise{from{height:0!important}}
-.hero-chart-days{display:flex;justify-content:space-between;margin-top:.4rem}
-.hero-chart-days span{font-size:.6rem;color:rgba(255,255,255,.4)}
-.hero-rows{display:flex;flex-direction:column;gap:.5rem}
-.hero-row{display:flex;align-items:center;justify-content:space-between;
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.65rem .9rem}
-.hero-row-label{font-size:.74rem;color:#fff;font-weight:500}
-.hero-row-pill{font-size:.66rem;padding:.22rem .65rem;border-radius:99px;font-weight:600}
-.hero-row-pill.green{background:rgba(20,184,166,.18);color:#5eead4;border:1px solid rgba(20,184,166,.3)}
-.hero-row-pill.purple{background:rgba(124,58,237,.18);color:#c4b5fd;border:1px solid rgba(124,58,237,.3)}
+/* ─── PAIN CARDS ─── */
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.pain-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rad-lg);
+  padding:2rem;transition:transform var(--t),border-color var(--t),background var(--t)}
+.pain-card:hover{transform:translateY(-4px);border-color:var(--accent-soft2);background:var(--surface2)}
+.pain-icon{width:52px;height:52px;border-radius:14px;background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;margin-bottom:1.5rem;transition:background var(--t)}
+.pain-icon svg{width:26px;height:26px;stroke-width:1.75}
+.pain-card:hover .pain-icon{background:var(--accent);color:#fff}
+.pain-title{font-family:'Syne',sans-serif;font-size:1.18rem;font-weight:700;margin-bottom:.5rem;color:var(--text)}
+.pain-fix{color:var(--muted);font-size:.94rem;line-height:1.55}
+.pain-fix b{color:var(--accent);font-weight:600}
 
-.hero-badge{position:absolute;font-family:'Syne',sans-serif;font-weight:700;z-index:3;
-  transition:transform var(--t)}
-.hero-badge.tr{top:-16px;right:-16px;background:var(--grad);color:#fff;border-radius:12px;padding:.65rem .95rem;font-size:.74rem;
-  box-shadow:0 12px 36px rgba(124,58,237,.5);animation:floaty 4s ease-in-out infinite}
-.hero-badge.bl{bottom:-14px;left:-14px;background:rgba(10,14,26,.92);border:1px solid rgba(255,255,255,.14);
-  border-radius:12px;padding:.6rem .9rem;font-size:.72rem;color:#fff;font-weight:600;
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 12px 30px rgba(0,0,0,.4);
-  animation:floaty 4s ease-in-out -2s infinite}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-
-/* ─── TRUST TICKER ─── */
-.ticker-wrap{background:var(--surface);border-top:1.5px solid var(--border);border-bottom:1.5px solid var(--border);
-  padding:.85rem 0;overflow:hidden}
-.ticker-track{display:flex;gap:2.5rem;animation:tickleft 28s linear infinite;width:max-content}
-.ti{font-size:.79rem;color:var(--muted);white-space:nowrap;flex-shrink:0;font-weight:400;display:inline-flex;align-items:center;gap:.4rem}
-.ts{color:var(--p);opacity:.35}
-@keyframes tickleft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* ─── GENERIC SECTION ─── */
-.sec{padding:7.5rem 5.5%;position:relative;z-index:1}
-.sec-surface{background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);
-  position:relative;z-index:1}
-.sec-surface::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(108,63,255,.18),transparent)}
-.sec-surface::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(108,63,255,.12),transparent)}
-.sec-ink{background:var(--ink);color:#fff}
-.sec-tight{padding:5.5rem 5.5%}
-
-.eyebrow{display:inline-flex;align-items:center;gap:.45rem;
-  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink);font-weight:800;margin-bottom:1.25rem;
-  background:var(--yellow);border:2px solid var(--ink);border-radius:6px;padding:.32rem .75rem;
-  width:fit-content;box-shadow:3px 3px 0 var(--ink);transform:rotate(-1deg)}
-.eyebrow::before{content:'';width:7px;height:7px;background:var(--ink);border-radius:1px}
-.center .eyebrow{margin-left:auto;margin-right:auto}
-.h2{font-size:clamp(2.2rem,4.4vw,3.4rem);font-weight:800;margin-bottom:1.1rem;color:var(--ink);letter-spacing:-.035em;line-height:1.04}
-.h2.light{color:#fff}
-.body-text{font-size:1.02rem;color:var(--ink3);max-width:580px;line-height:1.75;font-weight:400}
-.body-text.light{color:rgba(255,255,255,.7)}
-
-/* ─── PAIN HOOK ─── */
-.pain-hero{text-align:center;max-width:760px;margin:0 auto 4rem}
-.pain-hero .h2{font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:1.2rem}
-
-.pain-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem}
-.pain-card{background:var(--surface);border:1.5px solid var(--border);border-radius:18px;padding:2rem;
-  position:relative;overflow:hidden;transition:box-shadow var(--t),border-color var(--t),transform var(--t)}
-.pain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .35s}
-.pain-card:hover{box-shadow:var(--sh-lg);border-color:rgba(108,63,255,.3);transform:translateY(-5px)}
-.pain-card:hover::before{transform:scaleX(1)}
-.pain-card-icon-box{width:48px;height:48px;border-radius:12px;background:var(--pa);border:1.5px solid var(--border2);
-  display:grid;place-items:center;margin-bottom:1.1rem;color:var(--p);transition:all var(--t)}
-.pain-card-icon-box svg{width:24px;height:24px;stroke-width:2}
-.pain-card:hover .pain-card-icon-box{background:var(--grad);color:#fff;border-color:transparent;transform:scale(1.05)}
-.pain-card-head{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:.6rem;color:var(--ink)}
-.pain-card-body{font-size:.84rem;color:var(--muted);line-height:1.7;font-weight:300}
-
-.pain-statements{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;
-  background:var(--border);border:1.5px solid var(--border);border-radius:16px;overflow:hidden}
-.pstat{background:var(--surface);padding:1.75rem 2rem;transition:background var(--t)}
-.pstat:hover{background:var(--bg)}
-.pstat-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);font-weight:600;margin-bottom:.6rem}
-.pstat-quote{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.4}
-.pstat-sub{font-size:.8rem;color:var(--muted);margin-top:.5rem;line-height:1.55;font-weight:300}
-
-/* ─── SERVICES ─── */
-.svc-layout{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
-.svc-sticky{position:sticky;top:7rem}
-.svc-tagline{font-size:1.4rem;font-family:'Syne',sans-serif;font-weight:700;line-height:1.4;
-  margin-bottom:1.25rem;color:var(--ink)}
-.svc-list{display:flex;flex-direction:column;gap:.85rem}
-.svc-item{background:var(--surface);border:1.5px solid var(--border);border-radius:14px;
-  padding:1.6rem;transition:border-color var(--t),box-shadow var(--t),transform var(--t);
-  position:relative;overflow:hidden}
-.svc-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad);
-  transform:scaleY(0);transform-origin:top;transition:transform .35s ease}
-.svc-item:hover{border-color:rgba(108,63,255,.35);box-shadow:var(--sh-lg);transform:translateY(-3px)}
-.svc-item:hover::before{transform:scaleY(1)}
-.svc-row{display:flex;align-items:flex-start;gap:1rem}
-.svc-icon-box{width:44px;height:44px;border-radius:10px;background:var(--pa);
-  display:grid;place-items:center;font-size:1.2rem;flex-shrink:0;border:1.5px solid var(--border2);color:var(--p);
-  transition:transform var(--t),background var(--t),box-shadow var(--t)}
-.svc-icon-box svg{width:22px;height:22px;stroke-width:2;transition:transform var(--t)}
-.svc-item:hover .svc-icon-box{background:var(--grad);border-color:transparent;color:#fff;
-  box-shadow:0 6px 18px rgba(108,63,255,.35);transform:scale(1.06)}
-.svc-item:hover .svc-icon-box svg{transform:rotate(-6deg)}
-.svc-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
-.svc-desc{font-size:.8rem;color:var(--muted);line-height:1.65;font-weight:300}
-.svc-pills{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem}
-.stag{padding:.18rem .58rem;border-radius:4px;background:var(--pa);
-  font-size:.66rem;color:var(--p);font-weight:600;border:1px solid var(--border2)}
-
-/* ─── INDUSTRIES (NEW) ─── */
-.ind-head{text-align:center;max-width:720px;margin:0 auto 3.5rem}
-.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
-.ind-card{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:1/1.1;cursor:pointer;
-  box-shadow:var(--sh-md);transition:transform var(--t),box-shadow var(--t)}
-.ind-card:hover{transform:translateY(-6px);box-shadow:var(--sh-xl)}
-.ind-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.4,0,.2,1)}
-.ind-card:hover img{transform:scale(1.08)}
-.ind-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,13,26,0) 35%,rgba(10,13,26,.85) 100%)}
-.ind-card-body{position:absolute;bottom:0;left:0;right:0;padding:1.25rem;z-index:1;color:#fff}
-.ind-card-tag{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:700;margin-bottom:.3rem;display:flex;align-items:center;gap:.4rem}
-.ind-card-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#22c55e}
-.ind-card-name{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;line-height:1.2}
-.ind-card-sub{font-size:.72rem;color:rgba(255,255,255,.7);margin-top:.25rem;line-height:1.4;font-weight:300}
-
-/* ─── CASE STUDIES (NEW) ─── */
-.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.case-card{background:var(--surface);border:1.5px solid var(--border);border-radius:18px;overflow:hidden;
-  transition:border-color var(--t),box-shadow var(--t),transform var(--t)}
-.case-card:hover{border-color:rgba(108,63,255,.3);box-shadow:var(--sh-lg);transform:translateY(-5px)}
-.case-img-wrap{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg2)}
-.case-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.4,0,.2,1)}
-.case-card:hover .case-img-wrap img{transform:scale(1.06)}
-.case-img-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(108,63,255,.25),rgba(79,107,255,.1));mix-blend-mode:multiply;opacity:0;transition:opacity var(--t)}
-.case-card:hover .case-img-overlay{opacity:1}
-.case-badge{position:absolute;top:.9rem;left:.9rem;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
-  color:var(--p);font-family:'Syne',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.08em;
-  text-transform:uppercase;padding:.3rem .7rem;border-radius:99px;display:inline-flex;align-items:center;gap:.35rem}
-.case-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:#22c55e}
-.case-body{padding:1.5rem}
-.case-industry{font-size:.65rem;color:var(--muted2);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:.45rem}
-.case-title{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--ink);margin-bottom:.5rem;line-height:1.3}
-.case-desc{font-size:.83rem;color:var(--muted);line-height:1.65;font-weight:300;margin-bottom:1rem}
-.case-metrics{display:flex;gap:1rem;padding-top:1rem;border-top:1px solid var(--border)}
-.case-metric{flex:1}
-.case-metric-val{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1}
-.case-metric-lbl{font-size:.65rem;color:var(--muted);margin-top:.15rem;line-height:1.3}
-
-/* ─── TRANSFORMATION ─── */
-.transform-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);
-  border:1.5px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:var(--sh-lg)}
-.trans-side{padding:3rem;background:var(--surface);position:relative}
-.trans-side.before{background:linear-gradient(160deg,#fff8ed 0%,#fffaf2 100%)}
-.trans-side.after{background:linear-gradient(160deg,#f5f0ff 0%,#f3edff 100%);position:relative}
-.trans-side.after::before{content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(108,63,255,.10),transparent);pointer-events:none}
-.trans-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;margin-bottom:1.5rem;
-  display:inline-flex;align-items:center;gap:.5rem;padding:.32rem .85rem;border-radius:99px;position:relative;z-index:1}
-.trans-label.b{color:#d97706;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25)}
-.trans-label.a{color:var(--p);background:var(--pa);border:1px solid var(--border2)}
-.trans-items{display:flex;flex-direction:column;gap:.7rem;position:relative;z-index:1}
-.trans-row{display:flex;align-items:flex-start;gap:.75rem;
-  background:rgba(255,255,255,.75);border-radius:12px;padding:.95rem 1.05rem;
-  border:1px solid rgba(0,0,0,.05);transition:transform var(--t),box-shadow var(--t),background var(--t);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.trans-row:hover{transform:translateX(6px);box-shadow:var(--sh-md);background:#fff}
-.trans-row.a{background:rgba(255,255,255,.85);border-color:rgba(108,63,255,.12)}
-.trans-row.a:hover{box-shadow:0 8px 22px rgba(108,63,255,.15)}
-.trans-emoji{font-size:1.1rem;flex-shrink:0;margin-top:.05rem}
-.trans-text{font-size:.84rem;line-height:1.6;font-weight:300}
-.trans-text strong{font-weight:600;color:var(--ink)}
-
-/* ─── RESULTS ─── */
-.results-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-bottom:4rem}
-.rnum-card{background:var(--surface);border:1.5px solid var(--border);border-radius:14px;
-  padding:1.75rem;text-align:center;box-shadow:var(--sh);transition:border-color var(--t),transform var(--t),box-shadow var(--t);
-  position:relative;overflow:hidden}
-.rnum-card::before{content:'';position:absolute;inset:-1px;border-radius:14px;padding:1.5px;
-  background:var(--grad);
-  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
-  mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
-  -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity var(--t);pointer-events:none}
-.rnum-card:hover{border-color:transparent;transform:translateY(-4px);box-shadow:var(--sh-lg)}
-.rnum-card:hover::before{opacity:1}
-.rnum-val{font-family:'Syne',sans-serif;font-size:2.6rem;font-weight:800;
-  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;margin-bottom:.2rem;
-  transition:transform var(--t)}
-.rnum-card:hover .rnum-val{transform:scale(1.06)}
-.rnum-label{font-size:.77rem;color:var(--muted);line-height:1.55;font-weight:300}
-
-/* ─── TESTIMONIALS (NEW) ─── */
-.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.test-card{background:var(--surface);border:1.5px solid var(--border);border-radius:18px;padding:2rem;
-  position:relative;transition:border-color var(--t),box-shadow var(--t),transform var(--t)}
-.test-card:hover{border-color:rgba(108,63,255,.3);box-shadow:var(--sh-lg);transform:translateY(-5px)}
-.test-quote-icon{position:absolute;top:1.5rem;right:1.5rem;width:32px;height:32px;color:var(--pa2);opacity:.5}
-.test-rating{display:flex;gap:.15rem;margin-bottom:1rem}
-.test-rating svg{width:16px;height:16px;fill:#fbbf24}
-.test-text{font-size:.93rem;color:var(--ink2);line-height:1.7;font-weight:400;margin-bottom:1.75rem;font-style:italic}
-.test-foot{display:flex;align-items:center;gap:.85rem;padding-top:1.25rem;border-top:1px solid var(--border)}
-.test-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--surface);box-shadow:0 2px 8px rgba(108,63,255,.15)}
-.test-name{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:800;color:var(--ink);line-height:1.2}
-.test-role{font-size:.72rem;color:var(--muted);margin-top:.15rem;line-height:1.4}
-
-/* ─── PRODUCTS ─── */
-.prod-band{background:var(--grad2);border-radius:28px;padding:4.25rem;position:relative;overflow:hidden;
-  box-shadow:0 30px 80px rgba(108,63,255,.32),inset 0 1px 0 rgba(255,255,255,.18)}
-.prod-band::before{content:'';position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 60% 50% at 0% 0%,rgba(255,255,255,.18),transparent 50%),
-    radial-gradient(ellipse 50% 40% at 100% 100%,rgba(236,72,153,.25),transparent 50%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='white' opacity='.14'/%3E%3C/svg%3E")}
-.prod-band-head{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem;margin-bottom:2.5rem}
-.prod-band-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#fff;margin-bottom:.6rem}
-.prod-band-sub{font-size:.92rem;color:rgba(255,255,255,.72);max-width:480px;line-height:1.72;font-weight:300}
-.prod-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;position:relative;z-index:1}
-.prod-mini{background:rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:1.6rem;
-  transition:background var(--t),transform var(--t),border-color var(--t),box-shadow var(--t);
-  color:#fff;text-decoration:none;display:block}
-.prod-mini:hover{background:rgba(255,255,255,.18);transform:translateY(-5px);
-  border-color:rgba(255,255,255,.45);box-shadow:0 14px 36px rgba(0,0,0,.25)}
-.prod-mini-badge{font-size:.64rem;letter-spacing:.07em;font-weight:700;text-transform:uppercase;
-  margin-bottom:.65rem;display:flex;align-items:center;gap:.35rem;color:rgba(255,255,255,.65)}
-.live-green{width:5px;height:5px;border-radius:50%;background:#4ade80;flex-shrink:0;box-shadow:0 0 8px #4ade80}
-.soon-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.5);flex-shrink:0}
-.prod-mini-name{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;margin-bottom:.45rem}
-.prod-mini-desc{font-size:.79rem;color:rgba(255,255,255,.68);line-height:1.62;font-weight:300}
-.prod-mini-link{font-size:.75rem;color:rgba(255,255,255,.8);font-weight:700;margin-top:.85rem;
-  display:inline-flex;align-items:center;gap:.3rem;font-family:'Syne',sans-serif}
-
-/* ─── HOW ─── */
-.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.how-card{background:var(--surface);border:1.5px solid var(--border);border-radius:16px;
-  padding:2rem;transition:border-color var(--t),box-shadow var(--t),transform var(--t);
-  position:relative;overflow:hidden}
-.how-card::after{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:var(--grad);
+/* ─── SERVICES GRID ─── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.svc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rad-lg);
+  padding:1.8rem;transition:transform var(--t),border-color var(--t),background var(--t);
+  display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden}
+.svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:var(--accent);
   transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
-.how-card:hover{border-color:rgba(108,63,255,.35);box-shadow:var(--sh-lg);transform:translateY(-4px)}
-.how-card:hover::after{transform:scaleX(1)}
-.how-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem}
-.how-step{width:44px;height:44px;border-radius:50%;background:var(--grad);
-  display:grid;place-items:center;font-family:'Syne',sans-serif;font-size:.85rem;font-weight:800;color:#fff;
-  box-shadow:0 4px 12px rgba(108,63,255,.28);flex-shrink:0;transition:transform var(--t),box-shadow var(--t)}
-.how-icon{width:44px;height:44px;border-radius:10px;background:var(--pa);border:1.5px solid var(--border2);
-  display:grid;place-items:center;color:var(--p);flex-shrink:0;transition:background var(--t),color var(--t),border-color var(--t),transform var(--t)}
-.how-icon svg{width:22px;height:22px;stroke-width:2;transition:transform var(--t)}
-.how-card:hover .how-step{transform:scale(1.08) rotate(-4deg);box-shadow:0 8px 22px rgba(108,63,255,.45)}
-.how-card:hover .how-icon{background:var(--grad);color:#fff;border-color:transparent}
-.how-card:hover .how-icon svg{transform:rotate(6deg)}
-.how-title{font-family:'Syne',sans-serif;font-size:.96rem;font-weight:700;color:var(--ink);margin-bottom:.45rem}
-.how-desc{font-size:.8rem;color:var(--muted);line-height:1.65;font-weight:300}
+.svc-card:hover{transform:translateY(-4px);border-color:var(--accent-soft2);background:var(--surface2)}
+.svc-card:hover::after{transform:scaleX(1)}
+.svc-icon{width:44px;height:44px;border-radius:11px;background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;transition:background var(--t)}
+.svc-icon svg{width:22px;height:22px;stroke-width:1.75}
+.svc-card:hover .svc-icon{background:var(--accent);color:#fff}
+.svc-name{font-family:'Syne',sans-serif;font-size:1.08rem;font-weight:700;color:var(--text)}
+.svc-out{color:var(--muted);font-size:.92rem;line-height:1.5;flex:1}
+.svc-out b{color:var(--text);font-weight:600}
+.svc-link{display:inline-flex;align-items:center;gap:.3rem;font-size:.85rem;font-weight:600;color:var(--accent);
+  margin-top:auto;transition:gap var(--t)}
+.svc-card:hover .svc-link{gap:.55rem}
 
-/* ─── FOUNDER ─── */
-.founder-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+/* ─── BEFORE vs AFTER ─── */
+.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.proof-col{background:var(--surface);border:1px solid var(--border);border-radius:var(--rad-lg);padding:2.25rem}
+.proof-col.before{border-top:3px solid var(--red)}
+.proof-col.after{border-top:3px solid var(--green)}
+.proof-label{display:inline-flex;align-items:center;gap:.4rem;padding:.32rem .75rem;border-radius:99px;
+  font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.5rem}
+.proof-label.b{background:var(--red-soft);color:var(--red)}
+.proof-label.a{background:var(--green-soft);color:var(--green)}
+.proof-list{list-style:none;display:flex;flex-direction:column;gap:.85rem}
+.proof-list li{display:flex;align-items:flex-start;gap:.85rem;font-size:.96rem;line-height:1.5;color:var(--text)}
+.proof-list .ico{width:22px;height:22px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;margin-top:.1rem;font-size:.7rem;font-weight:700}
+.proof-list.before .ico{background:var(--red-soft);color:var(--red)}
+.proof-list.after .ico{background:var(--green-soft);color:var(--green)}
 
-.fw-left h2{margin-bottom:1.2rem}
-.fw-highlight{background:linear-gradient(135deg,#f5f3ff,#ede9ff);
-  border:1.5px solid rgba(108,63,255,.2);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1.75rem}
-.fw-hl-top{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:.2rem}
-.fw-hl-sub{font-size:.8rem;color:var(--muted);line-height:1.55;font-weight:300}
-.fw-body{font-size:.93rem;color:var(--muted);line-height:1.85;font-weight:300;margin-bottom:1.1rem}
-.fw-checklist{list-style:none;margin-bottom:2rem}
-.fw-checklist li{font-size:.88rem;color:var(--muted);padding:.4rem 0;
-  display:flex;gap:.7rem;align-items:flex-start;border-bottom:1px solid var(--border);font-weight:300}
-.fw-checklist li::before{content:'';flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--grad);
-  display:grid;place-items:center;margin-top:.1rem;color:#fff;font-size:.65rem;font-weight:700;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M6.5 11L3 7.5l1.4-1.4L6.5 8.2 11.6 3.1 13 4.5z'/%3E%3C/svg%3E");
-  background-size:60% 60%;background-repeat:no-repeat;background-position:center;background-color:var(--p)}
+/* ─── CASE STUDIES (horizontal scroll) ─── */
+.case-scroll{display:flex;gap:1.25rem;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-bottom:1rem;margin:0 calc(-1*clamp(1.25rem,4vw,2rem));padding-left:clamp(1.25rem,4vw,2rem);padding-right:clamp(1.25rem,4vw,2rem)}
+.case-scroll::-webkit-scrollbar{height:6px}
+.case-scroll::-webkit-scrollbar-track{background:var(--surface)}
+.case-scroll::-webkit-scrollbar-thumb{background:var(--border2);border-radius:99px}
+.case-card{flex:0 0 380px;background:var(--surface);border:1px solid var(--border);border-radius:var(--rad-lg);
+  padding:2rem;scroll-snap-align:start;transition:transform var(--t),border-color var(--t),background var(--t);
+  display:flex;flex-direction:column;gap:1.25rem;position:relative;overflow:hidden}
+.case-card:hover{transform:translateY(-4px);border-color:var(--accent-soft2);background:var(--surface2)}
+.case-card::before{content:'';position:absolute;inset:-1px -1px auto auto;width:160px;height:160px;
+  background:radial-gradient(circle at top right,var(--accent-soft),transparent 70%);pointer-events:none;opacity:0;transition:opacity var(--t)}
+.case-card:hover::before{opacity:1}
+.case-badge{display:inline-flex;align-items:center;gap:.3rem;padding:.32rem .75rem;border-radius:99px;
+  background:var(--accent-soft);color:var(--accent);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;width:fit-content;position:relative;z-index:1}
+.case-name{font-family:'Syne',sans-serif;font-size:1.32rem;font-weight:700;line-height:1.2;color:var(--text);position:relative;z-index:1}
+.case-metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;position:relative;z-index:1}
+.case-metric{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px;padding:.85rem .65rem;text-align:center}
+.case-metric b{display:block;font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--accent);margin-bottom:.15rem;letter-spacing:-.01em}
+.case-metric span{font-size:.66rem;color:var(--muted);line-height:1.25;display:block}
+.case-link{display:inline-flex;align-items:center;gap:.3rem;font-size:.86rem;font-weight:600;color:var(--text);
+  transition:color var(--t),gap var(--t);position:relative;z-index:1;margin-top:auto}
+.case-card:hover .case-link{color:var(--accent);gap:.55rem}
 
-/* ─── CTA SECTION ─── */
-.cta-section{background:linear-gradient(135deg,#0a0d1a 0%,#161a30 100%);border-radius:28px;padding:5.5rem 5rem;text-align:center;
-  position:relative;overflow:hidden;margin:0 5.5% 5rem;
-  box-shadow:0 40px 100px rgba(108,63,255,.35),inset 0 1px 0 rgba(255,255,255,.06)}
-.cta-section::before{content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 65% 55% at 50% 50%,rgba(108,63,255,.28),transparent 60%),
-    radial-gradient(ellipse 40% 40% at 20% 100%,rgba(236,72,153,.18),transparent 60%),
-    radial-gradient(ellipse 40% 40% at 80% 0%,rgba(79,107,255,.20),transparent 60%);
-  pointer-events:none}
-.cta-section::after{content:'';position:absolute;inset:0;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='1' fill='white' opacity='.08'/%3E%3C/svg%3E")}
-.cta-section h2{font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;color:#fff;margin-bottom:1.1rem;position:relative;z-index:1}
-.cta-section p{font-size:.97rem;color:rgba(255,255,255,.6);max-width:480px;margin:0 auto 2.5rem;line-height:1.78;font-weight:300;position:relative;z-index:1}
-.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;margin-bottom:1.25rem}
-.cta-note{font-size:.75rem;color:rgba(255,255,255,.35);position:relative;z-index:1}
-.cta-features{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:2.5rem;position:relative;z-index:1}
-.cta-feat{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.5)}
-.cta-feat::before{content:'✓';color:var(--p);font-weight:700}
+/* ─── TESTIMONIALS ─── */
+.tes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.tes-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rad-lg);padding:2rem;
+  transition:transform var(--t),border-color var(--t),background var(--t);display:flex;flex-direction:column;gap:1.25rem}
+.tes-card:hover{transform:translateY(-4px);border-color:var(--accent-soft2);background:var(--surface2)}
+.tes-quote{font-size:1.02rem;line-height:1.55;color:var(--text);font-weight:500}
+.tes-foot{display:flex;align-items:center;gap:.85rem;padding-top:1rem;border-top:1px solid var(--border)}
+.tes-avatar{width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;
+  display:grid;place-items:center;font-family:'Syne',sans-serif;font-weight:700;font-size:.92rem;flex-shrink:0;letter-spacing:.02em}
+.tes-meta{flex:1;min-width:0}
+.tes-name{font-weight:600;color:var(--text);font-size:.96rem}
+.tes-co{font-size:.82rem;color:var(--muted);margin-top:.05rem}
+.tes-tag{display:inline-flex;align-items:center;padding:.25rem .65rem;border-radius:99px;
+  background:var(--accent-soft);color:var(--accent);font-size:.7rem;font-weight:600;letter-spacing:.04em;width:fit-content}
+
+/* ─── CTA ─── */
+.cta-band{background:var(--surface);border-radius:24px;padding:clamp(3rem,7vw,5.5rem) clamp(2rem,5vw,4rem);
+  text-align:center;position:relative;overflow:hidden;border:1px solid var(--border)}
+.cta-band::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse 50% 50% at 50% 50%,rgba(255,107,53,.16),transparent 65%),
+  radial-gradient(ellipse 30% 30% at 20% 80%,rgba(255,107,53,.10),transparent 65%);pointer-events:none}
+.cta-band>*{position:relative;z-index:1}
+.cta-band h2{font-size:clamp(2.2rem,5vw,3.8rem);letter-spacing:-.03em;margin-bottom:1.25rem}
+.cta-band h2 .accent{color:var(--accent)}
+.cta-band p{color:var(--muted);font-size:1.05rem;max-width:42ch;margin:0 auto 2.5rem}
+.cta-trust{margin-top:1.5rem;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted2)}
+.cta-trust span{display:inline-flex;align-items:center;gap:.4rem}
+.cta-trust span::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent)}
 
 /* ─── FOOTER ─── */
-footer{background:var(--ink2);padding:4rem 5.5% 2.5rem;position:relative;z-index:1}
-.foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:3.5rem;margin-bottom:3rem}
-.foot-logo-svg{margin-bottom:1rem;display:block}
-.foot-desc{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.72;font-weight:300;margin-bottom:1.25rem}
-.foot-small{font-size:.72rem;color:rgba(255,255,255,.28);line-height:1.7}
-.foot-small a{color:rgba(108,63,255,.8);text-decoration:none}
-.foot-col h4{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;
-  text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.9rem}
-.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
-.foot-col a{font-size:.82rem;color:rgba(255,255,255,.45);transition:color .2s}
-.foot-col a:hover{color:rgba(108,63,255,.9)}
-.foot-contact-link{font-size:.82rem;color:rgba(108,63,255,.8)!important;display:block;margin-bottom:.4rem}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}
-.foot-bottom-txt{font-size:.72rem;color:rgba(255,255,255,.25)}
+footer{padding:4rem 0 2rem;border-top:1px solid var(--border);margin-top:2rem}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.foot-brand .logo{font-size:1.32rem;margin-bottom:1rem}
+.foot-tag{color:var(--muted);font-size:.92rem;line-height:1.6;max-width:30ch}
+.foot-col h4{font-family:'Syne',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted2);margin-bottom:1.1rem}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.foot-col a{font-size:.92rem;color:var(--muted);transition:color var(--t)}
+.foot-col a:hover{color:var(--accent)}
+.foot-bottom{padding-top:1.75rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.foot-bottom small{color:var(--muted2);font-size:.82rem}
+.foot-bottom .credit{color:var(--muted2);font-size:.82rem}
+.foot-bottom .credit a{color:var(--accent)}
 
-/* ─── UTILS ─── */
-.center{text-align:center}
-.center .body-text{margin:0 auto}
-.flex-gap{display:flex;gap:1rem;flex-wrap:wrap}
-.rev{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+/* ─── REVEAL ─── */
+.rev{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
 .rev.in{opacity:1;transform:none}
 
-/* Hero 2-col layout */
-@media(min-width:1024px){
-  #hero{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:4rem}
-  #hero>*{z-index:1;position:relative}
-  .hero-vis{display:block;width:100%;max-width:540px;justify-self:end}
-}
-/* ─── MOBILE ─── */
-@media(max-width:1024px){
-  .svc-layout{grid-template-columns:1fr}
-  .svc-sticky{position:static}
-  .founder-grid{grid-template-columns:1fr}
-  .ind-grid{grid-template-columns:repeat(3,1fr)}
-  [style*="grid-template-columns:1.15fr"]{grid-template-columns:1fr!important}
-}
-@media(max-width:1180px){
-  nav .flex-gap a.btn-ghost{display:none}
-  .nav-center{gap:1.4rem}
-}
-@media(max-width:1024px){
-  nav .nav-center{display:none}
-  .mobile-toggle{display:flex}
-}
-@media(max-width:900px){
-  .pain-cards,.prod-3,.how-grid,.results-nums,.case-grid,.test-grid{grid-template-columns:1fr 1fr}
-  .ind-grid{grid-template-columns:repeat(2,1fr)}
-  .pain-statements,.transform-grid{grid-template-columns:1fr}
-  .foot-grid{grid-template-columns:1fr 1fr}
-  .hero-h1{font-size:clamp(2.5rem,8vw,3.5rem)}
-}
-@media(max-width:600px){
-  nav{padding:.7rem 4%}
-  .sec{padding:5rem 4%}
-  .pain-cards,.results-nums,.prod-3,.how-grid,.case-grid,.test-grid{grid-template-columns:1fr}
-  .ind-grid{grid-template-columns:1fr 1fr;gap:.85rem}
-  .ind-card{aspect-ratio:1/1.05}
-  .cta-section{padding:3rem 1.5rem;margin:0 1rem 3rem}
-  .prod-band{padding:2.5rem 1.5rem}
-  .trans-side{padding:2rem 1.5rem}
-  .hero-acts .btn{flex:1;justify-content:center}
-}
-
-/* Prefers reduced motion */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
   .rev{opacity:1;transform:none}
 }
 
-/* ════════════════════════════════════════════════════════
-   PREMIUM OVERRIDES — soft shadows, refined borders, glow accents
-   ════════════════════════════════════════════════════════ */
-
-/* sections */
-.sec-surface{background:var(--surface);position:relative}
-.sec-surface::before,.sec-surface::after{display:block;content:'';position:absolute;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--line),transparent)}
-.sec-surface::before{top:0}.sec-surface::after{bottom:0}
-
-/* trust ticker — light feel */
-.ticker-wrap{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1rem 0}
-.ti{color:var(--muted)!important;font-weight:500}
-.ts{color:var(--purple)!important;opacity:.45!important}
-
-/* pain cards */
-.pain-card{border:1px solid var(--line)!important;border-radius:20px!important;box-shadow:var(--sh);background:var(--surface)!important;transition:transform var(--t),box-shadow var(--t),border-color var(--t)}
-.pain-card::before{display:block;content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;border-radius:20px 20px 0 0}
-.pain-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg)!important;border-color:rgba(124,58,237,.2)!important}
-.pain-card:hover::before{transform:scaleX(1)}
-.pain-card-icon-box{border:1px solid var(--line)!important;border-radius:14px!important;background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(236,72,153,.06))!important;color:var(--purple)!important;box-shadow:none;transition:all var(--t)}
-.pain-cards .pain-card:nth-child(2) .pain-card-icon-box{background:linear-gradient(135deg,rgba(251,113,133,.10),rgba(236,72,153,.06))!important;color:var(--coral-dk)!important}
-.pain-cards .pain-card:nth-child(3) .pain-card-icon-box{background:linear-gradient(135deg,rgba(20,184,166,.10),rgba(6,182,212,.06))!important;color:var(--teal-dk)!important}
-.pain-card:hover .pain-card-icon-box{background:var(--grad)!important;color:#fff!important;border-color:transparent!important;transform:scale(1.05);box-shadow:0 8px 24px rgba(124,58,237,.32)}
-.pain-cards .pain-card:nth-child(2):hover .pain-card-icon-box{background:linear-gradient(135deg,var(--coral),var(--pink))!important;box-shadow:var(--sh-coral-glow)}
-.pain-cards .pain-card:nth-child(3):hover .pain-card-icon-box{background:linear-gradient(135deg,var(--teal),#06b6d4)!important;box-shadow:var(--sh-teal-glow)}
-.pain-card-head{color:var(--ink)!important;font-weight:700;font-size:1.15rem!important}
-.pain-card-body{color:var(--muted)!important;font-weight:400;line-height:1.7}
-
-.pain-statements{border:1px solid var(--line)!important;border-radius:22px!important;background:linear-gradient(180deg,var(--surface),var(--surface2))!important;box-shadow:var(--sh-md);overflow:hidden}
-.pstat{background:transparent!important;padding:2.25rem 2rem!important;border-right:1px solid var(--line);transition:background var(--t)}
-.pstat:last-child{border-right:none}
-.pstat:hover{background:linear-gradient(180deg,rgba(124,58,237,.03),transparent)!important}
-.pstat-label{color:var(--purple)!important;font-weight:700;letter-spacing:.14em}
-.pstat-quote{color:var(--ink)!important;font-weight:700}
-.pstat-sub{color:var(--muted)!important;font-weight:400}
-
-/* service cards */
-.svc-item{border:1px solid var(--line)!important;border-radius:18px!important;box-shadow:var(--sh);background:var(--surface);transition:transform var(--t),box-shadow var(--t),border-color var(--t)}
-.svc-item::before{display:block;content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad);
-  transform:scaleY(0);transform-origin:top;transition:transform .35s ease;border-radius:18px 0 0 18px}
-.svc-item:hover{transform:translateY(-4px)!important;box-shadow:var(--sh-lg)!important;border-color:rgba(124,58,237,.18)!important}
-.svc-item:hover::before{transform:scaleY(1)}
-.svc-icon-box{border:1px solid var(--line)!important;border-radius:12px!important;box-shadow:none;color:#fff!important;background:linear-gradient(135deg,#7c3aed,#a855f7)!important;transition:transform var(--t),box-shadow var(--t)}
-.svc-list .svc-item:nth-child(7n+2) .svc-icon-box{background:linear-gradient(135deg,#fb7185,#ec4899)!important}
-.svc-list .svc-item:nth-child(7n+3) .svc-icon-box{background:linear-gradient(135deg,#14b8a6,#06b6d4)!important}
-.svc-list .svc-item:nth-child(7n+4) .svc-icon-box{background:linear-gradient(135deg,#f59e0b,#fbbf24)!important;color:#0a0e1a!important}
-.svc-list .svc-item:nth-child(7n+5) .svc-icon-box{background:linear-gradient(135deg,#7c3aed,#3b82f6)!important}
-.svc-list .svc-item:nth-child(7n+6) .svc-icon-box{background:linear-gradient(135deg,#10b981,#14b8a6)!important}
-.svc-list .svc-item:nth-child(7n+7) .svc-icon-box{background:linear-gradient(135deg,#0a0e1a,#3a4055)!important}
-.svc-item:hover .svc-icon-box{transform:scale(1.06) rotate(-4deg);box-shadow:0 10px 24px rgba(124,58,237,.28)}
-.svc-tagline{color:var(--ink)!important;font-weight:700!important;font-size:1.6rem!important;line-height:1.3!important;letter-spacing:-.02em}
-.svc-name{color:var(--ink)!important;font-weight:700!important;font-size:1.05rem!important}
-.svc-desc{color:var(--muted)!important;font-weight:400!important;font-size:.88rem!important;line-height:1.7!important}
-.stag{background:rgba(124,58,237,.06)!important;color:var(--purple)!important;border:1px solid rgba(124,58,237,.15)!important;border-radius:6px!important;font-weight:600!important;font-size:.68rem!important;padding:.24rem .65rem!important}
-
-/* svc sticky stat boxes */
-.svc-sticky [style*="grid-template-columns:1fr 1fr"]>div{background:var(--surface)!important;border:1px solid var(--line)!important;border-radius:14px!important;box-shadow:var(--sh)!important;transition:transform var(--t),box-shadow var(--t),border-color var(--t)}
-.svc-sticky [style*="grid-template-columns:1fr 1fr"]>div:hover{transform:translateY(-3px)!important;box-shadow:var(--sh-md)!important;border-color:rgba(124,58,237,.22)!important}
-.svc-sticky [style*="grid-template-columns:1fr 1fr"]>div>div:first-child{background:var(--grad)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important}
-
-/* how cards */
-.how-card{border:1px solid var(--line)!important;border-radius:20px!important;box-shadow:var(--sh);background:var(--surface)!important;transition:transform var(--t),box-shadow var(--t),border-color var(--t)}
-.how-card::after{display:block;content:'';position:absolute;left:0;right:0;top:0;height:3px;background:var(--grad);
-  transform:scaleX(0);transform-origin:left;transition:transform .4s ease;border-radius:20px 20px 0 0}
-.how-card:hover{transform:translateY(-6px)!important;box-shadow:var(--sh-lg)!important;border-color:rgba(124,58,237,.18)!important}
-.how-card:hover::after{transform:scaleX(1)}
-.how-step{background:var(--grad)!important;color:#fff!important;border-radius:50%!important;width:52px!important;height:52px!important;font-size:1rem!important;
-  box-shadow:0 8px 22px rgba(124,58,237,.36)!important}
-.how-grid .how-card:nth-child(2) .how-step{background:linear-gradient(135deg,var(--coral),var(--pink))!important;box-shadow:0 8px 22px rgba(251,113,133,.36)!important}
-.how-grid .how-card:nth-child(3) .how-step{background:linear-gradient(135deg,var(--teal),#06b6d4)!important;box-shadow:0 8px 22px rgba(20,184,166,.36)!important}
-.how-grid .how-card:nth-child(4) .how-step{background:linear-gradient(135deg,var(--yellow-dk),var(--yellow))!important;color:#0a0e1a!important;box-shadow:0 8px 22px rgba(245,158,11,.36)!important}
-.how-icon{border:1px solid var(--line)!important;border-radius:12px!important;background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(236,72,153,.05))!important;color:var(--purple)!important;box-shadow:none;transition:all var(--t)}
-.how-grid .how-card:nth-child(2) .how-icon{background:linear-gradient(135deg,rgba(251,113,133,.10),rgba(236,72,153,.06))!important;color:var(--coral-dk)!important}
-.how-grid .how-card:nth-child(3) .how-icon{background:linear-gradient(135deg,rgba(20,184,166,.10),rgba(6,182,212,.06))!important;color:var(--teal-dk)!important}
-.how-grid .how-card:nth-child(4) .how-icon{background:linear-gradient(135deg,rgba(245,158,11,.10),rgba(251,191,36,.06))!important;color:var(--yellow-dk)!important}
-.how-card:hover .how-step{transform:scale(1.08) rotate(-4deg)!important}
-.how-card:hover .how-icon{background:var(--grad)!important;color:#fff!important;border-color:transparent!important}
-.how-grid .how-card:nth-child(2):hover .how-icon{background:linear-gradient(135deg,var(--coral),var(--pink))!important}
-.how-grid .how-card:nth-child(3):hover .how-icon{background:linear-gradient(135deg,var(--teal),#06b6d4)!important}
-.how-grid .how-card:nth-child(4):hover .how-icon{background:linear-gradient(135deg,var(--yellow-dk),var(--yellow))!important;color:#0a0e1a!important}
-.how-title{color:var(--ink)!important;font-weight:700!important;font-size:1.08rem!important}
-.how-desc{color:var(--muted)!important;font-weight:400!important;line-height:1.7}
-
-/* result numbers — premium colored cards */
-.rnum-card{border:1px solid var(--line)!important;border-radius:20px!important;box-shadow:var(--sh-md);background:var(--surface)!important;transition:transform var(--t),box-shadow var(--t);overflow:hidden;position:relative}
-.rnum-card::before{display:block;content:'';position:absolute;inset:0;border-radius:20px;opacity:0;transition:opacity var(--t);pointer-events:none}
-.rnum-card:hover{transform:translateY(-6px)!important;box-shadow:var(--sh-lg)!important}
-.results-nums .rnum-card:nth-child(1){background:linear-gradient(155deg,#fff,#faf5ff)!important;border-color:rgba(124,58,237,.15)!important}
-.results-nums .rnum-card:nth-child(2){background:linear-gradient(155deg,#0a0e1a,#1a1f3a)!important;color:#fff;border-color:transparent!important}
-.results-nums .rnum-card:nth-child(3){background:linear-gradient(155deg,#fff,#ecfeff)!important;border-color:rgba(20,184,166,.18)!important}
-.results-nums .rnum-card:nth-child(4){background:linear-gradient(155deg,#fff,#fff1f2)!important;border-color:rgba(251,113,133,.18)!important}
-.rnum-val{background:var(--grad)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;font-size:3rem!important;font-weight:800!important;display:block;line-height:1.1}
-.results-nums .rnum-card:nth-child(2) .rnum-val{background:linear-gradient(135deg,#fff,#c4b5fd)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important}
-.results-nums .rnum-card:nth-child(3) .rnum-val{background:linear-gradient(135deg,#14b8a6,#06b6d4)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important}
-.results-nums .rnum-card:nth-child(4) .rnum-val{background:linear-gradient(135deg,#fb7185,#ec4899)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important}
-.rnum-label{color:var(--muted)!important;font-weight:400!important;font-size:.82rem!important;line-height:1.6}
-.results-nums .rnum-card:nth-child(2) .rnum-label{color:rgba(255,255,255,.6)!important}
-
-/* products band */
-.prod-band{background:linear-gradient(135deg,#0a0e1a 0%,#1a1f3a 50%,#1a1538 100%)!important;border:none!important;border-radius:28px!important;box-shadow:0 30px 80px rgba(124,58,237,.28),0 0 0 1px rgba(255,255,255,.04) inset!important;padding:4rem!important}
-.prod-band::before{background:radial-gradient(ellipse 60% 50% at 0% 0%,rgba(124,58,237,.28),transparent 55%),radial-gradient(ellipse 50% 40% at 100% 100%,rgba(251,113,133,.20),transparent 55%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='%23ffffff' opacity='.10'/%3E%3C/svg%3E")!important}
-.prod-band-title{color:#fff!important}
-.prod-band-sub{color:rgba(255,255,255,.7)!important}
-.prod-mini{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:18px!important;color:#fff!important;
-  box-shadow:0 8px 24px rgba(0,0,0,.18),0 0 0 1px rgba(255,255,255,.02) inset;
-  backdrop-filter:blur(14px)!important;-webkit-backdrop-filter:blur(14px)!important;transition:all var(--t)}
-.prod-mini:hover{transform:translateY(-5px)!important;border-color:rgba(255,255,255,.28)!important;background:rgba(255,255,255,.10)!important;box-shadow:0 14px 36px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.06) inset!important}
-.prod-mini-badge{color:rgba(255,255,255,.7)!important;font-weight:600}
-.prod-mini-name{color:#fff!important}
-.prod-mini-desc{color:rgba(255,255,255,.7)!important;font-weight:400}
-.prod-mini-link{color:#c4b5fd!important;font-weight:700}
-
-/* industries */
-.ind-card{border:1px solid var(--line)!important;border-radius:18px!important;box-shadow:var(--sh-md)!important;transition:transform var(--t),box-shadow var(--t)}
-.ind-card:hover{transform:translateY(-6px)!important;box-shadow:var(--sh-xl)!important}
-
-/* case studies */
-.case-card{border:1px solid var(--line)!important;border-radius:20px!important;box-shadow:var(--sh)!important;background:var(--surface)!important;transition:transform var(--t),box-shadow var(--t),border-color var(--t)}
-.case-card:hover{transform:translateY(-6px)!important;box-shadow:var(--sh-lg)!important;border-color:rgba(124,58,237,.18)!important}
-.case-badge{background:rgba(255,255,255,.92)!important;color:var(--purple)!important;border:1px solid rgba(124,58,237,.18)!important;border-radius:99px!important;font-weight:700!important;
-  backdrop-filter:blur(8px)!important;-webkit-backdrop-filter:blur(8px)!important;box-shadow:0 4px 14px rgba(10,14,26,.12)}
-.case-title{color:var(--ink)!important;font-weight:700!important}
-.case-desc{color:var(--muted)!important;font-weight:400!important;line-height:1.7}
-.case-metric-val{background:var(--grad)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;font-weight:800!important}
-.case-metrics{border-top:1px solid var(--line)!important}
-.case-industry{color:var(--purple)!important;font-weight:700!important}
-
-/* transformation */
-.transform-grid{border:1px solid var(--line)!important;border-radius:24px!important;box-shadow:var(--sh-md)!important;background:var(--line)!important;gap:1px!important;overflow:hidden}
-.trans-side.before{background:linear-gradient(165deg,#fff,#fff7f5)!important;padding:3rem}
-.trans-side.after{background:linear-gradient(165deg,#fff,#faf5ff)!important;position:relative}
-.trans-side.after::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(124,58,237,.06),transparent);pointer-events:none}
-.trans-label.b{background:rgba(251,113,133,.10)!important;color:var(--coral-dk)!important;border:1px solid rgba(251,113,133,.22)!important;border-radius:99px!important;font-weight:700!important;box-shadow:none!important;padding:.4rem .9rem!important}
-.trans-label.a{background:rgba(124,58,237,.08)!important;color:var(--purple)!important;border:1px solid rgba(124,58,237,.20)!important;border-radius:99px!important;font-weight:700!important;box-shadow:none!important;padding:.4rem .9rem!important}
-.trans-row{background:rgba(255,255,255,.78)!important;border:1px solid var(--border)!important;border-radius:12px!important;
-  backdrop-filter:blur(8px)!important;-webkit-backdrop-filter:blur(8px)!important;box-shadow:var(--sh)!important;transition:transform var(--t),box-shadow var(--t),background var(--t)}
-.trans-row:hover{transform:translateX(4px)!important;box-shadow:var(--sh-md)!important;background:#fff!important;border-color:rgba(124,58,237,.18)!important}
-.trans-row.a:hover{border-color:rgba(20,184,166,.22)!important}
-.trans-text{color:var(--muted)!important;font-weight:400!important;font-size:.88rem!important;line-height:1.6}
-.trans-text strong{color:var(--ink)!important;font-weight:700!important}
-
-/* founder card */
-.fcard{border:1px solid var(--line)!important;border-radius:24px!important;box-shadow:var(--sh-lg)!important;background:var(--surface)!important}
-.fcard::before{display:block;content:'';position:absolute;inset:0;border-radius:24px;
-  background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(124,58,237,.10),transparent 60%);pointer-events:none}
-.f-avatar{background:var(--grad)!important;color:#fff!important;border:4px solid var(--surface)!important;box-shadow:0 12px 36px rgba(124,58,237,.36),0 0 0 1px rgba(124,58,237,.18)!important}
-.f-name{color:var(--ink)!important}
-.f-exp-row{background:var(--surface2)!important;border:1px solid var(--line)!important;border-radius:12px!important;transition:transform var(--t),box-shadow var(--t),border-color var(--t)}
-.f-exp-row:hover{transform:translateY(-2px);box-shadow:var(--sh);border-color:rgba(124,58,237,.18)!important}
-.f-exp-title{color:var(--ink)!important;font-weight:700!important}
-.fsk{background:linear-gradient(135deg,rgba(124,58,237,.10),rgba(236,72,153,.07))!important;color:var(--purple)!important;border:1px solid rgba(124,58,237,.18)!important;border-radius:6px!important;font-weight:600!important}
-
-.fw-highlight{background:linear-gradient(135deg,#faf5ff,#fff1f7)!important;border:1px solid rgba(124,58,237,.18)!important;border-radius:18px!important;box-shadow:var(--sh)!important}
-.fw-hl-top{color:var(--ink)!important;font-weight:700!important}
-.fw-hl-sub{color:var(--muted)!important;font-weight:400!important}
-.fw-body{color:var(--muted)!important;font-weight:400!important;line-height:1.85}
-.fw-checklist li{color:var(--muted)!important;font-weight:400!important;border-bottom-color:var(--line)!important;padding:.55rem 0!important}
-.fw-checklist li::before{content:'';color:transparent!important;background:var(--grad);width:18px;height:18px;border-radius:50%;display:inline-grid;place-items:center;font-size:0;border:none;box-shadow:0 0 0 3px rgba(124,58,237,.10)}
-
-/* CTA section */
-.cta-section{background:linear-gradient(135deg,#0a0e1a 0%,#1a1f3a 50%,#1a1538 100%)!important;border:none!important;border-radius:28px!important;
-  box-shadow:0 30px 80px rgba(10,14,26,.4),0 0 0 1px rgba(255,255,255,.05) inset!important}
-.cta-section::before{background:radial-gradient(ellipse 65% 55% at 50% 50%,rgba(124,58,237,.32),transparent 60%),radial-gradient(ellipse 40% 40% at 20% 100%,rgba(251,113,133,.22),transparent 60%),radial-gradient(ellipse 40% 40% at 80% 0%,rgba(20,184,166,.18),transparent 60%)!important}
-
-/* footer */
-footer{border-top:1px solid var(--line);background:linear-gradient(180deg,#0a0e1a,#161b35)}
-.foot-col a:hover{color:#c4b5fd!important}
-.foot-contact-link{color:#c4b5fd!important}
-.foot-small a{color:#c4b5fd!important}
-
-/* CTA features */
-.cta-feat::before{content:'';background:var(--grad);width:18px;height:18px;border-radius:50%;display:inline-grid;place-items:center;font-size:0;border:none;box-shadow:0 0 0 3px rgba(124,58,237,.18)}
-
-/* small accent — section divider stripe */
-.sec-tight{background:var(--surface2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);box-shadow:none}
-
-/* hero framework underline accent */
-.hero-framework strong{color:#fff!important;text-decoration:none}
-
-@media(max-width:900px){
-  .pain-card:hover,.svc-item:hover,.how-card:hover,.case-card:hover,.ind-card:hover,.rnum-card:hover,.fcard:hover{transform:translateY(-3px)!important}
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  .nav-links{display:none}
+  .mobile-toggle{display:inline-flex}
 }
-
-/* ════════════════════════════════════════════════════════
-   FINAL CLEANUP — restraint pass (drop clutter, single accent)
-   ════════════════════════════════════════════════════════ */
-
-/* hide noisy sections — keep only hero, pain, services, case, founder, cta */
-.ticker-wrap{display:none}
-#hero .hero-vis{display:none!important}
-.pain-statements{display:none}
-#products,
-.sec-tight,
-section[id="how"],
-#founder + section,
-.transform-grid,
-section.sec:has(.results-nums){display:none}
-
-/* sections — generous whitespace */
-.sec{padding:6.5rem 5.5%}
-@media(min-width:1024px){.sec{padding:8rem 8%}}
-@media(min-width:1280px){.sec{padding:9rem 10%}}
-#hero{padding:7rem 5.5% 6rem}
-@media(min-width:1024px){#hero{padding:9rem 8% 7rem}}
-@media(min-width:1280px){#hero{padding:10rem 10% 8rem}}
-
-/* hide section dividers — cleaner */
-.sec-surface{background:var(--surface)!important}
-.sec-surface::before,.sec-surface::after{display:none!important}
-
-/* eyebrows — quiet, no chip */
-.eyebrow{background:transparent!important;border:none!important;box-shadow:none!important;
-  transform:none!important;color:var(--accent)!important;font-weight:600!important;
-  padding:0!important;letter-spacing:.18em!important;font-size:.7rem!important;margin-bottom:1.5rem!important;
-  gap:.55rem!important}
-.eyebrow::before{width:14px!important;height:1.5px!important;border-radius:0!important;background:var(--accent)!important;box-shadow:none!important}
-
-/* h2 — calm, no animated gradient */
-.h2{color:var(--ink)!important;font-weight:700!important;letter-spacing:-.025em!important;line-height:1.08!important}
-.h2 .hl{background:none!important;-webkit-text-fill-color:var(--accent)!important;color:var(--accent)!important;
-  animation:none!important;font-style:normal!important;font-weight:700!important}
-
-.body-text{color:var(--muted)!important;font-weight:400!important;font-size:1rem!important;line-height:1.7!important}
-
-/* ─── PAIN cards — uniform, calm ─── */
-.pain-card{border:1px solid var(--line)!important;border-radius:18px!important;
-  box-shadow:none!important;background:var(--surface)!important;padding:2rem!important}
-.pain-card::before{display:none!important}
-.pain-card:hover{transform:translateY(-3px)!important;box-shadow:var(--sh-md)!important;border-color:rgba(108,63,255,.18)!important}
-.pain-card-icon-box,
-.pain-cards .pain-card:nth-child(2) .pain-card-icon-box,
-.pain-cards .pain-card:nth-child(3) .pain-card-icon-box{
-  background:var(--accent-soft)!important;color:var(--accent)!important;
-  border:none!important;border-radius:12px!important;box-shadow:none!important;
-  width:44px!important;height:44px!important}
-.pain-card:hover .pain-card-icon-box{background:var(--accent)!important;color:#fff!important;transform:none!important;box-shadow:none!important}
-.pain-card-head{font-weight:700!important;font-size:1.1rem!important;color:var(--ink)!important;margin-bottom:.55rem!important}
-.pain-card-body{color:var(--muted)!important;line-height:1.65!important;font-size:.92rem!important}
-
-/* ─── SERVICES — uniform icons, no rainbow ─── */
-.svc-layout{gap:4rem!important}
-.svc-item{border:1px solid var(--line)!important;border-radius:18px!important;
-  box-shadow:none!important;background:var(--surface)!important;padding:1.75rem!important}
-.svc-item::before{display:none!important}
-.svc-item:hover{transform:translateY(-3px)!important;box-shadow:var(--sh-md)!important;border-color:rgba(108,63,255,.18)!important}
-.svc-icon-box,
-.svc-list .svc-item .svc-icon-box,
-.svc-list .svc-item:nth-child(7n+1) .svc-icon-box,
-.svc-list .svc-item:nth-child(7n+2) .svc-icon-box,
-.svc-list .svc-item:nth-child(7n+3) .svc-icon-box,
-.svc-list .svc-item:nth-child(7n+4) .svc-icon-box,
-.svc-list .svc-item:nth-child(7n+5) .svc-icon-box,
-.svc-list .svc-item:nth-child(7n+6) .svc-icon-box,
-.svc-list .svc-item:nth-child(7n+7) .svc-icon-box{
-  background:var(--accent-soft)!important;color:var(--accent)!important;
-  border:none!important;border-radius:10px!important;box-shadow:none!important}
-.svc-item:hover .svc-icon-box{background:var(--accent)!important;color:#fff!important;transform:none!important;box-shadow:none!important}
-.svc-item:hover .svc-icon-box svg{transform:none!important}
-.svc-tagline{color:var(--ink)!important;font-weight:600!important;font-size:1.55rem!important;line-height:1.3!important}
-.svc-name{font-size:1.02rem!important;font-weight:600!important;color:var(--ink)!important;margin-bottom:.35rem!important}
-.svc-desc{color:var(--muted)!important;font-size:.93rem!important;line-height:1.6!important;font-weight:400!important}
-.stag{background:var(--surface2)!important;color:var(--ink3)!important;border:1px solid var(--line)!important;
-  border-radius:6px!important;font-weight:500!important;font-size:.7rem!important;padding:.22rem .6rem!important}
-
-/* hide the busy 4-stat sidebar grid inside svc-sticky */
-.svc-sticky [style*="grid-template-columns:1fr 1fr"]{display:none!important}
-.svc-sticky{position:static!important}
-
-/* ─── CASE studies — calm ─── */
-.case-card{border:1px solid var(--line)!important;border-radius:18px!important;box-shadow:none!important;background:var(--surface)!important}
-.case-card:hover{transform:translateY(-4px)!important;box-shadow:var(--sh-md)!important;border-color:rgba(108,63,255,.18)!important}
-.case-badge{background:rgba(255,255,255,.95)!important;color:var(--accent)!important;border:1px solid var(--line)!important;font-weight:600!important;box-shadow:none!important}
-.case-title{color:var(--ink)!important;font-weight:700!important;font-size:1.08rem!important}
-.case-desc{color:var(--muted)!important;font-weight:400!important;line-height:1.65!important}
-.case-metric-val{background:none!important;-webkit-text-fill-color:var(--ink)!important;color:var(--ink)!important;font-weight:700!important;font-family:'Syne',sans-serif}
-.case-industry{color:var(--accent)!important;font-weight:600!important;letter-spacing:.12em!important}
-.case-img-overlay{display:none!important}
-
-/* industries — keep but quiet */
-.ind-card{border:1px solid var(--line)!important;border-radius:16px!important;box-shadow:none!important}
-.ind-card:hover{transform:translateY(-4px)!important;box-shadow:var(--sh)!important}
-
-/* ─── FOUNDER ─── */
-.fcard{border:1px solid var(--line)!important;border-radius:22px!important;box-shadow:none!important;background:var(--surface)!important;padding:2.5rem!important}
-.fcard::before{display:none!important}
-.f-avatar{background:var(--accent)!important;color:#fff!important;border:none!important;box-shadow:0 8px 24px rgba(108,63,255,.22)!important}
-.f-exp-row{background:transparent!important;border:1px solid var(--line)!important}
-.f-exp-row:hover{box-shadow:var(--sh)!important;transform:none!important;border-color:rgba(108,63,255,.18)!important}
-.fsk{background:var(--accent-soft)!important;color:var(--accent)!important;border:none!important;font-weight:500!important}
-
-.fw-highlight{background:var(--surface2)!important;border:1px solid var(--line)!important;box-shadow:none!important;border-left:3px solid var(--accent)!important;border-radius:6px!important;padding:1.25rem 1.5rem!important}
-.fw-checklist li::before{background:var(--accent)!important;width:7px!important;height:7px!important;border-radius:50%!important;box-shadow:none!important;margin-top:.55rem!important;flex-shrink:0}
-.fw-checklist li{padding:.5rem 0!important;align-items:center!important}
-
-/* ─── CTA section — cream, not dark ─── */
-.cta-section{background:var(--ink)!important;color:#fff!important;border-radius:24px!important;
-  box-shadow:0 30px 80px rgba(10,10,10,.18)!important;padding:5rem!important;margin:0 5.5% 5rem!important}
-.cta-section::before,.cta-section::after{background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(108,63,255,.25),transparent 60%)!important}
-.cta-section h2{font-weight:700!important}
-.cta-section h2 .hl{color:#c4b5fd!important;-webkit-text-fill-color:#c4b5fd!important;background:none!important}
-.cta-features{display:none!important}
-.cta-feat::before{background:var(--accent)!important;box-shadow:none!important}
-
-/* ─── FOOTER — cream ─── */
-footer{background:var(--bg2)!important;color:var(--ink2)!important;border-top:1px solid var(--line)!important;padding:4rem 5.5% 2rem!important}
-.foot-desc,.foot-small,.foot-col a,.foot-bottom-txt{color:var(--muted)!important}
-.foot-col h4{color:var(--ink3)!important}
-.foot-col a:hover,.foot-contact-link,.foot-small a{color:var(--accent)!important}
-.foot-bottom{border-top:1px solid var(--line)!important}
-
-/* ─── BUTTONS — quiet refinement ─── */
-.btn-purple{background:var(--ink)!important;color:#fff!important;font-weight:600!important;
-  box-shadow:0 6px 18px rgba(10,10,10,.12)!important;border:none!important;border-radius:99px!important;padding:.85rem 1.75rem!important}
-.btn-purple::before,.btn-purple::after{display:none!important}
-.btn-purple:hover{background:var(--accent)!important;transform:translateY(-1px)!important;
-  box-shadow:0 10px 28px rgba(108,63,255,.32)!important}
-.btn-ghost{background:transparent!important;border:1px solid var(--line)!important;color:var(--ink)!important;box-shadow:none!important;border-radius:99px!important;padding:.78rem 1.6rem!important;font-weight:500!important}
-.btn-ghost:hover{border-color:var(--ink)!important;background:transparent!important;transform:none!important;box-shadow:none!important}
-.btn-lg{padding:.95rem 2rem!important;font-size:.95rem!important}
-
-/* nav — quiet, no underline grow */
-.nav-center a::after{height:1.5px;background:var(--accent)!important}
-
-/* demo bar — minimal */
-.demo-bar{background:var(--ink)!important;border:none!important;box-shadow:0 10px 30px rgba(10,10,10,.25)!important}
-.demo-bar a{background:var(--accent)!important;color:#fff!important}
-.demo-bar-text{color:rgba(255,255,255,.7)!important;font-weight:400!important}
-
-/* ─── REVEAL transitions ─── */
-.rev{transition:opacity .8s ease,transform .8s ease}
-
-@media(max-width:760px){
-  .sec{padding:4.5rem 5%!important}
-  #hero{padding:6rem 5% 4rem!important;min-height:auto}
-  .hero-h1{font-size:clamp(2.2rem,9vw,3.2rem)}
-  .hero-sub{font-size:1.02rem}
-  .cta-section{padding:3rem 1.75rem!important;margin:0 1rem 3rem!important}
-  .fcard{padding:1.75rem!important}
+@media(max-width:880px){
+  .pain-grid,.svc-grid,.tes-grid{grid-template-columns:1fr 1fr;gap:1rem}
+  .proof-grid{grid-template-columns:1fr;gap:1rem}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .foot-brand{grid-column:span 2}
+  .case-card{flex:0 0 86vw;max-width:380px}
+}
+@media(max-width:600px){
+  .pain-grid,.svc-grid,.tes-grid{grid-template-columns:1fr}
+  .hero-acts{flex-direction:column;align-items:stretch;width:100%}
+  .hero-acts .btn{justify-content:center;width:100%}
+  .hero-stats{justify-content:center}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-brand{grid-column:span 2}
+  .cta-band{padding:3rem 1.5rem}
 }
 </style>
 </head>
 <body>
 
+<!-- ─── NAV ─── -->
+<nav id="nav">
+  <a href="#" class="logo"><span class="dot"></span>VIVONIX</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#products">Products</a></li>
+  </ul>
+  <a href="#cta" class="btn btn-primary btn-sm nav-cta">Free Audit →</a>
+  <button class="mobile-toggle" aria-label="Open menu" id="menuBtn"><span></span></button>
+</nav>
 
-<!-- ─── STICKY DEMO BAR ─── -->
-<div class="demo-bar" id="demoBar">
-  <span class="demo-bar-text">Ready when you are.</span>
-  <a href="#cta">Book Free Demo</a>
-  <button class="close" onclick="document.getElementById('demoBar').classList.remove('show')" aria-label="Close">✕</button>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a>
+  <a href="#work">Work</a>
+  <a href="#products">Products</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#cta" class="btn btn-primary">Get Free Audit →</a>
 </div>
 
-<!-- ─── NAV ─── -->
-<nav id="mainnav">
-  <a href="#" aria-label="VIVONIX Home"><svg width="148" height="40" viewBox="0 0 148 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="2" y="2" width="36" height="36" rx="8" fill="none" stroke="#7c4dff" stroke-width="2"/>
-  <rect x="8" y="8" width="24" height="24" rx="5" fill="#7c4dff"/>
-  <text x="20" y="25" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" font-weight="800" fill="white">VX</text>
-  <text x="48" y="19" font-family="Syne,sans-serif" font-size="16" font-weight="800" fill="#0d0f1e" letter-spacing="1">VIVONIX</text>
-  <text x="49" y="33" font-family="sans-serif" font-size="8" letter-spacing="2.8" fill="#888">DIGITAL SOLUTIONS</text>
-</svg></a>
-  <ul class="nav-center">
-    <li><a href="#pain">Why Automate</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Work</a></li>
-    <li><a href="#products">Products</a></li>
-    <li><a href="#testimonials">Reviews</a></li>
-    <li><a href="#founder">About</a></li>
-  </ul>
-  <div class="flex-gap">
-    <a href="https://wa.me/919079649289" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:.78rem">💬 WhatsApp</a>
-    <a href="#cta" class="btn btn-purple">Book Free Demo →</a>
-  </div>
-  <button class="mobile-toggle" aria-label="Menu"><span></span></button>
-</nav>
+<main>
 
 <!-- ─── HERO ─── -->
 <section id="hero">
-  <div>
+  <div class="container">
     <div class="hero-tag"><span class="pulsedot"></span>Now onboarding · 48h go-live</div>
-
-    <h1 class="hero-h1">
-      Automation that lets founders <span class="hl">sleep.</span>
-    </h1>
-
-    <p class="hero-sub">
-      We build the WhatsApp, dashboard, and workflow systems that quietly run Indian SMBs while their founders focus on growth.
-    </p>
-
+    <h1 class="hero-h1">Your business should run <span class="accent">without you.</span></h1>
+    <p class="hero-sub">We build the WhatsApp, dashboard, and workflow systems that quietly run Indian SMBs while founders focus on growth.</p>
     <div class="hero-acts">
-      <a href="#cta" class="btn btn-purple btn-lg">Book a free audit</a>
-      <a href="#services" class="secondary">See how it works →</a>
+      <a href="#cta" class="btn btn-primary btn-lg">Get Free Audit</a>
+      <a href="#work" class="btn btn-ghost btn-lg">Watch Demo</a>
     </div>
-  </div>
-
-  <!-- Hero Visual: Dashboard mockup -->
-  <div class="hero-vis">
-    <div class="hero-dash">
-      <div class="hero-dash-head">
-        <span class="hero-dash-title">VIVONIX Dashboard</span>
-        <div class="hero-dash-dots"><span></span><span></span><span></span></div>
-      </div>
-      <div class="hero-kpis">
-        <div class="hero-kpi p">
-          <div class="hero-kpi-lbl">WhatsApp Sent</div>
-          <div class="hero-kpi-val">4,812</div>
-          <div class="hero-kpi-sub">↑ 68% this week</div>
-        </div>
-        <div class="hero-kpi n">
-          <div class="hero-kpi-lbl">Tasks Done</div>
-          <div class="hero-kpi-val">91%</div>
-          <div class="hero-kpi-sub">Team score today</div>
-        </div>
-      </div>
-      <div class="hero-chart">
-        <div class="hero-chart-lbl">MIS Report — Live</div>
-        <div class="hero-chart-bars">
-          <div style="height:60%;animation-delay:.1s"></div>
-          <div style="height:80%;opacity:.85;animation-delay:.15s"></div>
-          <div style="height:45%;opacity:.65;animation-delay:.2s"></div>
-          <div style="height:95%;opacity:.9;animation-delay:.25s"></div>
-          <div style="height:70%;opacity:.75;animation-delay:.3s"></div>
-          <div style="height:88%;animation-delay:.35s"></div>
-          <div style="height:55%;opacity:.65;animation-delay:.4s"></div>
-        </div>
-        <div class="hero-chart-days">
-          <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
-        </div>
-      </div>
-      <div class="hero-rows">
-        <div class="hero-row"><span class="hero-row-label">WhatsApp Campaign</span><span class="hero-row-pill green">Active ●</span></div>
-        <div class="hero-row"><span class="hero-row-label">MIS Auto Report</span><span class="hero-row-pill green">Running ●</span></div>
-        <div class="hero-row"><span class="hero-row-label">Team Tasks Synced</span><span class="hero-row-pill purple">24 done</span></div>
-      </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><b>30+</b><span>Projects shipped</span></div>
+      <div class="hero-stat"><b>80%</b><span>Manual work cut</span></div>
+      <div class="hero-stat"><b>48h</b><span>Go-live time</span></div>
     </div>
-    <div class="hero-badge tr">🚀 Live Automation</div>
-    <div class="hero-badge bl">✅ 48h Go-Live</div>
   </div>
 </section>
 
-<!-- ─── TRUST TICKER ─── -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ti">🏗️ Construction</span><span class="ts"> · </span>
-    <span class="ti">💒 Wedding Planners</span><span class="ts"> · </span>
-    <span class="ti">🏭 Manufacturing</span><span class="ts"> · </span>
-    <span class="ti">📦 Trading & Distribution</span><span class="ts"> · </span>
-    <span class="ti">🏠 Real Estate</span><span class="ts"> · </span>
-    <span class="ti">🎓 Coaching & Education</span><span class="ts"> · </span>
-    <span class="ti">💊 Pharma & Healthcare</span><span class="ts"> · </span>
-    <span class="ti">🚚 Logistics</span><span class="ts"> · </span>
-    <span class="ti">💎 Gems & Jewellery</span><span class="ts"> · </span>
-    <span class="ti">🎭 Events</span><span class="ts"> · </span>
-    <span class="ti">☀️ Solar & Energy</span><span class="ts"> · </span>
-    <span class="ti">🍽️ F&B</span><span class="ts"> · </span>
-    <span class="ti">💰 Finance & NBFC</span><span class="ts"> · </span>
-    <span class="ti">🧵 Textile</span><span class="ts"> · </span>
-    <span class="ti">🏗️ Construction</span><span class="ts"> · </span>
-    <span class="ti">💒 Wedding Planners</span><span class="ts"> · </span>
-    <span class="ti">🏭 Manufacturing</span><span class="ts"> · </span>
-    <span class="ti">📦 Trading & Distribution</span><span class="ts"> · </span>
-    <span class="ti">🏠 Real Estate</span><span class="ts"> · </span>
-    <span class="ti">🎓 Coaching & Education</span><span class="ts"> · </span>
-    <span class="ti">💊 Pharma & Healthcare</span><span class="ts"> · </span>
-    <span class="ti">🚚 Logistics</span><span class="ts"> · </span>
-    <span class="ti">💎 Gems & Jewellery</span><span class="ts"> · </span>
-    <span class="ti">🎭 Events</span><span class="ts"> · </span>
-    <span class="ti">☀️ Solar & Energy</span><span class="ts"> · </span>
-    <span class="ti">🍽️ F&B</span><span class="ts"> · </span>
-    <span class="ti">💰 Finance & NBFC</span><span class="ts"> · </span>
-    <span class="ti">🧵 Textile</span>
+<!-- ─── MARQUEE ─── -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Construction</span><i>·</i>
+    <span>Wedding</span><i>·</i>
+    <span>Manufacturing</span><i>·</i>
+    <span>Real Estate</span><i>·</i>
+    <span>Pharma</span><i>·</i>
+    <span>Logistics</span><i>·</i>
+    <span>NBFC</span><i>·</i>
+    <span>Jewellery</span><i>·</i>
+    <span>Construction</span><i>·</i>
+    <span>Wedding</span><i>·</i>
+    <span>Manufacturing</span><i>·</i>
+    <span>Real Estate</span><i>·</i>
+    <span>Pharma</span><i>·</i>
+    <span>Logistics</span><i>·</i>
+    <span>NBFC</span><i>·</i>
+    <span>Jewellery</span><i>·</i>
   </div>
 </div>
 
-<!-- ─── PAIN HOOK ─── -->
-<section id="pain" class="sec sec-surface">
-  <div class="pain-hero rev">
-    <div class="eyebrow center" style="justify-content:center">Why This Matters</div>
-    <h2 class="h2" style="font-size:clamp(2.2rem,4vw,3.2rem)">
-      Your Business is Running You.<br>
-      <span class="hl">It Should Be</span> the <span class="hl coral">Other Way Around.</span>
-    </h2>
-    <p class="body-text center" style="margin-top:.75rem">
-      Every day without automation, you're losing hours to tasks a system should handle. Here's what we hear from Indian business owners every single week.
-    </p>
-  </div>
+<!-- ─── PAIN POINTS ─── -->
+<section class="sec" id="pain">
+  <div class="container">
+    <div class="sec-head rev">
+      <div class="eyebrow">The shift</div>
+      <h2 class="h2">Stop firefighting. Start scaling.</h2>
+      <p class="body-text">The same three breakdowns are draining Indian founders today. We fix them with systems, not headcount.</p>
+    </div>
+    <div class="pain-grid">
 
-  <!-- Visual: 80% firefighting bar -->
-  <div class="rev" style="background:linear-gradient(135deg,#fffbf5,#fff5e6);border:1.5px solid #fde68a;border-radius:20px;padding:2.5rem;margin-bottom:3rem;display:flex;align-items:center;gap:3rem;flex-wrap:wrap">
-    <div style="flex:1;min-width:200px">
-      <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#92400e;margin-bottom:.75rem">How You Currently Spend Your Day</div>
-      <div style="margin-bottom:.85rem">
-        <div style="display:flex;justify-content:space-between;font-size:.8rem;color:#78350f;font-weight:500;margin-bottom:.4rem"><span>🔥 Firefighting & Operations</span><span>80%</span></div>
-        <div style="height:10px;background:#fef3c7;border-radius:99px;overflow:hidden;border:1px solid #fde68a"><div style="height:100%;width:80%;background:linear-gradient(90deg,#f59e0b,#ef4444);border-radius:99px"></div></div>
+      <div class="pain-card rev">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11h-6"/><path d="M19 8v6"/></svg>
+        </div>
+        <h3 class="pain-title">MIS depends on one person.</h3>
+        <p class="pain-fix"><b>Fix —</b> Live dashboards that update themselves. Even when your MIS hire is on leave.</p>
       </div>
-      <div>
-        <div style="display:flex;justify-content:space-between;font-size:.8rem;color:#1e40af;font-weight:500;margin-bottom:.4rem"><span>📈 Actual Growth Work</span><span>20%</span></div>
-        <div style="height:10px;background:#eff6ff;border-radius:99px;overflow:hidden;border:1px solid #bfdbfe"><div style="height:100%;width:20%;background:linear-gradient(90deg,#6c3fff,#4f6bff);border-radius:99px"></div></div>
-      </div>
-    </div>
-    <div style="text-align:center;flex-shrink:0">
-      <div style="font-family:Syne,sans-serif;font-size:3.5rem;font-weight:800;line-height:1;background:linear-gradient(135deg,#f59e0b,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">80%</div>
-      <div style="font-size:.78rem;color:#78350f;margin-top:.3rem;font-weight:500">of your time<br>is firefighting</div>
-      <div style="font-size:.72rem;color:#92400e;margin-top:.5rem;font-style:italic">VIVONIX flips this</div>
-    </div>
-  </div>
 
-  <div class="pain-cards rev">
-    <div class="pain-card">
-      <div class="pain-card-icon-box">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+      <div class="pain-card rev">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <h3 class="pain-title">Team runs on WhatsApp.</h3>
+        <p class="pain-fix"><b>Fix —</b> Tasks delegated, tracked, scored — automatically. No more "boss bhool gaye."</p>
       </div>
-      <div class="pain-card-head">Remove Dependence from Your MIS Person</div>
-      <p class="pain-card-body">If your MIS executive is absent for a day, your entire reporting stops. That's not a system — that's a single point of failure. Your business data should be automated, live, and independent of any one person.</p>
-    </div>
-    <div class="pain-card">
-      <div class="pain-card-icon-box">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-      </div>
-      <div class="pain-card-head">It's Time to Move from Google Sheets to ERP</div>
-      <p class="pain-card-body">You've outgrown Excel and Google Sheets. Data is scattered across files, versions are mismatched, and nothing is real-time. It's time for a proper business system that scales with you — not against you.</p>
-    </div>
-    <div class="pain-card">
-      <div class="pain-card-icon-box">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-      </div>
-      <div class="pain-card-head">Stop Managing Your Team on WhatsApp</div>
-      <p class="pain-card-body">Assigning tasks, chasing follow-ups, sending reminders — all on WhatsApp. Messages get buried, tasks get forgotten, accountability is zero. Your team needs a system, not a chat group.</p>
-    </div>
-  </div>
 
-  <div class="pain-statements rev">
-    <div class="pstat">
-      <div class="pstat-label">The Reality</div>
-      <div class="pstat-quote">"I'm working 12 hours a day but the business isn't growing."</div>
-      <p class="pstat-sub">You're doing operator work, not owner work. Automation frees you to focus on strategy, not operations.</p>
-    </div>
-    <div class="pstat">
-      <div class="pstat-label">The Problem</div>
-      <div class="pstat-quote">"My team has no accountability. Same mistakes every week."</div>
-      <p class="pstat-sub">Without a task system, delegation is just hope. Checklists, FMS, and scoring make accountability automatic.</p>
-    </div>
-    <div class="pstat">
-      <div class="pstat-label">The Fix</div>
-      <div class="pstat-quote">"I want to run this business working just one day a week."</div>
-      <p class="pstat-sub">That's exactly the Rahul Jain Tachknowledgy framework. VIVONIX builds the tech that makes it possible.</p>
+      <div class="pain-card rev">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        </div>
+        <h3 class="pain-title">50 Google Sheets, one truth lost.</h3>
+        <p class="pain-fix"><b>Fix —</b> Move to a real ERP. One source. One screen. One version of the truth.</p>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- ─── SERVICES ─── -->
-<section id="services" class="sec">
-  <div class="svc-layout">
-    <div class="svc-sticky">
-      <div class="eyebrow">What We Build</div>
-      <div class="svc-tagline">Every service we offer exists to buy back your <span class="hl">time</span> and <span class="hl coral">attention.</span></div>
-      <p class="body-text" style="margin-bottom:2rem">From your first automation to a fully running digital business — we design, build, and deploy the systems that set you free.</p>
-      <a href="#cta" class="btn btn-purple">Start With Free Audit →</a>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-top:2.5rem">
-      <div style="background:var(--pa);border:1.5px solid var(--border2);border-radius:12px;padding:1.1rem;text-align:center">
-        <div style="font-family:Syne,sans-serif;font-size:1.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">7+</div>
-        <div style="font-size:.72rem;color:var(--muted);margin-top:.15rem">Automation Services</div>
-      </div>
-      <div style="background:var(--pa);border:1.5px solid var(--border2);border-radius:12px;padding:1.1rem;text-align:center">
-        <div style="font-family:Syne,sans-serif;font-size:1.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">30+</div>
-        <div style="font-size:.72rem;color:var(--muted);margin-top:.15rem">Projects Done</div>
-      </div>
-      <div style="background:var(--pa);border:1.5px solid var(--border2);border-radius:12px;padding:1.1rem;text-align:center">
-        <div style="font-family:Syne,sans-serif;font-size:1.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">94%</div>
-        <div style="font-size:.72rem;color:var(--muted);margin-top:.15rem">ML Model Accuracy</div>
-      </div>
-      <div style="background:var(--pa);border:1.5px solid var(--border2);border-radius:12px;padding:1.1rem;text-align:center">
-        <div style="font-family:Syne,sans-serif;font-size:1.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">48h</div>
-        <div style="font-size:.72rem;color:var(--muted);margin-top:.15rem">Avg. Delivery Time</div>
-      </div>
-    </div>
+<section class="sec" id="services" style="background:linear-gradient(180deg,transparent,rgba(255,255,255,.015),transparent)">
+  <div class="container">
+    <div class="sec-head rev">
+      <div class="eyebrow">What we build</div>
+      <h2 class="h2">Six systems. One running business.</h2>
+      <p class="body-text">Mix and match — every service ships in 48 hours and pays back in 60 days.</p>
     </div>
 
-    <div class="svc-list rev">
-      <div class="svc-item">
-        <div class="svc-row">
-          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M7 9h10"/><path d="M7 13h6"/></svg></div>
-          <div>
-            <div class="svc-name">WhatsApp & Email Marketing Automation</div>
-            <p class="svc-desc">Bulk WhatsApp campaigns to thousands in one click — no Meta approval needed.</p>
-            <div class="svc-pills"><span class="stag">WhatsApp API</span><span class="stag">Bulk Messaging</span><span class="stag">Email Sequences</span><span class="stag">Chatbots</span></div>
-          </div>
+    <div class="svc-grid">
+
+      <a href="#cta" class="svc-card rev">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
-      </div>
-
-      <div class="svc-item">
-        <div class="svc-row">
-          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div>
-          <div>
-            <div class="svc-name">MIS Dashboard & Business Analytics</div>
-            <p class="svc-desc">Live Power BI dashboards that replace your MIS person — visible on your phone, 24/7.</p>
-            <div class="svc-pills"><span class="stag">Power BI</span><span class="stag">Python</span><span class="stag">MySQL</span><span class="stag">DAX</span><span class="stag">Auto Reports</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="svc-item">
-        <div class="svc-row">
-          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
-          <div>
-            <div class="svc-name">AI Chatbots & Voice Agents</div>
-            <p class="svc-desc">WhatsApp and voice agents that answer queries and book demos while you sleep.</p>
-            <div class="svc-pills"><span class="stag">OpenAI</span><span class="stag">LangChain</span><span class="stag">RAG</span><span class="stag">ElevenLabs</span><span class="stag">Vapi</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="svc-item">
-        <div class="svc-row">
-          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-          <div>
-            <div class="svc-name">Business Process Automation (Move to ERP)</div>
-            <p class="svc-desc">Move from 50 Google Sheets to a real ERP — without the chaos.</p>
-            <div class="svc-pills"><span class="stag">AppSheet</span><span class="stag">AppScript</span><span class="stag">Google APIs</span><span class="stag">No-Code ERP</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="svc-item">
-        <div class="svc-row">
-          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></div>
-          <div>
-            <div class="svc-name">Team Management & Accountability Systems</div>
-            <p class="svc-desc">Delegation, checklists, and daily scoring — your team runs itself.</p>
-            <div class="svc-pills"><span class="stag">FMS</span><span class="stag">Delegation</span><span class="stag">Checklists</span><span class="stag">MIS Score</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="svc-item">
-        <div class="svc-row">
-          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-          <div>
-            <div class="svc-name">Predictive Analytics & Demand Forecasting</div>
-            <p class="svc-desc">Demand forecasting and fraud detection at 94% accuracy — not gut-feel.</p>
-            <div class="svc-pills"><span class="stag">Python</span><span class="stag">Prophet</span><span class="stag">XGBoost</span><span class="stag">Flask</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="svc-item">
-        <div class="svc-row">
-          <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></div>
-          <div>
-            <div class="svc-name">Custom SaaS & Web Application Development</div>
-            <p class="svc-desc">CRMs, portals, and internal tools — built for how Indian businesses actually work.</p>
-            <div class="svc-pills"><span class="stag">React</span><span class="stag">Next.js</span><span class="stag">Node.js</span><span class="stag">MySQL</span><span class="stag">Flask</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── PORTFOLIO / CASE STUDIES (NEW) ─── -->
-<section id="portfolio" class="sec sec-surface">
-  <div class="rev" style="text-align:center;max-width:720px;margin:0 auto 3.5rem">
-    <div class="eyebrow" style="justify-content:center">Selected Work</div>
-    <h2 class="h2">Real Businesses. Real Results.</h2>
-    <p class="body-text center" style="margin-top:.65rem">A snapshot of automation systems we've shipped for Indian SMEs — from wedding planners to manufacturers.</p>
-  </div>
-
-  <div class="case-grid rev">
-    <article class="case-card">
-      <div class="case-img-wrap">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format&fit=crop" alt="Live analytics dashboard">
-        <div class="case-img-overlay"></div>
-        <span class="case-badge">Live</span>
-      </div>
-      <div class="case-body">
-        <div class="case-industry">Wedding Planning · Vivah Pro</div>
-        <h3 class="case-title">Wedding CRM that runs 10+ weddings in parallel</h3>
-        <p class="case-desc">Built India's first wedding-specific CRM — dedicated WhatsApp per event, kanban tasks, bulk RSVPs, vendor payments. Live since 2024.</p>
-        <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-val">10+</div><div class="case-metric-lbl">Weddings in Parallel</div></div>
-          <div class="case-metric"><div class="case-metric-val">3h→0</div><div class="case-metric-lbl">RSVP Time Saved</div></div>
-          <div class="case-metric"><div class="case-metric-val">48h</div><div class="case-metric-lbl">Go-Live</div></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="case-card">
-      <div class="case-img-wrap">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format&fit=crop" alt="MIS analytics dashboard">
-        <div class="case-img-overlay"></div>
-        <span class="case-badge">Live</span>
-      </div>
-      <div class="case-body">
-        <div class="case-industry">Manufacturing · MIS Automation</div>
-        <h3 class="case-title">Replaced an entire MIS team with a live Power BI dashboard</h3>
-        <p class="case-desc">Production output, inventory, scrap rate, attendance — all flowing into one phone dashboard. No more dependency on a single MIS executive.</p>
-        <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-val">80%</div><div class="case-metric-lbl">Manual Work Cut</div></div>
-          <div class="case-metric"><div class="case-metric-val">24/7</div><div class="case-metric-lbl">Live Visibility</div></div>
-          <div class="case-metric"><div class="case-metric-val">0</div><div class="case-metric-lbl">MIS Dependency</div></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="case-card">
-      <div class="case-img-wrap">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80&auto=format&fit=crop" alt="WhatsApp bulk campaign mockup">
-        <div class="case-img-overlay"></div>
-        <span class="case-badge">Live</span>
-      </div>
-      <div class="case-body">
-        <div class="case-industry">Retail · MYAPI WhatsApp</div>
-        <h3 class="case-title">5,000 personalised WhatsApp messages in 12 minutes</h3>
-        <p class="case-desc">Bulk WhatsApp campaign engine — no Meta approval required. Personalised name, offer, and link per recipient. Plug-and-play REST API.</p>
-        <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-val">5,000</div><div class="case-metric-lbl">Msgs / Campaign</div></div>
-          <div class="case-metric"><div class="case-metric-val">68%</div><div class="case-metric-lbl">Open Rate</div></div>
-          <div class="case-metric"><div class="case-metric-val">1-click</div><div class="case-metric-lbl">Deployment</div></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="case-card">
-      <div class="case-img-wrap">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&auto=format&fit=crop" alt="AI chatbot integration">
-        <div class="case-img-overlay"></div>
-        <span class="case-badge">Live</span>
-      </div>
-      <div class="case-body">
-        <div class="case-industry">Coaching · AI Voice Agent</div>
-        <h3 class="case-title">AI voice agent qualifying 200+ leads per week</h3>
-        <p class="case-desc">RAG-powered voice agent on Vapi + ElevenLabs. Books demos, answers FAQs, and routes hot leads to humans — running 24/7 on autopilot.</p>
-        <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-val">200+</div><div class="case-metric-lbl">Leads / Week</div></div>
-          <div class="case-metric"><div class="case-metric-val">24/7</div><div class="case-metric-lbl">Coverage</div></div>
-          <div class="case-metric"><div class="case-metric-val">3x</div><div class="case-metric-lbl">Conversion</div></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="case-card">
-      <div class="case-img-wrap">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format&fit=crop" alt="ERP migration dashboard">
-        <div class="case-img-overlay"></div>
-        <span class="case-badge">Live</span>
-      </div>
-      <div class="case-body">
-        <div class="case-industry">Distribution · ERP Migration</div>
-        <h3 class="case-title">From 50 Google Sheets to one ERP in 2 weeks</h3>
-        <p class="case-desc">AppSheet-based ERP for a multi-warehouse distributor — inventory, POs, approvals, automated invoicing. Replaced chaos with a single source of truth.</p>
-        <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-val">50→1</div><div class="case-metric-lbl">Sheets Consolidated</div></div>
-          <div class="case-metric"><div class="case-metric-val">2 wks</div><div class="case-metric-lbl">Migration Time</div></div>
-          <div class="case-metric"><div class="case-metric-val">100%</div><div class="case-metric-lbl">Real-time</div></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="case-card">
-      <div class="case-img-wrap">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80&auto=format&fit=crop" alt="Predictive analytics charts">
-        <div class="case-img-overlay"></div>
-        <span class="case-badge">Live</span>
-      </div>
-      <div class="case-body">
-        <div class="case-industry">NBFC · Fraud Detection</div>
-        <h3 class="case-title">94% accurate fraud detection model in production</h3>
-        <p class="case-desc">XGBoost + Flask API flagging suspicious transactions in real-time. Trained on 2 years of historical data, deployed behind their loan-disbursal flow.</p>
-        <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-val">94%</div><div class="case-metric-lbl">Model Accuracy</div></div>
-          <div class="case-metric"><div class="case-metric-val">&lt;200ms</div><div class="case-metric-lbl">API Latency</div></div>
-          <div class="case-metric"><div class="case-metric-val">2 yrs</div><div class="case-metric-lbl">Training Data</div></div>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ─── INDUSTRIES WE SERVE (NEW) ─── -->
-<section id="industries" class="sec">
-  <div class="ind-head rev">
-    <div class="eyebrow" style="justify-content:center">Industries We Serve</div>
-    <h2 class="h2">Built for <span class="hl">Indian Business Realities</span></h2>
-    <p class="body-text center" style="margin-top:.65rem">Same automation principles, tailored to your industry's workflows. We've worked across 14+ sectors — here are the ones we know best.</p>
-  </div>
-  <div class="ind-grid rev">
-    <a href="#cta" class="ind-card">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80&auto=format&fit=crop" alt="Construction industry">
-      <div class="ind-card-body">
-        <div class="ind-card-tag">Active Projects</div>
-        <div class="ind-card-name">🏗️ Construction</div>
-        <div class="ind-card-sub">Project tracking · Material approvals · Site MIS</div>
-      </div>
-    </a>
-    <a href="#cta" class="ind-card">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80&auto=format&fit=crop" alt="Wedding planning industry">
-      <div class="ind-card-body">
-        <div class="ind-card-tag">Live Product</div>
-        <div class="ind-card-name">💒 Wedding Planners</div>
-        <div class="ind-card-sub">Vivah Pro CRM · Bulk RSVPs · Vendor payments</div>
-      </div>
-    </a>
-    <a href="#cta" class="ind-card">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&q=80&auto=format&fit=crop" alt="Manufacturing industry">
-      <div class="ind-card-body">
-        <div class="ind-card-tag">Active Projects</div>
-        <div class="ind-card-name">🏭 Manufacturing</div>
-        <div class="ind-card-sub">Production MIS · Inventory · Scrap tracking</div>
-      </div>
-    </a>
-    <a href="#cta" class="ind-card">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&auto=format&fit=crop" alt="Real estate industry">
-      <div class="ind-card-body">
-        <div class="ind-card-tag">Active Projects</div>
-        <div class="ind-card-name">🏠 Real Estate</div>
-        <div class="ind-card-sub">Lead routing · Site visit MIS · Document AI</div>
-      </div>
-    </a>
-    <a href="#cta" class="ind-card">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&q=80&auto=format&fit=crop" alt="Pharma and healthcare industry">
-      <div class="ind-card-body">
-        <div class="ind-card-tag">Active Projects</div>
-        <div class="ind-card-name">💊 Pharma & Healthcare</div>
-        <div class="ind-card-sub">Order automation · Compliance MIS · CRM</div>
-      </div>
-    </a>
-    <a href="#cta" class="ind-card">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80&auto=format&fit=crop" alt="Logistics industry">
-      <div class="ind-card-body">
-        <div class="ind-card-tag">Active Projects</div>
-        <div class="ind-card-name">🚚 Logistics</div>
-        <div class="ind-card-sub">Dispatch tracking · POD automation · Live MIS</div>
-      </div>
-    </a>
-    <a href="#cta" class="ind-card">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=80&auto=format&fit=crop" alt="Finance and NBFC industry">
-      <div class="ind-card-body">
-        <div class="ind-card-tag">Active Projects</div>
-        <div class="ind-card-name">💰 Finance & NBFC</div>
-        <div class="ind-card-sub">Loan workflow · Fraud detection · KYC AI</div>
-      </div>
-    </a>
-    <a href="#cta" class="ind-card">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=80&auto=format&fit=crop" alt="Gems and jewellery industry">
-      <div class="ind-card-body">
-        <div class="ind-card-tag">Active Projects</div>
-        <div class="ind-card-name">💎 Gems & Jewellery</div>
-        <div class="ind-card-sub">Stock MIS · Bill automation · Customer CRM</div>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- ─── TRANSFORMATION ─── -->
-<section class="sec sec-surface">
-  <div class="rev center" style="margin-bottom:3.5rem">
-    <div class="eyebrow" style="justify-content:center">The Shift</div>
-    <h2 class="h2">Before VIVONIX vs After VIVONIX</h2>
-    <p class="body-text center" style="margin-top:.65rem">This is the exact transformation we deliver. Every. Single. Time.</p>
-  </div>
-  <div class="transform-grid rev">
-    <div class="trans-side before">
-      <div class="trans-label b">⚠ Before VIVONIX</div>
-      <div class="trans-items">
-        <div class="trans-row"><span class="trans-emoji">😤</span><div class="trans-text"><strong>MIS depends on one person.</strong> Absent? Reporting stops. Business blind.</div></div>
-        <div class="trans-row"><span class="trans-emoji">📂</span><div class="trans-text"><strong>50 Google Sheets.</strong> Different versions, manual updates, no single truth.</div></div>
-        <div class="trans-row"><span class="trans-emoji">📲</span><div class="trans-text"><strong>Copy-pasting WhatsApp</strong> to 500 customers one by one. 3 hours wasted daily.</div></div>
-        <div class="trans-row"><span class="trans-emoji">🗂️</span><div class="trans-text"><strong>Team has no accountability.</strong> Same task missed every week. Same excuses.</div></div>
-        <div class="trans-row"><span class="trans-emoji">⏰</span><div class="trans-text"><strong>You can't take a day off.</strong> Business stops the moment you stop.</div></div>
-        <div class="trans-row"><span class="trans-emoji">📉</span><div class="trans-text"><strong>No live dashboard.</strong> "Boss, give me 2 days to prepare the MIS report."</div></div>
-      </div>
-    </div>
-    <div class="trans-side after">
-      <div class="trans-label a">✦ After VIVONIX</div>
-      <div class="trans-items">
-        <div class="trans-row a"><span class="trans-emoji">📊</span><div class="trans-text"><strong>MIS runs automatically.</strong> Live dashboard on your phone. Zero dependency.</div></div>
-        <div class="trans-row a"><span class="trans-emoji">🏢</span><div class="trans-text"><strong>ERP system replaces Sheets.</strong> One platform. Real-time. Always accurate.</div></div>
-        <div class="trans-row a"><span class="trans-emoji">📱</span><div class="trans-text"><strong>Bulk WhatsApp in 1 click.</strong> 1000 personalised messages sent in seconds.</div></div>
-        <div class="trans-row a"><span class="trans-emoji">✅</span><div class="trans-text"><strong>Team runs itself.</strong> Tasks delegated, tracked, scored — automatically every day.</div></div>
-        <div class="trans-row a"><span class="trans-emoji">🏖️</span><div class="trans-text"><strong>You work one day a week.</strong> Business runs while you're away. Rahul Jain framework live.</div></div>
-        <div class="trans-row a"><span class="trans-emoji">📈</span><div class="trans-text"><strong>Real-time KPI dashboard.</strong> Sales, ops, HR — all visible from your phone. Always.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── RESULTS ─── -->
-<section class="sec">
-  <div class="rev center" style="margin-bottom:3.5rem">
-    <div class="eyebrow" style="justify-content:center">Real Numbers</div>
-    <h2 class="h2">The Impact of Automation,<br>in Plain Numbers</h2>
-  </div>
-  <div class="results-nums rev">
-    <div class="rnum-card"><span class="rnum-val">80%</span><div class="rnum-label">Average reduction in manual work within 90 days of implementation</div></div>
-    <div class="rnum-card"><span class="rnum-val">2x</span><div class="rnum-label">Team output improvement with delegation systems and MIS scoring</div></div>
-    <div class="rnum-card"><span class="rnum-val">48h</span><div class="rnum-label">Average time to go live with your first automation after audit</div></div>
-    <div class="rnum-card"><span class="rnum-val">₹0</span><div class="rnum-label">Cost of your complete business system audit. Zero strings. Zero pressure.</div></div>
-  </div>
-</section>
-
-<!-- ─── TESTIMONIALS (NEW) ─── -->
-<section id="testimonials" class="sec sec-surface">
-  <div class="rev" style="text-align:center;max-width:720px;margin:0 auto 3.5rem">
-    <div class="eyebrow" style="justify-content:center">What Owners Say</div>
-    <h2 class="h2">Built Trust, One Business at a Time</h2>
-    <p class="body-text center" style="margin-top:.65rem">Real feedback from Indian business owners who replaced their chaos with VIVONIX systems.</p>
-  </div>
-
-  <div class="test-grid rev">
-    <article class="test-card">
-      <svg class="test-quote-icon" viewBox="0 0 32 32" fill="currentColor"><path d="M12 8H4v8h4v8h-4V12h8V8zm16 0h-8v8h4v8h-4V12h8V8z"/></svg>
-      <div class="test-rating">
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-      </div>
-      <p class="test-text">"We were drowning in 40+ Google Sheets. VIVONIX migrated us to an AppSheet ERP in 12 days flat. My team finally has one source of truth — and I sleep at night."</p>
-      <div class="test-foot">
-        <img loading="lazy" class="test-avatar" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&q=80&auto=format&fit=crop&crop=faces" alt="Client portrait">
-        <div>
-          <div class="test-name">Amit Sharma</div>
-          <div class="test-role">Founder · Sharma Distributors, Indore</div>
-        </div>
-      </div>
-    </article>
-
-    <article class="test-card">
-      <svg class="test-quote-icon" viewBox="0 0 32 32" fill="currentColor"><path d="M12 8H4v8h4v8h-4V12h8V8zm16 0h-8v8h4v8h-4V12h8V8z"/></svg>
-      <div class="test-rating">
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-      </div>
-      <p class="test-text">"The Vivah Pro CRM changed our wedding business overnight. Bulk WhatsApp RSVPs, vendor payment tracking, kanban tasks for 10+ events — it all just works."</p>
-      <div class="test-foot">
-        <img loading="lazy" class="test-avatar" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=120&q=80&auto=format&fit=crop&crop=faces" alt="Client portrait">
-        <div>
-          <div class="test-name">Priya Kapoor</div>
-          <div class="test-role">Director · ShaadiArt Events, Jaipur</div>
-        </div>
-      </div>
-    </article>
-
-    <article class="test-card">
-      <svg class="test-quote-icon" viewBox="0 0 32 32" fill="currentColor"><path d="M12 8H4v8h4v8h-4V12h8V8zm16 0h-8v8h4v8h-4V12h8V8z"/></svg>
-      <div class="test-rating">
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-      </div>
-      <p class="test-text">"Our MIS person was the bottleneck. VIVONIX automated 80% of our reporting in 3 weeks. I check the dashboard on my phone now — same data, zero dependency."</p>
-      <div class="test-foot">
-        <img loading="lazy" class="test-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80&auto=format&fit=crop&crop=faces" alt="Client portrait">
-        <div>
-          <div class="test-name">Rajesh Mehta</div>
-          <div class="test-role">MD · Mehta Industries, Bhopal</div>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ─── PRODUCTS ─── -->
-<section id="products" class="sec">
-  <div class="rev" style="margin-bottom:2.5rem">
-    <div class="eyebrow">Product Suite</div>
-    <h2 class="h2">We Build Products, Not Just Services.</h2>
-    <p class="body-text" style="margin-top:.65rem">Three live products that prove our capability. Every product in this suite came from a real client problem — and became a scalable solution for the market.</p>
-  </div>
-  <div class="prod-band rev">
-    <div class="prod-band-head">
-      <div>
-        <div style="font-family:'Syne',sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.5rem">VIVONIX PRODUCT SUITE</div>
-        <div class="prod-band-title">One Suite. Real Problems. Real Solutions.</div>
-        <p class="prod-band-sub">These aren't demos — they're live products being used by real businesses today. Each one is a module you can plug into your own business stack.</p>
-      </div>
-      <a href="https://vivah-virid-nine.vercel.app/" target="_blank" rel="noopener" class="btn btn-white">Explore All Products →</a>
-    </div>
-    <div class="prod-3">
-      <a href="https://vivah-virid-nine.vercel.app/" target="_blank" rel="noopener" class="prod-mini">
-        <div class="prod-mini-badge"><span class="live-green"></span> Live Now</div>
-        <div class="prod-mini-name">💒 Vivah Pro</div>
-        <p class="prod-mini-desc">India's smartest Wedding Planner CRM. Manage 10+ weddings, dedicated WhatsApp per event, bulk RSVPs, vendor payments, kanban tasks, and auto reminders — all in one dashboard.</p>
-        <span class="prod-mini-link">View Live →</span>
+        <div class="svc-name">WhatsApp Automation</div>
+        <div class="svc-out"><b>5,000 personalised messages</b> in one click. No Meta approval.</div>
+        <span class="svc-link">Explore →</span>
       </a>
-      <div class="prod-mini">
-        <div class="prod-mini-badge"><span class="live-green"></span> Live Now</div>
-        <div class="prod-mini-name">📲 MYAPI</div>
-        <p class="prod-mini-desc">WhatsApp Bulk Messaging API with no Meta approval needed. Send thousands of personalised messages in one click. Full REST API, templates, scheduling, and delivery analytics.</p>
-        <span class="prod-mini-link">Get Access →</span>
-      </div>
-      <div class="prod-mini">
-        <div class="prod-mini-badge"><span class="soon-dot"></span> Launching Soon</div>
-        <div class="prod-mini-name">🗂️ Task Manager Pro</div>
-        <p class="prod-mini-desc">Flow management, checklists, delegation, help tickets, leave tracker, and MIS scoring. Run your entire team operations from one screen — without micromanaging anyone.</p>
-        <span class="prod-mini-link">Join Waitlist →</span>
-      </div>
+
+      <a href="#cta" class="svc-card rev">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+        </div>
+        <div class="svc-name">MIS Dashboard</div>
+        <div class="svc-out">Live KPIs on your phone. <b>Replaces a full-time MIS hire.</b></div>
+        <span class="svc-link">Explore →</span>
+      </a>
+
+      <a href="#cta" class="svc-card rev">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+        </div>
+        <div class="svc-name">AI Chatbots</div>
+        <div class="svc-out"><b>24/7 lead qualification</b> across WhatsApp and voice. Books demos overnight.</div>
+        <span class="svc-link">Explore →</span>
+      </a>
+
+      <a href="#cta" class="svc-card rev">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v10M4.22 4.22l4.24 4.24m7.08 7.08 4.24 4.24M1 12h6m6 0h10M4.22 19.78l4.24-4.24m7.08-7.08 4.24-4.24"/></svg>
+        </div>
+        <div class="svc-name">ERP Migration</div>
+        <div class="svc-out">Move <b>50 sheets into one system</b> — without breaking your day-to-day.</div>
+        <span class="svc-link">Explore →</span>
+      </a>
+
+      <a href="#cta" class="svc-card rev">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg>
+        </div>
+        <div class="svc-name">Team Systems</div>
+        <div class="svc-out">Delegation, checklists, daily scoring — <b>your team runs itself.</b></div>
+        <span class="svc-link">Explore →</span>
+      </a>
+
+      <a href="#cta" class="svc-card rev">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <div class="svc-name">Fraud Detection</div>
+        <div class="svc-out">ML models flagging fraud at <b>94% accuracy</b> before it costs you.</div>
+        <span class="svc-link">Explore →</span>
+      </a>
+
     </div>
   </div>
 </section>
 
-<!-- ─── HOW IT WORKS ─── -->
-<section id="how" class="sec sec-surface">
-  <div class="rev center" style="margin-bottom:3.5rem">
-    <div class="eyebrow" style="justify-content:center">How It Works</div>
-    <h2 class="h2">From Chaos to Clarity in 4 Steps</h2>
-    <p class="body-text center" style="margin-top:.65rem">A proven process. Fast delivery. Zero technical headache on your end.</p>
-  </div>
-  <div class="how-grid rev">
-    <div class="how-card">
-      <div class="how-head">
-        <div class="how-step">01</div>
-        <div class="how-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m8 11 2 2 4-4"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
-      </div>
-      <div class="how-title">Free Business Audit</div>
-      <p class="how-desc">We map every workflow, identify every bottleneck, and show you exactly where you're losing time and money. 30 minutes. Zero cost. Zero commitment.</p>
+<!-- ─── BEFORE / AFTER ─── -->
+<section class="sec" id="proof">
+  <div class="container">
+    <div class="sec-head center rev">
+      <div class="eyebrow">Before · After</div>
+      <h2 class="h2">From chaos to clockwork.</h2>
+      <p class="body-text" style="margin:0 auto">This is the exact swap our clients run inside 90 days. Same team. Same revenue. Different reality.</p>
     </div>
-    <div class="how-card">
-      <div class="how-head">
-        <div class="how-step">02</div>
-        <div class="how-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><path d="M9 3v15"/><path d="M15 6v15"/></svg></div>
+
+    <div class="proof-grid">
+
+      <div class="proof-col before rev">
+        <span class="proof-label b">⚠ Before</span>
+        <ul class="proof-list before">
+          <li><span class="ico">✗</span><span>MIS report takes 2 days of prep, every week.</span></li>
+          <li><span class="ico">✗</span><span>3 hours/day copy-pasting WhatsApp to customers.</span></li>
+          <li><span class="ico">✗</span><span>Team forgets the same task every Monday.</span></li>
+          <li><span class="ico">✗</span><span>You can't take a day off — business stops.</span></li>
+          <li><span class="ico">✗</span><span>Sheets break the day one person leaves.</span></li>
+        </ul>
       </div>
-      <div class="how-title">Custom Blueprint</div>
-      <p class="how-desc">A tailored automation roadmap designed for your specific business — WhatsApp API, MIS dashboards, ERP migration, team systems. Nothing generic, everything specific.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-head">
-        <div class="how-step">03</div>
-        <div class="how-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+
+      <div class="proof-col after rev">
+        <span class="proof-label a">✦ After VIVONIX</span>
+        <ul class="proof-list after">
+          <li><span class="ico">✓</span><span>Live dashboard, zero prep, ready on your phone.</span></li>
+          <li><span class="ico">✓</span><span>5,000 personalised messages sent in 30 seconds.</span></li>
+          <li><span class="ico">✓</span><span>Tasks auto-tracked, scored, escalated.</span></li>
+          <li><span class="ico">✓</span><span>Business runs while you're on holiday in Goa.</span></li>
+          <li><span class="ico">✓</span><span>Systems outlast any one team member.</span></li>
+        </ul>
       </div>
-      <div class="how-title">Build & Deploy Fast</div>
-      <p class="how-desc">We implement your complete automation stack — tested, trained, and live within 48 hours. No technical knowledge needed from your team. We handle everything.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-head">
-        <div class="how-step">04</div>
-        <div class="how-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-      </div>
-      <div class="how-title">Grow & Scale</div>
-      <p class="how-desc">Dedicated ongoing support keeps your systems running 24/7. As your business grows, your automation grows with it. We're your long-term digital partner — not a one-time vendor.</p>
+
     </div>
   </div>
 </section>
 
-<!-- ─── FOUNDER + FRAMEWORK ─── -->
-<section id="founder" class="sec">
-  <div class="rev" style="display:grid;grid-template-columns:1.15fr 1fr;gap:5rem;align-items:start">
-    <div id="framework">
-      <div class="eyebrow">Our Foundation</div>
-      <h2 class="h2">Built on the<br><span class="hl">Rahul Jain</span><br><span class="hl coral">Tachknowledgy Framework</span></h2>
-      <div class="fw-highlight">
-        <div class="fw-hl-top">🏆 Run Your Business Working One Day a Week</div>
-        <div class="fw-hl-sub">& Double Your Profits Every Year — The Rahul Jain Mission, Business Coaching India LLP</div>
-      </div>
-      <p class="fw-body">India's pioneer of Business Coaching — <strong style="color:var(--ink)">Rahul Jain</strong> — has spent 23+ years and coached 26,000+ business owners across every industry to achieve a single mission: a business that runs itself while profits keep doubling.</p>
-      <p class="fw-body"><strong style="color:var(--ink)">VIVONIX is the technology arm of that vision.</strong> We implement the Tachknowledgy framework digitally — building systems, dashboards, and automation tools that make "work one day a week" a real, measurable outcome for Indian businesses.</p>
-      <ul class="fw-checklist">
-        <li>Remove dependence from your MIS person — automation takes over</li>
-        <li>Move from Google Sheets to a proper ERP system</li>
-        <li>Team accountability without daily micromanagement</li>
-        <li>Real-time dashboards replacing manual reporting</li>
-        <li>WhatsApp automation replacing manual follow-ups forever</li>
-      </ul>
-      <div class="flex-gap">
-        <a href="https://businesscoachingindia.com/" target="_blank" rel="noopener" class="btn btn-ghost">Learn Rahul Jain's Framework ↗</a>
-        <a href="#cta" class="btn btn-purple">Implement It →</a>
-      </div>
+<!-- ─── CASE STUDIES ─── -->
+<section class="sec" id="work">
+  <div class="container">
+    <div class="sec-head rev">
+      <div class="eyebrow">Case studies</div>
+      <h2 class="h2">Real businesses. Real numbers.</h2>
+      <p class="body-text">Swipe through three live VIVONIX builds running today.</p>
     </div>
 
-    <div style="background:linear-gradient(135deg,#f5f3ff,#ede9ff);border:1.5px solid rgba(108,63,255,.2);border-radius:20px;padding:2.5rem;text-align:center;box-shadow:var(--sh-lg)">
-      <div style="width:80px;height:80px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:Syne,sans-serif;font-size:1.7rem;font-weight:800;color:#fff;margin:0 auto 1rem;box-shadow:0 6px 20px rgba(108,63,255,.35)">RJ</div>
-      <div style="font-family:Syne,sans-serif;font-size:1.2rem;font-weight:800;color:var(--ink);margin-bottom:.2rem">Rahul Jain</div>
-      <div style="font-size:.78rem;color:var(--muted);margin-bottom:1.75rem;line-height:1.6">India's Pioneer Business Coach<br>23+ Years · Founder Director, Business Coaching India LLP</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem">
-        <div style="background:var(--surface);border-radius:10px;padding:.9rem;border:1px solid rgba(108,63,255,.15)">
-          <div style="font-family:Syne,sans-serif;font-size:1.35rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">26,000+</div>
-          <div style="font-size:.68rem;color:var(--muted);margin-top:.15rem;line-height:1.4">Business Owners Coached</div>
+    <div class="case-scroll">
+
+      <article class="case-card rev">
+        <span class="case-badge">Wedding Planners</span>
+        <h3 class="case-name">Vivah — wedding planner CRM running 10+ weddings at once.</h3>
+        <div class="case-metrics">
+          <div class="case-metric"><b>10+</b><span>weddings handled</span></div>
+          <div class="case-metric"><b>80%</b><span>manual work cut</span></div>
+          <div class="case-metric"><b>48h</b><span>go-live</span></div>
         </div>
-        <div style="background:var(--surface);border-radius:10px;padding:.9rem;border:1px solid rgba(108,63,255,.15)">
-          <div style="font-family:Syne,sans-serif;font-size:1.35rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">23 Yrs</div>
-          <div style="font-size:.68rem;color:var(--muted);margin-top:.15rem;line-height:1.4">Coaching in India</div>
+        <span class="case-link">View case study →</span>
+      </article>
+
+      <article class="case-card rev">
+        <span class="case-badge">Trading & Distribution</span>
+        <h3 class="case-name">MYAPI — WhatsApp bulk engine sending 50k messages/month.</h3>
+        <div class="case-metrics">
+          <div class="case-metric"><b>50k</b><span>msgs/month</span></div>
+          <div class="case-metric"><b>0</b><span>Meta approvals</span></div>
+          <div class="case-metric"><b>4×</b><span>team output</span></div>
         </div>
-        <div style="background:var(--surface);border-radius:10px;padding:.9rem;border:1px solid rgba(108,63,255,.15)">
-          <div style="font-family:Syne,sans-serif;font-size:1.35rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">1 Day</div>
-          <div style="font-size:.68rem;color:var(--muted);margin-top:.15rem;line-height:1.4">Work Week System</div>
+        <span class="case-link">View case study →</span>
+      </article>
+
+      <article class="case-card rev">
+        <span class="case-badge">Manufacturing</span>
+        <h3 class="case-name">Inventory forecasting that stopped ₹1.2 Cr of dead stock.</h3>
+        <div class="case-metrics">
+          <div class="case-metric"><b>94%</b><span>demand accuracy</span></div>
+          <div class="case-metric"><b>23%</b><span>inventory cost cut</span></div>
+          <div class="case-metric"><b>18%</b><span>revenue lift</span></div>
         </div>
-        <div style="background:var(--surface);border-radius:10px;padding:.9rem;border:1px solid rgba(108,63,255,.15)">
-          <div style="font-family:Syne,sans-serif;font-size:1.35rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">2x</div>
-          <div style="font-size:.68rem;color:var(--muted);margin-top:.15rem;line-height:1.4">Profits Every Year</div>
+        <span class="case-link">View case study →</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="sec" id="reviews" style="background:linear-gradient(180deg,transparent,rgba(255,255,255,.015),transparent)">
+  <div class="container">
+    <div class="sec-head center rev">
+      <div class="eyebrow">What founders say</div>
+      <h2 class="h2">Built for the way India runs business.</h2>
+    </div>
+
+    <div class="tes-grid">
+
+      <article class="tes-card rev">
+        <p class="tes-quote">"Our daily MIS work dropped from 4 hours to zero. Now I see live numbers on my phone before my morning chai."</p>
+        <div class="tes-foot">
+          <div class="tes-avatar">RM</div>
+          <div class="tes-meta">
+            <div class="tes-name">Rohit Mehra</div>
+            <div class="tes-co">Founder, Mehra Weddings</div>
+          </div>
+          <span class="tes-tag">MIS Dashboard</span>
         </div>
-      </div>
+      </article>
+
+      <article class="tes-card rev">
+        <p class="tes-quote">"I used to dread bulk WhatsApp. Now we send 5,000 messages in 30 seconds. Honestly a game-changer for our distribution business."</p>
+        <div class="tes-foot">
+          <div class="tes-avatar">AS</div>
+          <div class="tes-meta">
+            <div class="tes-name">Anjali Sharma</div>
+            <div class="tes-co">Director, Bhandari Pharma</div>
+          </div>
+          <span class="tes-tag">WhatsApp</span>
+        </div>
+      </article>
+
+      <article class="tes-card rev">
+        <p class="tes-quote">"The team scoring system is the only reason I could finally take a two-week holiday. Business ran better without me."</p>
+        <div class="tes-foot">
+          <div class="tes-avatar">KJ</div>
+          <div class="tes-meta">
+            <div class="tes-name">Kunal Jain</div>
+            <div class="tes-co">Owner, Jain Textiles</div>
+          </div>
+          <span class="tes-tag">Team Systems</span>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
 <!-- ─── CTA ─── -->
-<div class="cta-section rev" id="cta">
-  <h2>Ready to Build a Business<br>That Runs <span class="hl teal">Without You?</span></h2>
-  <p>Book a free 30-minute business audit. We'll map your workflows, find the exact bottlenecks, and show you the automation roadmap — specific to your business. Zero commitment. Zero cost.</p>
-  <div class="cta-btns">
-    <a href="https://wa.me/919079649289" target="_blank" rel="noopener" class="btn btn-white btn-lg">📞 WhatsApp for Free Audit</a>
-    <a href="mailto:contact@vivonix.in" class="btn btn-outline-white btn-lg">✉️ Send an Email</a>
+<section class="sec" id="cta">
+  <div class="container">
+    <div class="cta-band rev">
+      <h2>Ready to <span class="accent">automate?</span></h2>
+      <p>Get the systems that let you finally take a Sunday off. 30-minute audit. Live in 48 hours.</p>
+      <a href="https://wa.me/919079649289" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Free 30-min Audit</a>
+      <div class="cta-trust">
+        <span>No credit card</span>
+        <span>No pressure</span>
+        <span>Live in 48 hours</span>
+      </div>
+    </div>
   </div>
-  <p class="cta-note">No credit card · No sales pressure · 30-min call · Live in 48 hours</p>
-  <div class="cta-features">
-    <span class="cta-feat">Free business system audit</span>
-    <span class="cta-feat">Custom automation blueprint</span>
-    <span class="cta-feat">48h go-live guarantee</span>
-    <span class="cta-feat">Ongoing support included</span>
-  </div>
-</div>
+</section>
+
+</main>
 
 <!-- ─── FOOTER ─── -->
 <footer>
-  <div class="foot-grid">
-    <div>
-      <svg class="foot-logo-svg" width="160" height="44" viewBox="0 0 160 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="2" width="36" height="36" rx="8" fill="none" stroke="#7c4dff" stroke-width="2"/>
-        <rect x="8" y="8" width="24" height="24" rx="5" fill="#7c4dff"/>
-        <text x="20" y="25" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" font-weight="800" fill="white">VX</text>
-        <text x="48" y="21" font-family="Syne,sans-serif" font-size="16" font-weight="800" fill="#eef2ff" letter-spacing="1">VIVONIX</text>
-        <text x="49" y="35" font-family="sans-serif" font-size="8" letter-spacing="2.8" fill="#5b6280">DIGITAL SOLUTIONS</text>
-      </svg>
-      <p class="foot-desc">VIVONIX builds business automation systems for Indian SMEs — replacing manual work, broken workflows, and spreadsheet chaos with smart digital systems.<br><br>Working on the Rahul Jain Tachknowledgy Framework.</p>
-      <p class="foot-small">© 2025 VIVONIX Digital Solutions · Bhopal, Madhya Pradesh, India<br>
-        <a href="https://businesscoachingindia.com/" target="_blank" rel="noopener">businesscoachingindia.com</a> framework partner</p>
+  <div class="container">
+    <div class="foot-grid">
+
+      <div class="foot-brand">
+        <a href="#" class="logo"><span class="dot"></span>VIVONIX</a>
+        <p class="foot-tag">Business automation for Indian SMBs. Live in 48 hours.</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">WhatsApp Automation</a></li>
+          <li><a href="#services">MIS Dashboard</a></li>
+          <li><a href="#services">AI Chatbots</a></li>
+          <li><a href="#services">ERP Migration</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#products">Vivah CRM</a></li>
+          <li><a href="#products">MYAPI</a></li>
+          <li><a href="#products">Task Manager Pro</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#work">Case Studies</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#cta">Free Audit</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/919079649289" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:hello@vivonix.in">hello@vivonix.in</a></li>
+          <li><a href="tel:+919079649289">+91 90796 49289</a></li>
+        </ul>
+      </div>
+
     </div>
-    <div class="foot-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#services">WhatsApp Automation</a></li>
-        <li><a href="#services">MIS Dashboard</a></li>
-        <li><a href="#services">AI Chatbots</a></li>
-        <li><a href="#services">ERP / AppSheet</a></li>
-        <li><a href="#services">Team Management</a></li>
-        <li><a href="#services">Predictive Analytics</a></li>
-        <li><a href="#services">Free Audit</a></li>
-      </ul>
+
+    <div class="foot-bottom">
+      <small>© <span id="yr"></span> VIVONIX Digital Solutions. All rights reserved.</small>
+      <span class="credit">Built in India · <a href="#cta">Book a call</a></span>
     </div>
-    <div class="foot-col">
-      <h4>Products</h4>
-      <ul>
-        <li><a href="https://vivah-virid-nine.vercel.app/" target="_blank" rel="noopener">Vivah Pro ↗</a></li>
-        <li><a href="#products">MYAPI</a></li>
-        <li><a href="#products">Task Manager Pro</a></li>
-      </ul>
-      <h4 style="margin-top:1.5rem">Company</h4>
-      <ul>
-        <li><a href="#portfolio">Selected Work</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="#founder">Framework</a></li>
-        <li><a href="#how">How We Work</a></li>
-      </ul>
-    </div>
-    <div class="foot-col">
-      <h4>Get In Touch</h4>
-      <a href="https://wa.me/919079649289" target="_blank" rel="noopener" class="foot-contact-link">📱 +91 90796 49289</a>
-      <a href="mailto:contact@vivonix.in" class="foot-contact-link">✉️ contact@vivonix.in</a>
-      <p style="font-size:.78rem;color:rgba(255,255,255,.3);margin-top:.65rem;line-height:1.7">📍 Bhopal, Madhya Pradesh, India</p>
-      <a href="#cta" class="btn btn-purple" style="margin-top:1.25rem;font-size:.78rem">Book Free Demo →</a>
-    </div>
-  </div>
-  <div class="foot-bottom">
-    <span class="foot-bottom-txt">© 2025 VIVONIX Digital Solutions · All rights reserved</span>
-    <span class="foot-bottom-txt">Founder: Vishal Daharwal · Bhopal, MP</span>
   </div>
 </footer>
 
 <script>
-// Nav shadow on scroll
-const nav=document.getElementById('mainnav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('up',scrollY>20)},{passive:true});
+// Year
+document.getElementById('yr').textContent = new Date().getFullYear();
 
-// Demo bar — show after 4s
-setTimeout(()=>document.getElementById('demoBar').classList.add('show'),4000);
+// Nav scroll shadow
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('up', window.scrollY > 24);
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+// Mobile menu
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
 
 // Reveal on scroll
-const ro=new IntersectionObserver(es=>{
-  es.forEach(e=>{if(e.isIntersecting){
-    e.target.querySelectorAll('.rev').forEach((el,j)=>{
-      el.style.transitionDelay=(j*.08)+'s';el.classList.add('in');
-    });
-    e.target.classList.add('in');ro.unobserve(e.target);
-  }});
-},{threshold:.06,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.rev').forEach(el=>{ro.observe(el)});
-
-// Highlight active nav link
-const sections=document.querySelectorAll('section[id]');
-const links=document.querySelectorAll('.nav-center a');
-window.addEventListener('scroll',()=>{
-  let curr='';
-  sections.forEach(s=>{if(scrollY>=s.offsetTop-200)curr=s.id});
-  links.forEach(a=>{
-    const active=a.getAttribute('href')==='#'+curr;
-    a.style.color=active?'var(--p)':'';
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
   });
-},{passive:true});
+}, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+document.querySelectorAll('.rev').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
