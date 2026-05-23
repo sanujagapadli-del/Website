@@ -62,7 +62,7 @@ button{font-family:inherit;border:none;background:none;color:inherit;cursor:poin
 
 /* ─── BUTTONS ─── */
 .btn{display:inline-flex;align-items:center;gap:.5rem;
-  font-family:'Inter',sans-serif;font-size:.93rem;font-weight:600;
+  font-family:'Inter',sans-serif;font-size:.92rem;font-weight:500;
   padding:.78rem 1.4rem;border-radius:10px;cursor:pointer;
   transition:transform var(--t),background var(--t),border-color var(--t),box-shadow var(--t),color var(--t);
   white-space:nowrap;position:relative;overflow:hidden}
@@ -84,11 +84,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;
   border-bottom:1px solid transparent;transition:background var(--t),border-color var(--t)}
 nav.up{background:rgba(250,250,251,.94);border-bottom-color:var(--line)}
 .logo{display:inline-flex;align-items:baseline;gap:.05rem;flex-shrink:0;
-  font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:600;letter-spacing:.05em;color:var(--ink);
+  font-family:'Inter',sans-serif;font-size:1.22rem;font-weight:500;letter-spacing:-.005em;color:var(--ink);
   white-space:nowrap;line-height:1}
-.logo .b{color:var(--brand)}
-.logo small{font-family:'Inter',sans-serif;font-size:.55rem;font-weight:600;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-left:.45rem;display:none}
+.logo .b{color:var(--brand);font-weight:600}
+.logo small{font-family:'Inter',sans-serif;font-size:.56rem;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--muted2);margin-left:.5rem;display:none}
 @media(min-width:480px){.logo small{display:inline}}
 .nav-links{display:flex;gap:2rem;list-style:none;flex-shrink:0}
 .nav-links a{font-size:.92rem;font-weight:500;color:var(--ink3);transition:color var(--t);position:relative}
@@ -122,14 +122,14 @@ nav.up{background:rgba(250,250,251,.94);border-bottom-color:var(--line)}
 .pulsedot{width:7px;height:7px;border-radius:50%;background:var(--green);
   box-shadow:0 0 0 0 rgba(16,185,129,.5);animation:ping 2.2s infinite}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}70%{box-shadow:0 0 0 10px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
-.hero-h1{font-size:clamp(2.4rem,5.4vw,4.4rem);font-weight:600;max-width:19ch;letter-spacing:-.025em;margin-bottom:1.5rem;line-height:1.08}
-.hero-h1 .accent{color:var(--brand)}
+.hero-h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:500;max-width:20ch;letter-spacing:-.022em;margin-bottom:1.5rem;line-height:1.1;color:var(--ink)}
+.hero-h1 .accent{color:var(--brand);font-weight:500}
 .hero-sub{font-size:clamp(1rem,1.2vw,1.15rem);color:var(--ink3);max-width:54ch;margin-bottom:2.25rem;line-height:1.6}
 .hero-acts{display:flex;gap:.85rem;flex-wrap:wrap;align-items:center;margin-bottom:2.5rem}
 .hero-trust{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
 .hero-trust-stat{display:flex;flex-direction:column;gap:.15rem}
-.hero-trust-stat b{font-family:'Inter',sans-serif;font-size:1.45rem;font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1}
-.hero-trust-stat span{font-size:.78rem;color:var(--muted);font-weight:500}
+.hero-trust-stat b{font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:500;color:var(--ink);letter-spacing:-.02em;line-height:1}
+.hero-trust-stat span{font-size:.78rem;color:var(--muted);font-weight:400}
 .hero-trust-sep{width:1px;height:32px;background:var(--line)}
 
 /* ─── HERO PRODUCT MOCKUP ─── */
