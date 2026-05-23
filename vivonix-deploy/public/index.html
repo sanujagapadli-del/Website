@@ -422,6 +422,27 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem;back
   .foot-brand{grid-column:span 1}
   .case-metrics,.founder-stats,.flag-stats{grid-template-columns:1fr}
 }
+
+/* ── photo-led case cards ── */
+.case-card{padding:0!important;overflow:hidden;display:flex;flex-direction:column;gap:0!important}
+.case-img{aspect-ratio:16/10;background-size:cover;background-position:center;background-color:var(--bg2);
+  position:relative;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.case-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,10,14,.32));pointer-events:none}
+.case-card:hover .case-img{transform:scale(1.04)}
+.case-body{padding:1.65rem 1.75rem 1.85rem;display:flex;flex-direction:column;gap:1rem;flex:1}
+
+/* ── modules quiet strip (replaces 9-card grid) ── */
+.modules-strip{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--line)}
+.modules-strip span{display:inline-flex;align-items:center;padding:.42rem .9rem;border-radius:99px;
+  border:1px solid var(--line);background:var(--surface);font-size:.82rem;font-weight:500;color:var(--ink3);
+  transition:border-color var(--t),color var(--t),background var(--t)}
+.modules-strip span:hover{border-color:var(--brand);color:var(--brand);background:var(--brand-soft)}
+.modules-strip span:last-child{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ── about photo block ── */
+.about-photo{aspect-ratio:4/5;background-size:cover;background-position:center;border-radius:22px;
+  background-color:var(--bg2);box-shadow:0 18px 50px rgba(10,10,14,.10);position:relative;overflow:hidden}
+.about-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(10,10,14,.28));pointer-events:none}
 </style>
 </head>
 <body>
@@ -430,17 +451,16 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem;back
 <nav id="nav">
   <a href="#" class="logo">VIVO<span class="b">NIX</span><small>Digital Solutions</small></a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
     <li><a href="#flagship">Workflo</a></li>
     <li><a href="#products">Products</a></li>
     <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
   </ul>
   <a href="#cta" class="btn btn-brand btn-sm nav-cta">Book Audit</a>
   <button class="mobile-toggle" aria-label="Open menu" id="menuBtn"><span></span></button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#services">Services</a>
   <a href="#flagship">Workflo</a>
   <a href="#products">Products</a>
   <a href="#work">Case Studies</a>
@@ -457,8 +477,8 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem;back
 
       <div class="hero-copy">
         <div class="hero-tag"><span class="pulsedot"></span>Onboarding · 48h go-live</div>
-        <h1 class="hero-h1">Digital products that <span class="accent">run your business.</span></h1>
-        <p class="hero-sub">We design, build, and ship production-grade SaaS, automation, and internal platforms for Indian businesses — the same systems we run inside our own products.</p>
+        <h1 class="hero-h1">Software that <span class="accent">runs your business.</span></h1>
+        <p class="hero-sub">We build SaaS, dashboards, and automation for Indian businesses. Live in 48 hours.</p>
         <div class="hero-acts">
           <a href="#cta" class="btn btn-primary btn-lg">Book a free audit</a>
           <a href="#flagship" class="btn btn-ghost btn-lg">See our flagship →</a>
@@ -589,206 +609,31 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem;back
   </div>
 </section>
 
-<!-- ─── INDUSTRIES ─── -->
-<div class="industries">
-  <div class="container">
-    <div class="industries-label">Shipped across Indian industries</div>
-  </div>
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Healthcare</span><i>●</i>
-      <span>Manufacturing</span><i>●</i>
-      <span>Wedding Planning</span><i>●</i>
-      <span>Trading & Distribution</span><i>●</i>
-      <span>NBFC & Finance</span><i>●</i>
-      <span>Real Estate</span><i>●</i>
-      <span>Pharma</span><i>●</i>
-      <span>Logistics</span><i>●</i>
-      <span>Construction</span><i>●</i>
-      <span>Jewellery</span><i>●</i>
-      <span>Healthcare</span><i>●</i>
-      <span>Manufacturing</span><i>●</i>
-      <span>Wedding Planning</span><i>●</i>
-      <span>Trading & Distribution</span><i>●</i>
-      <span>NBFC & Finance</span><i>●</i>
-      <span>Real Estate</span><i>●</i>
-      <span>Pharma</span><i>●</i>
-      <span>Logistics</span><i>●</i>
-      <span>Construction</span><i>●</i>
-      <span>Jewellery</span><i>●</i>
-    </div>
-  </div>
-</div>
-
-<!-- ─── SERVICES ─── -->
-<section class="sec" id="services">
-  <div class="container">
-    <div class="sec-head rev">
-      <div class="eyebrow">What we build</div>
-      <h2 class="h2">Six services. <span class="accent">One running business.</span></h2>
-      <p class="body-text">From WhatsApp bulk engines to full ERP migrations — every engagement ships in 48 hours and pays back in 60 days.</p>
-    </div>
-
-    <div class="svc-grid">
-
-      <div class="svc-card rev">
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="2"/><path d="M3 6v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3z"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-        </div>
-        <div class="svc-name">Custom SaaS Development</div>
-        <p class="svc-desc">Full-stack web platforms built on React, Next.js, and Node — designed for how Indian businesses actually run.</p>
-        <a href="#cta" class="svc-link">Start a project →</a>
-      </div>
-
-      <div class="svc-card rev">
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M7 9h10M7 13h6"/></svg>
-        </div>
-        <div class="svc-name">WhatsApp Automation</div>
-        <p class="svc-desc">Bulk messaging engines that send 5,000+ personalised messages in one click — no Meta approval needed.</p>
-        <a href="#cta" class="svc-link">Start a project →</a>
-      </div>
-
-      <div class="svc-card rev">
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>
-        </div>
-        <div class="svc-name">MIS Dashboards</div>
-        <p class="svc-desc">Live KPI dashboards in Power BI, Looker, or custom React — your numbers ready on your phone before your morning chai.</p>
-        <a href="#cta" class="svc-link">Start a project →</a>
-      </div>
-
-      <div class="svc-card rev">
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
-        </div>
-        <div class="svc-name">AI Chatbots & Voice</div>
-        <p class="svc-desc">OpenAI + RAG bots across WhatsApp and voice — qualifying leads and booking demos while you sleep.</p>
-        <a href="#cta" class="svc-link">Start a project →</a>
-      </div>
-
-      <div class="svc-card rev">
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <div class="svc-name">ERP & Process Migration</div>
-        <p class="svc-desc">Move from 50 broken Google Sheets to a real ERP system — without breaking your day-to-day operations.</p>
-        <a href="#cta" class="svc-link">Start a project →</a>
-      </div>
-
-      <div class="svc-card rev">
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4M3 7l2 2 4-4M13 6h8M13 12h8M13 18h8"/></svg>
-        </div>
-        <div class="svc-name">Team & Workflow Systems</div>
-        <p class="svc-desc">Delegation, checklists, leave tracking, FMS process flows — your team runs itself, even when you're away.</p>
-        <a href="#cta" class="svc-link">Start a project →</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- ─── FLAGSHIP PRODUCT: Workflo ─── -->
 <section class="sec" id="flagship">
   <div class="container">
     <div class="flag-head rev">
       <div>
-        <div class="flag-badge">Flagship · Live now</div>
-        <h2 class="flag-h2">Meet <b>Workflo</b> — our e-Mini ERP for ops-heavy Indian businesses.</h2>
-        <p class="flag-sub">Task delegation, FMS workflows, team chat, MIS reports, leave tracker, and role-based access — every operations module in one platform. Built by VIVONIX, running live in healthcare, manufacturing, and trading businesses.</p>
+        <div class="flag-badge">Flagship · Live</div>
+        <h2 class="flag-h2"><b>Workflo</b> — the ops platform we run inside Indian businesses.</h2>
+        <p class="flag-sub">An e-Mini ERP with everything a busy ops team needs. Built by us, live across healthcare, manufacturing, and trading.</p>
       </div>
       <div class="flag-stats">
-        <div class="flag-stat"><b>9</b><span>Modules live in production</span></div>
-        <div class="flag-stat"><b>0<span class="small"> downtime</span></b><span>Fully web-based, any browser</span></div>
-        <div class="flag-stat"><b>3</b><span>Role tiers — Admin, HOD, User</span></div>
-        <div class="flag-stat"><b>CSV</b><span>One-click MIS export</span></div>
+        <div class="flag-stat"><b>9</b><span>Modules live</span></div>
+        <div class="flag-stat"><b>48h</b><span>Setup to go-live</span></div>
       </div>
     </div>
 
-    <div class="modules-grid">
-
-      <div class="module rev">
-        <div class="module-num">01</div>
-        <div class="module-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
-        </div>
-        <h3 class="module-name">Dashboard</h3>
-        <p class="module-desc">Real-time task counts, pie chart distribution, today's pending list, and one-click action buttons.</p>
-      </div>
-
-      <div class="module rev">
-        <div class="module-num">02</div>
-        <div class="module-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 10h10M7 14h6M7 18h8"/></svg>
-        </div>
-        <h3 class="module-name">All Tasks</h3>
-        <p class="module-desc">Delegation & checklist tabs, smart search, transfer workflow, and bulk delete with status filters.</p>
-      </div>
-
-      <div class="module rev">
-        <div class="module-num">03</div>
-        <div class="module-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-        </div>
-        <h3 class="module-name">Approvals</h3>
-        <p class="module-desc">Multi-category approval hub for task completion, transfers, leave requests, and deletion oversight.</p>
-      </div>
-
-      <div class="module rev">
-        <div class="module-num">04</div>
-        <div class="module-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
-        </div>
-        <h3 class="module-name">Leave Tracker</h3>
-        <p class="module-desc">Apply leave from inside the app, see live status, plus dashboard cards for Total, Pending, Approved, Days Taken.</p>
-      </div>
-
-      <div class="module rev">
-        <div class="module-num">05</div>
-        <div class="module-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        </div>
-        <h3 class="module-name">Team Chat</h3>
-        <p class="module-desc">Real-time messaging, group + DM, file sharing, @mentions, and a built-in TaskBot that shows pending tasks inline.</p>
-      </div>
-
-      <div class="module rev">
-        <div class="module-num">06</div>
-        <div class="module-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3 class="module-name">Users & Roles</h3>
-        <p class="module-desc">Centralized directory with Admin, HOD, and User tiers — department grouping for IT, HR, Ops, Maintenance.</p>
-      </div>
-
-      <div class="module rev">
-        <div class="module-num">07</div>
-        <div class="module-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>
-        </div>
-        <h3 class="module-name">MIS Report</h3>
-        <p class="module-desc">Date-range delegation & checklist reports with one-click CSV export — ready for Excel and management review.</p>
-      </div>
-
-      <div class="module rev">
-        <div class="module-num">08</div>
-        <div class="module-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-        </div>
-        <h3 class="module-name">FMS Admin</h3>
-        <p class="module-desc">Google Sheet–linked workflow setup. Define multi-step process flows with assigned doers, sync data on demand.</p>
-      </div>
-
-      <div class="module rev">
-        <div class="module-num">09</div>
-        <div class="module-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <h3 class="module-name">FMS Tasks</h3>
-        <p class="module-desc">Interactive carousel of step cards — click any step to load tasks, with auto-scroll and real-time sheet refresh.</p>
-      </div>
-
+    <div class="modules-strip rev">
+      <span>Dashboard</span>
+      <span>Tasks</span>
+      <span>Approvals</span>
+      <span>Leave</span>
+      <span>Chat</span>
+      <span>Users</span>
+      <span>MIS</span>
+      <span>FMS</span>
+      <span>+ more</span>
     </div>
 
     <div class="flag-foot rev">
@@ -821,15 +666,9 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem;back
           </div>
           <div class="product-mark">V</div>
         </div>
-        <p class="product-desc">India's smartest wedding planner CRM. Manage 10+ weddings simultaneously, dedicated WhatsApp per event, bulk RSVPs, vendor payments, kanban tasks, auto reminders — all in one dashboard.</p>
-        <div class="product-feats">
-          <span class="product-feat">CRM</span>
-          <span class="product-feat">Kanban</span>
-          <span class="product-feat">WhatsApp/event</span>
-          <span class="product-feat">Vendor payments</span>
-        </div>
+        <p class="product-desc">India's smartest wedding planner CRM. Run 10+ weddings, dedicated WhatsApp per event, bulk RSVPs, vendor payments — one dashboard.</p>
         <div class="product-foot">
-          <span class="product-meta">Used by wedding planners across India</span>
+          <span class="product-meta">Live across India</span>
           <span class="product-link">View product →</span>
         </div>
       </a>
@@ -843,15 +682,9 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem;back
           </div>
           <div class="product-mark">M</div>
         </div>
-        <p class="product-desc">REST API to send 5,000+ personalised WhatsApp messages in one click — no Meta approval, no template fights. Templates, scheduling, delivery analytics, and webhook callbacks built in.</p>
-        <div class="product-feats">
-          <span class="product-feat">REST API</span>
-          <span class="product-feat">Templates</span>
-          <span class="product-feat">Scheduling</span>
-          <span class="product-feat">Delivery analytics</span>
-        </div>
+        <p class="product-desc">Send 5,000+ personalised WhatsApp messages in one click. No Meta approval, no template fights.</p>
         <div class="product-foot">
-          <span class="product-meta">50k+ messages sent daily across clients</span>
+          <span class="product-meta">50k+ messages/day</span>
           <span class="product-link">Get access →</span>
         </div>
       </a>
@@ -872,75 +705,44 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem;back
     <div class="case-grid">
 
       <article class="case-card rev">
-        <span class="case-tag">Healthcare · Ops platform</span>
-        <h3 class="case-name">Internal operations ERP — Workflo deployed across departments.</h3>
-        <div class="case-metrics">
-          <div class="case-metric"><b>9</b><span>modules live</span></div>
-          <div class="case-metric"><b>80%</b><span>manual ops cut</span></div>
-          <div class="case-metric"><b>48h</b><span>to go-live</span></div>
+        <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=720&q=80&auto=format&fit=crop')"></div>
+        <div class="case-body">
+          <span class="case-tag">Healthcare</span>
+          <h3 class="case-name">Internal ops ERP for a hospital group.</h3>
+          <div class="case-metrics">
+            <div class="case-metric"><b>9</b><span>modules</span></div>
+            <div class="case-metric"><b>80%</b><span>ops cut</span></div>
+            <div class="case-metric"><b>48h</b><span>go-live</span></div>
+          </div>
         </div>
-        <p class="case-quote">"Our daily ops review went from a 90-minute meeting to a 10-minute dashboard glance."</p>
-        <div class="case-role">— Operations Head, Healthcare Pvt. Ltd. (NDA)</div>
       </article>
 
       <article class="case-card rev">
-        <span class="case-tag">Wedding services</span>
-        <h3 class="case-name">Vivah CRM running 10+ simultaneous weddings end-to-end.</h3>
-        <div class="case-metrics">
-          <div class="case-metric"><b>10+</b><span>weddings/qtr</span></div>
-          <div class="case-metric"><b>4×</b><span>team output</span></div>
-          <div class="case-metric"><b>0</b><span>missed RSVPs</span></div>
+        <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?w=720&q=80&auto=format&fit=crop')"></div>
+        <div class="case-body">
+          <span class="case-tag">Weddings</span>
+          <h3 class="case-name">Vivah CRM running 10+ weddings at once.</h3>
+          <div class="case-metrics">
+            <div class="case-metric"><b>10+</b><span>weddings/qtr</span></div>
+            <div class="case-metric"><b>4×</b><span>team output</span></div>
+            <div class="case-metric"><b>0</b><span>missed RSVPs</span></div>
+          </div>
         </div>
-        <p class="case-quote">"We doubled our wedding capacity without hiring a single new person."</p>
-        <div class="case-role">— Founder, Wedding planning agency (NDA)</div>
       </article>
 
       <article class="case-card rev">
-        <span class="case-tag">Trading & Distribution</span>
-        <h3 class="case-name">MYAPI WhatsApp engine sending 50k+ messages/month.</h3>
-        <div class="case-metrics">
-          <div class="case-metric"><b>50k</b><span>msgs/month</span></div>
-          <div class="case-metric"><b>0</b><span>Meta approvals</span></div>
-          <div class="case-metric"><b>3h</b><span>saved daily</span></div>
+        <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=720&q=80&auto=format&fit=crop')"></div>
+        <div class="case-body">
+          <span class="case-tag">Distribution</span>
+          <h3 class="case-name">MYAPI sending 50k WhatsApp messages a month.</h3>
+          <div class="case-metrics">
+            <div class="case-metric"><b>50k</b><span>msgs/mo</span></div>
+            <div class="case-metric"><b>0</b><span>Meta approvals</span></div>
+            <div class="case-metric"><b>3h</b><span>saved daily</span></div>
+          </div>
         </div>
-        <p class="case-quote">"What used to take three hours of copy-paste now takes thirty seconds."</p>
-        <div class="case-role">— Sales Director, Distribution Co. (NDA)</div>
       </article>
 
-    </div>
-  </div>
-</section>
-
-<!-- ─── PROCESS ─── -->
-<section class="sec" id="process">
-  <div class="container">
-    <div class="sec-head center rev">
-      <div class="eyebrow">How we work</div>
-      <h2 class="h2">From audit to <span class="accent">production in 48h.</span></h2>
-      <p class="body-text" style="margin:0 auto">A proven four-step delivery process. No PowerPoint phase, no committee delays — we ship.</p>
-    </div>
-
-    <div class="process-grid">
-      <div class="process-step rev">
-        <div class="process-num">Audit</div>
-        <h3 class="process-title">Free Business Audit</h3>
-        <p class="process-desc">30-minute call — we map workflows, identify bottlenecks, and show you exactly where automation pays back fastest.</p>
-      </div>
-      <div class="process-step rev">
-        <div class="process-num">Blueprint</div>
-        <h3 class="process-title">Custom Blueprint</h3>
-        <p class="process-desc">A tailored automation roadmap — specific to your team, tools, and tech stack. Nothing generic.</p>
-      </div>
-      <div class="process-step rev">
-        <div class="process-num">Build</div>
-        <h3 class="process-title">Build & Deploy</h3>
-        <p class="process-desc">Implementation in under 48 hours — tested, trained, live. No coding knowledge needed on your side.</p>
-      </div>
-      <div class="process-step rev">
-        <div class="process-num">Scale</div>
-        <h3 class="process-title">Maintain & Scale</h3>
-        <p class="process-desc">Ongoing support keeps systems running. We're a long-term partner — not a one-time vendor.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -951,27 +753,17 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem;back
     <div class="about-grid">
 
       <div class="rev">
-        <div class="eyebrow">About VIVONIX</div>
-        <h2 class="h2">Built by founders, <span class="accent">for founders.</span></h2>
-        <p class="body-text" style="margin-bottom:1.25rem">VIVONIX is a small, senior team of full-stack engineers and product designers building production-grade software for Indian businesses.</p>
-        <p class="body-text">We've shipped 30+ projects, run three products in production, and work directly with founders — no account managers, no juniors, no handoffs. If you call us, you talk to the team that builds.</p>
-      </div>
-
-      <div class="about-card rev">
-        <div class="founder-row">
-          <div class="founder-avatar">VX</div>
-          <div>
-            <div class="founder-name">[Founder Name]</div>
-            <div class="founder-role">Founder · VIVONIX Digital Solutions</div>
-          </div>
-        </div>
-        <p class="founder-quote">We don't sell automation. We sell the freedom to take a Sunday off — and we build the systems that make that real.</p>
-        <div class="founder-stats">
+        <div class="eyebrow">About</div>
+        <h2 class="h2">A small team that <span class="accent">actually ships.</span></h2>
+        <p class="body-text" style="margin-bottom:2rem">Senior engineers and product designers. No account managers, no juniors, no handoffs — you talk directly to the team that builds.</p>
+        <div class="founder-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
           <div class="founder-stat"><b>10+</b><span>Years building</span></div>
           <div class="founder-stat"><b>30+</b><span>Projects shipped</span></div>
           <div class="founder-stat"><b>3</b><span>Live products</span></div>
         </div>
       </div>
+
+      <div class="about-photo rev" style="background-image:url('https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=720&q=80&auto=format&fit=crop')"></div>
 
     </div>
   </div>
