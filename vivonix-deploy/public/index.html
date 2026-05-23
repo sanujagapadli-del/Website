@@ -443,6 +443,160 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem;back
 .about-photo{aspect-ratio:4/5;background-size:cover;background-position:center;border-radius:22px;
   background-color:var(--bg2);box-shadow:0 18px 50px rgba(10,10,14,.10);position:relative;overflow:hidden}
 .about-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(10,10,14,.28));pointer-events:none}
+
+/* ──────────────────────────────────────────────
+   WHATSAPP-STYLE CHAT WIDGET
+   ────────────────────────────────────────────── */
+.wa-fab{position:fixed;bottom:1.5rem;right:1.5rem;z-index:600;
+  width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;
+  display:grid;place-items:center;cursor:pointer;border:none;
+  box-shadow:0 12px 36px rgba(37,211,102,.42),0 0 0 6px rgba(37,211,102,.16);
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s}
+.wa-fab:hover{transform:scale(1.08)}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab .pulse{position:absolute;inset:0;border-radius:50%;background:#25d366;animation:waring 2.2s infinite;z-index:-1}
+@keyframes waring{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.45);opacity:0}}
+.wa-fab .badge{position:absolute;top:-2px;right:-2px;min-width:18px;height:18px;border-radius:9px;
+  background:#ef4444;color:#fff;font-size:.66rem;font-weight:600;display:grid;place-items:center;padding:0 4px;
+  border:2px solid var(--bg);font-family:'Inter',sans-serif;line-height:1}
+.wa-fab .badge.hide{display:none}
+
+.wa-panel{position:fixed;bottom:5.8rem;right:1.5rem;z-index:599;
+  width:min(360px,calc(100vw - 2rem));height:min(540px,calc(100vh - 8rem));
+  background:#ece5dd;border-radius:14px;overflow:hidden;display:none;flex-direction:column;
+  box-shadow:0 28px 70px rgba(10,10,14,.32),0 0 0 1px rgba(10,10,14,.08);
+  font-family:'Inter',sans-serif}
+.wa-panel.open{display:flex;animation:waup .25s ease}
+@keyframes waup{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.wa-head{background:#075e54;color:#fff;padding:.85rem 1rem;display:flex;align-items:center;gap:.7rem}
+.wa-avatar{width:38px;height:38px;border-radius:50%;background:#25d366;color:#fff;
+  display:grid;place-items:center;font-weight:600;font-size:.92rem;flex-shrink:0}
+.wa-head-info{flex:1;min-width:0}
+.wa-head-name{font-size:.92rem;font-weight:500;line-height:1.1}
+.wa-head-status{font-size:.7rem;color:rgba(255,255,255,.78);margin-top:.18rem;display:flex;align-items:center;gap:.35rem}
+.wa-head-status::before{content:'';width:6px;height:6px;border-radius:50%;background:#4ade80}
+.wa-head-actions{display:flex;gap:.25rem;flex-shrink:0}
+.wa-head-actions button{width:32px;height:32px;border-radius:50%;background:transparent;color:#fff;
+  display:grid;place-items:center;border:none;cursor:pointer;transition:background .2s}
+.wa-head-actions button:hover{background:rgba(255,255,255,.12)}
+.wa-head-actions svg{width:16px;height:16px}
+
+.wa-body{flex:1;overflow-y:auto;padding:1rem .85rem;display:flex;flex-direction:column;gap:.45rem;
+  background-image:
+    radial-gradient(circle at 20% 30%,rgba(255,255,255,.45) 0,transparent 40%),
+    radial-gradient(circle at 80% 70%,rgba(255,255,255,.32) 0,transparent 40%),
+    linear-gradient(180deg,#ece5dd,#e1d8c9)}
+.wa-body::-webkit-scrollbar{width:6px}
+.wa-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.18);border-radius:99px}
+
+.wa-msg{max-width:78%;padding:.5rem .7rem;border-radius:8px;font-size:.86rem;line-height:1.4;color:#0a0a0a;
+  position:relative;word-wrap:break-word;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.wa-msg.in{background:#fff;align-self:flex-start;border-top-left-radius:2px}
+.wa-msg.out{background:#dcf8c6;align-self:flex-end;border-top-right-radius:2px}
+.wa-msg .time{font-size:.62rem;color:#667781;margin-left:.5rem;float:right;margin-top:.18rem}
+.wa-msg.out .time::after{content:' ✓✓';color:#34b7f1}
+
+.wa-day{align-self:center;background:rgba(255,255,255,.7);color:#667781;font-size:.66rem;font-weight:500;
+  padding:.22rem .6rem;border-radius:6px;margin:.6rem 0;box-shadow:0 1px 1px rgba(0,0,0,.05)}
+
+.wa-input-bar{background:#f0f0f0;padding:.6rem;display:flex;align-items:center;gap:.5rem;border-top:1px solid rgba(0,0,0,.05)}
+.wa-input{flex:1;border:none;background:#fff;border-radius:20px;padding:.62rem 1rem;font-size:.92rem;
+  outline:none;font-family:inherit;color:#0a0a0a;min-width:0}
+.wa-input::placeholder{color:#8696a0}
+.wa-send{width:42px;height:42px;border-radius:50%;background:#25d366;color:#fff;
+  display:grid;place-items:center;border:none;cursor:pointer;flex-shrink:0;transition:transform .15s,background .2s}
+.wa-send:hover{transform:scale(1.05);background:#1ebe57}
+.wa-send svg{width:18px;height:18px}
+
+.wa-confirm{position:absolute;inset:0;background:rgba(7,94,84,.94);color:#fff;display:none;
+  flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;text-align:center;z-index:2;border-radius:14px}
+.wa-confirm.show{display:flex}
+.wa-confirm h4{font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:500;margin-bottom:.3rem}
+.wa-confirm p{font-size:.88rem;color:rgba(255,255,255,.75);max-width:30ch;line-height:1.5}
+.wa-confirm-acts{display:flex;gap:.6rem;margin-top:.5rem}
+.wa-confirm-acts button{padding:.55rem 1.2rem;border-radius:99px;border:none;font-size:.86rem;font-weight:500;cursor:pointer;font-family:inherit}
+.wa-confirm .yes{background:#ef4444;color:#fff}
+.wa-confirm .yes:hover{background:#dc2626}
+.wa-confirm .no{background:rgba(255,255,255,.16);color:#fff}
+.wa-confirm .no:hover{background:rgba(255,255,255,.24)}
+
+@media(max-width:560px){
+  .wa-panel{bottom:5rem;right:.75rem;left:.75rem;width:auto;height:calc(100vh - 7rem);max-height:600px}
+  .wa-fab{bottom:1rem;right:1rem;width:56px;height:56px}
+}
+
+/* ── admin panel — same theme, full screen dashboard ── */
+.adm{position:fixed;inset:0;z-index:700;background:#0b141a;color:#e9edef;
+  display:none;flex-direction:column;font-family:'Inter',sans-serif}
+.adm.open{display:flex}
+.adm-head{background:#202c33;padding:.85rem 1.25rem;display:flex;align-items:center;gap:.75rem;
+  border-bottom:1px solid rgba(255,255,255,.08)}
+.adm-head h2{font-size:1rem;font-weight:500;color:#e9edef;flex:1;font-family:'Inter',sans-serif}
+.adm-head .dot{width:8px;height:8px;border-radius:50%;background:#25d366;box-shadow:0 0 8px rgba(37,211,102,.5)}
+.adm-head .close{width:36px;height:36px;border-radius:50%;background:transparent;color:#e9edef;
+  display:grid;place-items:center;border:1px solid rgba(255,255,255,.12);cursor:pointer;transition:background .2s}
+.adm-head .close:hover{background:rgba(255,255,255,.08)}
+.adm-head .close svg{width:16px;height:16px}
+.adm-body{flex:1;display:grid;grid-template-columns:320px 1fr;min-height:0}
+.adm-list{background:#111b21;border-right:1px solid rgba(255,255,255,.08);overflow-y:auto;display:flex;flex-direction:column}
+.adm-list-head{padding:.85rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.08);
+  font-size:.72rem;color:#8696a0;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+.adm-conv{padding:.95rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer;
+  display:flex;flex-direction:column;gap:.25rem;transition:background .15s}
+.adm-conv:hover{background:rgba(255,255,255,.03)}
+.adm-conv.active{background:#2a3942}
+.adm-conv-top{display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+.adm-conv-name{font-size:.92rem;font-weight:500;color:#e9edef}
+.adm-conv-time{font-size:.7rem;color:#8696a0;flex-shrink:0}
+.adm-conv-preview{font-size:.82rem;color:#8696a0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.adm-conv-empty{padding:2rem 1.25rem;text-align:center;color:#8696a0;font-size:.86rem;line-height:1.5}
+.adm-conv-empty svg{width:42px;height:42px;margin:0 auto 1rem;display:block;opacity:.4}
+.adm-conv .unread{display:inline-block;width:18px;height:18px;border-radius:50%;background:#25d366;color:#000;
+  font-size:.66rem;font-weight:600;text-align:center;line-height:18px}
+
+.adm-chat{display:flex;flex-direction:column;min-height:0;background:
+  radial-gradient(circle at 20% 30%,rgba(255,255,255,.02) 0,transparent 40%),#0b141a}
+.adm-chat-head{background:#202c33;padding:.85rem 1.25rem;display:flex;align-items:center;gap:.75rem;
+  border-bottom:1px solid rgba(255,255,255,.08)}
+.adm-chat-head .avatar{width:36px;height:36px;border-radius:50%;background:#25d366;color:#000;
+  display:grid;place-items:center;font-weight:600;font-size:.86rem;flex-shrink:0}
+.adm-chat-head-info{flex:1;min-width:0}
+.adm-chat-name{font-size:.94rem;font-weight:500;color:#e9edef}
+.adm-chat-meta{font-size:.7rem;color:#8696a0;margin-top:.15rem}
+.adm-chat-head button{width:36px;height:36px;border-radius:50%;background:transparent;color:#e9edef;
+  display:grid;place-items:center;border:1px solid rgba(255,255,255,.1);cursor:pointer;flex-shrink:0;transition:all .2s}
+.adm-chat-head button:hover{background:rgba(239,68,68,.16);border-color:#ef4444;color:#ef4444}
+.adm-chat-head button svg{width:15px;height:15px}
+
+.adm-msgs{flex:1;overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;gap:.45rem}
+.adm-msgs::-webkit-scrollbar{width:6px}
+.adm-msgs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:99px}
+.adm-msg{max-width:65%;padding:.55rem .75rem;border-radius:8px;font-size:.88rem;line-height:1.45;
+  color:#e9edef;box-shadow:0 1px 1px rgba(0,0,0,.18);position:relative;word-wrap:break-word}
+.adm-msg.in{background:#202c33;align-self:flex-start;border-top-left-radius:2px}
+.adm-msg.out{background:#005c4b;align-self:flex-end;border-top-right-radius:2px}
+.adm-msg .time{font-size:.62rem;color:rgba(233,237,239,.55);margin-left:.5rem;float:right;margin-top:.18rem}
+.adm-msg.out .time::after{content:' ✓✓';color:#34b7f1}
+
+.adm-empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;color:#8696a0;gap:1rem}
+.adm-empty svg{width:56px;height:56px;opacity:.5}
+.adm-empty h3{font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:500;color:#e9edef}
+.adm-empty p{font-size:.88rem;max-width:36ch;line-height:1.55}
+
+.adm-input-bar{background:#202c33;padding:.7rem 1rem;display:flex;align-items:center;gap:.6rem;border-top:1px solid rgba(255,255,255,.04)}
+.adm-input{flex:1;border:none;background:#2a3942;border-radius:8px;padding:.7rem 1rem;font-size:.92rem;
+  outline:none;font-family:inherit;color:#e9edef;min-width:0}
+.adm-input::placeholder{color:#8696a0}
+.adm-send{width:42px;height:42px;border-radius:50%;background:#25d366;color:#000;
+  display:grid;place-items:center;border:none;cursor:pointer;flex-shrink:0;transition:transform .15s,background .2s}
+.adm-send:hover{transform:scale(1.05);background:#1ebe57}
+.adm-send svg{width:18px;height:18px}
+
+@media(max-width:760px){
+  .adm-body{grid-template-columns:1fr}
+  .adm-list{display:none}
+  .adm-list.show{display:flex;position:absolute;inset:48px 0 0 0;z-index:1}
+}
 </style>
 </head>
 <body>
@@ -843,6 +997,70 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem;back
   </div>
 </footer>
 
+<!-- ─── CHAT WIDGET (visitor) ─── -->
+<button class="wa-fab" id="chatFab" aria-label="Open chat">
+  <span class="pulse"></span>
+  <span class="badge hide" id="chatBadge">1</span>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.2 2 11.4c0 1.8.5 3.5 1.5 5L2 22l5.8-1.5c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.2 10-9.4S17.5 2 12 2zm5 13c-.2.6-1.2 1.2-1.7 1.3-.4.1-1 .1-1.6-.1-.4-.1-.8-.2-1.3-.5-2.3-1-3.8-3.3-3.9-3.5-.1-.2-.9-1.2-.9-2.3 0-1.1.6-1.7.8-1.9.2-.2.4-.2.5-.2h.4c.1 0 .3 0 .5.4l.6 1.5c.1.2 0 .4-.1.5l-.2.3c-.1.1-.2.2-.1.4.1.2.6.9 1.2 1.4.8.7 1.5.9 1.7 1 .2.1.3 0 .4-.1l.7-.8c.1-.2.3-.1.5-.1l1.4.6c.2.1.4.2.4.3.1.2.1.7-.1 1.3z"/></svg>
+</button>
+
+<div class="wa-panel" id="chatPanel" role="dialog" aria-label="Chat with VIVONIX">
+  <div class="wa-head">
+    <div class="wa-avatar">VX</div>
+    <div class="wa-head-info">
+      <div class="wa-head-name">VIVONIX</div>
+      <div class="wa-head-status">online · typically replies in minutes</div>
+    </div>
+    <div class="wa-head-actions">
+      <button id="chatClear" title="Clear chat" aria-label="Clear chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="m19 6-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg>
+      </button>
+      <button id="chatClose" title="Close" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="wa-body" id="chatBody"></div>
+  <div class="wa-input-bar">
+    <input type="text" class="wa-input" id="chatInput" placeholder="Type a message" maxlength="500" autocomplete="off">
+    <button class="wa-send" id="chatSend" aria-label="Send">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>
+  <div class="wa-confirm" id="chatConfirm">
+    <h4>Clear this chat?</h4>
+    <p>This permanently removes your conversation with VIVONIX from this browser.</p>
+    <div class="wa-confirm-acts">
+      <button class="no" id="confirmNo">Cancel</button>
+      <button class="yes" id="confirmYes">Yes, clear</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── ADMIN PANEL (only shown on /?admin=vivonix) ─── -->
+<div class="adm" id="admPanel" role="dialog" aria-label="Chat admin panel">
+  <div class="adm-head">
+    <span class="dot"></span>
+    <h2>VIVONIX Chat — Admin</h2>
+    <button class="close" id="admClose" title="Exit admin" aria-label="Exit admin">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="adm-body">
+    <aside class="adm-list" id="admList">
+      <div class="adm-list-head">Conversations</div>
+      <!-- conversations injected by JS -->
+    </aside>
+    <section class="adm-chat" id="admChat">
+      <div class="adm-empty" id="admEmpty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <h3>Select a conversation</h3>
+        <p>Pick a visitor from the left to read and reply. New messages appear in real time as visitors type.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
 <script>
 // Year
 document.getElementById('yr').textContent = new Date().getFullYear();
@@ -868,6 +1086,231 @@ const io = new IntersectionObserver((entries) => {
   });
 }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
 document.querySelectorAll('.rev').forEach(el => io.observe(el));
+
+/* ══════════════════════════════════════════════════════════
+   VIVONIX CHAT — visitor widget + admin panel
+   Storage: localStorage (single browser demo)
+   Admin: open  /?admin=vivonix   then enter password
+   ══════════════════════════════════════════════════════════ */
+const VX_CHAT = (() => {
+  const ADMIN_PASSWORD = 'vivonix2026';    // change this!
+  const STORE_KEY = 'vx_chats';
+  const VID_KEY   = 'vx_vid';
+  const NAME_KEY  = 'vx_vname';
+  const WELCOME = 'Hi 👋 I\'m the VIVONIX team. What can I help with — Workflo demo, custom build, or a free audit?';
+  let visitorId, isAdmin = false, activeId = null;
+
+  // ─── utilities ───
+  const uuid = () => 'v-' + Math.random().toString(36).slice(2, 9) + Date.now().toString(36).slice(-4);
+  const fmtTime = ts => {
+    const d = new Date(ts), now = new Date(), diff = (now - d) / 1000;
+    if (diff < 60) return 'just now';
+    const h = d.getHours().toString().padStart(2,'0'), m = d.getMinutes().toString().padStart(2,'0');
+    if (diff < 86400) return `${h}:${m}`;
+    return d.toLocaleDateString('en-GB', {day:'2-digit', month:'short'}) + ` ${h}:${m}`;
+  };
+  const esc = s => String(s).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+
+  // ─── data layer ───
+  const load = () => { try { return JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); } catch { return {}; } };
+  const save = data => localStorage.setItem(STORE_KEY, JSON.stringify(data));
+
+  // ─── visitor identity ───
+  visitorId = localStorage.getItem(VID_KEY) || (() => { const id = uuid(); localStorage.setItem(VID_KEY, id); return id; })();
+
+  // ─── admin mode detection ───
+  const params = new URLSearchParams(location.search);
+  if (params.get('admin') === 'vivonix') {
+    const cached = sessionStorage.getItem('vx_admin_ok');
+    const pw = cached || prompt('Admin password:');
+    if (pw === ADMIN_PASSWORD) {
+      sessionStorage.setItem('vx_admin_ok', 'yes');
+      isAdmin = true;
+    } else if (pw !== null) {
+      alert('Wrong password. Reload to retry.');
+    }
+  }
+
+  // ─── ensure visitor chat exists with welcome ───
+  const ensureChat = (id, name = 'Visitor') => {
+    const data = load();
+    if (!data[id]) {
+      data[id] = { name, firstSeen: Date.now(), lastActivity: Date.now(),
+        messages: [{ text: WELCOME, from: 'admin', ts: Date.now() }] };
+      save(data);
+    }
+    return data;
+  };
+  ensureChat(visitorId, 'You');
+
+  // ─── send message ───
+  const sendMsg = (chatId, text, from) => {
+    const t = text.trim();
+    if (!t) return;
+    const data = load();
+    if (!data[chatId]) data[chatId] = { name: from === 'visitor' ? 'You' : 'Visitor', firstSeen: Date.now(), messages: [] };
+    data[chatId].messages.push({ text: t, from, ts: Date.now() });
+    data[chatId].lastActivity = Date.now();
+    save(data);
+    render();
+  };
+
+  // ─── render visitor widget ───
+  const renderVisitor = () => {
+    const data = load();
+    const chat = data[visitorId];
+    if (!chat) return;
+    const body = document.getElementById('chatBody');
+    if (!body) return;
+    body.innerHTML = '';
+    let lastDay = '';
+    chat.messages.forEach(m => {
+      const day = new Date(m.ts).toDateString();
+      if (day !== lastDay) {
+        const d = document.createElement('div'); d.className = 'wa-day';
+        d.textContent = (day === new Date().toDateString()) ? 'Today' : new Date(m.ts).toLocaleDateString('en-GB', {day:'2-digit', month:'short'});
+        body.appendChild(d); lastDay = day;
+      }
+      const el = document.createElement('div');
+      el.className = 'wa-msg ' + (m.from === 'visitor' ? 'out' : 'in');
+      el.innerHTML = esc(m.text) + `<span class="time">${fmtTime(m.ts)}</span>`;
+      body.appendChild(el);
+    });
+    body.scrollTop = body.scrollHeight;
+    // unread badge if panel closed and last msg from admin
+    const last = chat.messages[chat.messages.length - 1];
+    const panelOpen = document.getElementById('chatPanel')?.classList.contains('open');
+    const badge = document.getElementById('chatBadge');
+    if (badge) badge.classList.toggle('hide', panelOpen || !last || last.from !== 'admin' || (chat.lastRead || 0) >= last.ts);
+  };
+
+  // ─── render admin panel ───
+  const renderAdmin = () => {
+    if (!isAdmin) return;
+    const data = load();
+    const ids = Object.keys(data).sort((a,b) => (data[b].lastActivity||0) - (data[a].lastActivity||0));
+    const list = document.getElementById('admList');
+    if (!list) return;
+    list.innerHTML = '<div class="adm-list-head">Conversations · ' + ids.length + '</div>';
+    if (!ids.length) {
+      list.innerHTML += '<div class="adm-conv-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>No conversations yet. Visitors who open the chat widget will appear here.</div>';
+    } else {
+      ids.forEach(id => {
+        const c = data[id];
+        const last = c.messages[c.messages.length - 1];
+        const div = document.createElement('div');
+        div.className = 'adm-conv' + (id === activeId ? ' active' : '');
+        div.innerHTML = `
+          <div class="adm-conv-top">
+            <span class="adm-conv-name">${esc(c.name || 'Visitor')} · ${id.slice(0, 8)}</span>
+            <span class="adm-conv-time">${last ? fmtTime(last.ts) : ''}</span>
+          </div>
+          <div class="adm-conv-preview">${last ? (last.from === 'admin' ? 'You: ' : '') + esc(last.text) : 'No messages'}</div>`;
+        div.onclick = () => { activeId = id; render(); };
+        list.appendChild(div);
+      });
+    }
+
+    const chatBox = document.getElementById('admChat');
+    if (!activeId || !data[activeId]) {
+      chatBox.innerHTML = `
+        <div class="adm-empty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <h3>Select a conversation</h3>
+          <p>Pick a visitor from the left to read and reply.</p>
+        </div>`;
+      return;
+    }
+    const c = data[activeId];
+    const initials = (c.name || 'V').split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+    chatBox.innerHTML = `
+      <div class="adm-chat-head">
+        <div class="avatar">${initials}</div>
+        <div class="adm-chat-head-info">
+          <div class="adm-chat-name">${esc(c.name || 'Visitor')} · ${activeId.slice(0, 8)}</div>
+          <div class="adm-chat-meta">First seen ${fmtTime(c.firstSeen || Date.now())}</div>
+        </div>
+        <button id="admDel" title="Delete this conversation" aria-label="Delete conversation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="m19 6-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg>
+        </button>
+      </div>
+      <div class="adm-msgs" id="admMsgs"></div>
+      <div class="adm-input-bar">
+        <input type="text" class="adm-input" id="admInput" placeholder="Type your reply" maxlength="1000" autocomplete="off">
+        <button class="adm-send" id="admSend" aria-label="Send reply">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>`;
+    const msgs = document.getElementById('admMsgs');
+    c.messages.forEach(m => {
+      const el = document.createElement('div');
+      el.className = 'adm-msg ' + (m.from === 'admin' ? 'out' : 'in');
+      el.innerHTML = esc(m.text) + `<span class="time">${fmtTime(m.ts)}</span>`;
+      msgs.appendChild(el);
+    });
+    msgs.scrollTop = msgs.scrollHeight;
+
+    // wire admin actions
+    const input = document.getElementById('admInput');
+    const send  = document.getElementById('admSend');
+    const trigger = () => { if (input.value.trim()) { sendMsg(activeId, input.value, 'admin'); input.value = ''; } };
+    send.onclick = trigger;
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') trigger(); });
+    input.focus();
+
+    document.getElementById('admDel').onclick = () => {
+      if (!confirm('Delete this entire conversation? This cannot be undone.')) return;
+      const d = load(); delete d[activeId]; save(d); activeId = null; render();
+    };
+  };
+
+  const render = () => { renderVisitor(); renderAdmin(); };
+
+  // ─── visitor wiring ───
+  const fab = document.getElementById('chatFab');
+  const panel = document.getElementById('chatPanel');
+  const confirm = document.getElementById('chatConfirm');
+  fab?.addEventListener('click', () => {
+    panel.classList.toggle('open');
+    if (panel.classList.contains('open')) {
+      const d = load(); if (d[visitorId]) { d[visitorId].lastRead = Date.now(); save(d); }
+      document.getElementById('chatInput').focus();
+    }
+    render();
+  });
+  document.getElementById('chatClose')?.addEventListener('click', () => { panel.classList.remove('open'); render(); });
+  const sendBtn = document.getElementById('chatSend');
+  const input = document.getElementById('chatInput');
+  const sendVisitor = () => { if (input.value.trim()) { sendMsg(visitorId, input.value, 'visitor'); input.value = ''; } };
+  sendBtn?.addEventListener('click', sendVisitor);
+  input?.addEventListener('keydown', e => { if (e.key === 'Enter') sendVisitor(); });
+
+  document.getElementById('chatClear')?.addEventListener('click', () => confirm.classList.add('show'));
+  document.getElementById('confirmNo')?.addEventListener('click', () => confirm.classList.remove('show'));
+  document.getElementById('confirmYes')?.addEventListener('click', () => {
+    const d = load(); delete d[visitorId]; save(d);
+    ensureChat(visitorId, 'You');
+    confirm.classList.remove('show');
+    render();
+  });
+
+  // ─── admin wiring ───
+  if (isAdmin) {
+    document.getElementById('admPanel').classList.add('open');
+    document.getElementById('admClose')?.addEventListener('click', () => {
+      sessionStorage.removeItem('vx_admin_ok');
+      location.href = location.pathname;
+    });
+  }
+
+  // ─── live cross-tab sync ───
+  window.addEventListener('storage', e => { if (e.key === STORE_KEY) render(); });
+  // also poll every 3s as a safety net (covers same-tab edge cases)
+  setInterval(render, 3000);
+
+  render();
+  return { visitorId, isAdmin };
+})();
 </script>
 </body>
 </html>
