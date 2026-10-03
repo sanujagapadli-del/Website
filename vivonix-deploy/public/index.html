@@ -143,17 +143,10 @@ footer .logo-txt small{color:#94a3b8}
 .hero-h1{font-size:clamp(2.4rem,5.2vw,3.9rem);font-weight:800;margin-bottom:1.4rem;line-height:1.06;letter-spacing:-.035em}
 .hero-sub{font-size:clamp(1.02rem,1.3vw,1.18rem);color:var(--muted);max-width:52ch;margin-bottom:2.2rem;line-height:1.75}
 .hero-acts{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.hero-trust{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.avatars{display:flex}
-.avatars span{width:38px;height:38px;border-radius:50%;border:2.5px solid #fff;margin-left:-10px;display:grid;place-items:center;
-  font-size:.72rem;font-weight:600;color:#fff;box-shadow:var(--sh-sm)}
-.avatars span:first-child{margin-left:0}
-.avatars span:nth-child(1){background:linear-gradient(135deg,#6366f1,#8b5cf6)}
-.avatars span:nth-child(2){background:linear-gradient(135deg,#0ea5e9,#6366f1)}
-.avatars span:nth-child(3){background:linear-gradient(135deg,#f59e0b,#ef4444)}
-.avatars span:nth-child(4){background:linear-gradient(135deg,#10b981,#0ea5e9)}
-.hero-trust-txt{font-size:.88rem;color:var(--muted);line-height:1.35}
-.hero-trust-txt b{color:var(--ink);font-weight:600}
+.hero-points{display:flex;gap:.6rem 1.4rem;flex-wrap:wrap}
+.hero-points span{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:500;color:var(--ink3)}
+.hero-points span::before{content:'';width:20px;height:20px;border-radius:50%;flex-shrink:0;
+  background:var(--brand-soft) center/11px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f46e5' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E")}
 
 .hero-vis{position:relative}
 .hero-vis::before{content:'';position:absolute;inset:8% 6% -4%;background:var(--grad);filter:blur(60px);opacity:.35;border-radius:40px;z-index:-1}
@@ -165,7 +158,36 @@ footer .logo-txt small{color:#94a3b8}
 .frame-bar i{width:10px;height:10px;border-radius:50%;background:#e4e6ee}
 .frame-bar i:nth-child(1){background:#ff6058}.frame-bar i:nth-child(2){background:#ffbd2e}.frame-bar i:nth-child(3){background:#28c941}
 .frame-bar span{margin-left:auto;font-size:.7rem;color:var(--muted2);background:var(--bg2);padding:.2rem .7rem;border-radius:6px}
-.hero-img{border-radius:12px;aspect-ratio:16/11;background:#1e1b4b center/cover no-repeat}
+.dash{display:grid;grid-template-columns:52px 1fr;border-radius:12px;overflow:hidden;background:#f7f8fc;border:1px solid var(--line);font-size:12px;color:var(--ink2)}
+.dash-side{background:#0f1229;display:flex;flex-direction:column;align-items:center;gap:.55rem;padding:.8rem 0}
+.dash-side .lm{width:28px;height:28px;border-radius:8px;background:var(--grad);display:grid;place-items:center;color:#fff;font-weight:800;font-size:.8rem;margin-bottom:.5rem}
+.dash-side i{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;color:#7c82a8}
+.dash-side i.on{background:rgba(99,102,241,.22);color:#c7d2fe}
+.dash-side svg{width:15px;height:15px}
+.dash-main{padding:.95rem;display:flex;flex-direction:column;gap:.7rem;min-width:0}
+.dash-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.dash-top small{display:block;font-size:.66rem;color:var(--muted2);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.dash-top b{font-family:var(--display);font-size:.98rem;color:var(--ink)}
+.dash-live{display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;font-weight:600;color:#047857;background:#ecfdf5;padding:.22rem .6rem;border-radius:99px}
+.dash-live::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+.dash-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.6rem .7rem;min-width:0}
+.kpi small{display:block;font-size:.64rem;color:var(--muted);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kpi b{display:block;font-family:var(--display);font-size:1.15rem;color:var(--ink);line-height:1.25}
+.kpi em{font-style:normal;font-size:.62rem;font-weight:600;color:#059669}
+.dash-row{display:grid;grid-template-columns:1.35fr 1fr;gap:.55rem}
+.panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.65rem .7rem;min-width:0}
+.panel-h{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;font-weight:600;color:var(--ink2);margin-bottom:.45rem}
+.panel-h span{font-size:.6rem;font-weight:500;color:var(--muted2)}
+.panel svg.chart{width:100%;height:96px;display:block}
+.auto{display:flex;align-items:center;gap:.5rem;padding:.42rem 0;border-top:1px solid var(--line-soft)}
+.panel-h + .auto{border-top:0}
+.auto .d{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;flex-shrink:0;background:var(--brand-soft);color:var(--brand)}
+.auto .d svg{width:12px;height:12px}
+.auto p{flex:1;min-width:0;font-size:.68rem;font-weight:600;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.auto p small{display:block;font-weight:400;color:var(--muted2);font-size:.6rem}
+.tog{width:24px;height:14px;border-radius:99px;background:var(--brand);position:relative;flex-shrink:0}
+.tog::after{content:'';position:absolute;top:2px;right:2px;width:10px;height:10px;border-radius:50%;background:#fff}
 .float-card{position:absolute;background:rgba(255,255,255,.88);backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);
   border:1px solid rgba(255,255,255,.9);border-radius:16px;padding:.8rem 1rem;
   display:flex;align-items:center;gap:.75rem;box-shadow:0 18px 40px -12px rgba(16,24,40,.25);font-size:.86rem;font-weight:600;
@@ -173,7 +195,7 @@ footer .logo-txt small{color:#94a3b8}
 .float-card small{display:block;font-size:.73rem;color:var(--muted);font-weight:400}
 .float-card .ic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--grad);color:#fff;box-shadow:0 6px 14px -4px rgba(79,70,229,.6)}
 .float-card .ic svg{width:18px;height:18px}
-.float-card.a{left:-1.75rem;bottom:2.25rem}
+.float-card.a{left:-2rem;bottom:-1.6rem}
 .float-card.b{right:-1.25rem;top:-1rem;animation-delay:-3s}
 .float-card.b .ic{background:linear-gradient(135deg,#10b981,#0ea5e9);box-shadow:0 6px 14px -4px rgba(16,185,129,.6)}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
@@ -291,6 +313,14 @@ footer .logo-txt small{color:#94a3b8}
 .prod-tag{font-size:.78rem;color:var(--muted2)}
 .prod-link{font-size:.88rem;font-weight:600;color:var(--brand);display:inline-flex;gap:.35rem;transition:gap var(--t)}
 .prod-card:hover .prod-link{gap:.6rem}
+
+/* ─── INDUSTRIES ─── */
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.ind{padding:1.35rem 1.4rem;display:flex;align-items:flex-start;gap:.95rem}
+.ind .icon-tile{width:44px;height:44px;flex-shrink:0;border-radius:12px}
+.ind .icon-tile svg{width:20px;height:20px}
+.ind h3{font-size:.98rem;margin-bottom:.2rem}
+.ind p{font-size:.84rem;color:var(--muted);line-height:1.5}
 
 /* ─── WHY US ─── */
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
@@ -410,7 +440,7 @@ footer .logo .b{color:#a5b4fc}
   .mobile-toggle{display:inline-flex}
   .svc-grid,.prod-grid{grid-template-columns:1fr 1fr}
   .svc-card.cta{grid-column:span 1}
-  .why-grid{grid-template-columns:1fr 1fr}
+  .why-grid,.ind-grid{grid-template-columns:1fr 1fr}
   .proc-grid{grid-template-columns:1fr 1fr}
   .proc-grid::before{display:none}
   .contact-wrap{grid-template-columns:1fr}
@@ -419,7 +449,11 @@ footer .logo .b{color:#a5b4fc}
 }
 @media(max-width:680px){
   #hero{padding:8rem 0 4.5rem}
-  .svc-grid,.prod-grid,.why-grid,.proc-grid{grid-template-columns:1fr}
+  .svc-grid,.prod-grid,.why-grid,.proc-grid,.ind-grid{grid-template-columns:1fr}
+  .dash{grid-template-columns:1fr}
+  .dash-side{display:none}
+  .dash-row{grid-template-columns:1fr}
+  .dash-row .panel:last-child{display:none}
   .svc-card.cta{grid-column:auto}
   .stats-band{grid-template-columns:1fr 1fr;row-gap:2rem}
   .stat:nth-child(3)::before{display:none}
@@ -634,19 +668,53 @@ footer .logo .b{color:#a5b4fc}
         <a href="#contact" class="btn btn-brand btn-lg">Get Started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="#services" class="btn btn-ghost btn-lg">Explore Services</a>
       </div>
-      <div class="hero-trust rev" style="--d:.32s">
-        <div class="avatars"><span>RK</span><span>AS</span><span>PM</span><span>+</span></div>
-        <div class="hero-trust-txt">Trusted by <b>30+ businesses</b><br>across healthcare, retail &amp; services</div>
+      <div class="hero-points rev" style="--d:.32s">
+        <span>Free consultation</span><span>Go-live in 48 hours</span><span>NDA on request</span>
       </div>
     </div>
     <div class="hero-vis rev" style="--d:.2s">
       <div class="frame">
-        <div class="frame-bar"><i></i><i></i><i></i><span>dashboard.vivonix.in</span></div>
-        <div class="hero-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&q=80&auto=format&fit=crop')"></div>
+        <div class="frame-bar"><i></i><i></i><i></i><span>app.vivonix.in</span></div>
+        <div class="dash" aria-hidden="true">
+          <aside class="dash-side">
+            <span class="lm">V</span>
+            <i class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></i>
+            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></i>
+            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></i>
+            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></i>
+            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></i>
+          </aside>
+          <div class="dash-main">
+            <div class="dash-top"><div><small>Control Center</small><b>Operations Overview</b></div><span class="dash-live">Live</span></div>
+            <div class="dash-kpis">
+              <div class="kpi"><small>Tasks automated</small><b>1,284</b><em>▲ 18%</em></div>
+              <div class="kpi"><small>On-time rate</small><b>96.4%</b><em>▲ 4.2%</em></div>
+              <div class="kpi"><small>Hours saved</small><b>312</b><em>▲ 22%</em></div>
+            </div>
+            <div class="dash-row">
+              <div class="panel">
+                <div class="panel-h">Weekly throughput<span>Last 7 days</span></div>
+                <svg class="chart" viewBox="0 0 240 96" preserveAspectRatio="none">
+                  <defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6366f1" stop-opacity=".35"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></linearGradient></defs>
+                  <g stroke="#eef0f6" stroke-width="1"><line x1="0" y1="24" x2="240" y2="24"/><line x1="0" y1="48" x2="240" y2="48"/><line x1="0" y1="72" x2="240" y2="72"/></g>
+                  <g fill="#e0e4ff"><rect x="8" y="62" width="16" height="34" rx="3"/><rect x="42" y="50" width="16" height="46" rx="3"/><rect x="76" y="56" width="16" height="40" rx="3"/><rect x="110" y="38" width="16" height="58" rx="3"/><rect x="144" y="44" width="16" height="52" rx="3"/><rect x="178" y="26" width="16" height="70" rx="3"/><rect x="212" y="32" width="16" height="64" rx="3"/></g>
+                  <path d="M0 70 L34 62 L68 66 L102 48 L136 52 L170 32 L204 38 L240 18 L240 96 L0 96Z" fill="url(#ga)"/>
+                  <path d="M0 70 L34 62 L68 66 L102 48 L136 52 L170 32 L204 38 L240 18" fill="none" stroke="#4f46e5" stroke-width="2.2" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+                </svg>
+              </div>
+              <div class="panel">
+                <div class="panel-h">Automations<span>3 active</span></div>
+                <div class="auto"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><p>Invoice sync<small>Tally → Sheets</small></p><span class="tog"></span></div>
+                <div class="auto"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l1.9-5.7A8.4 8.4 0 1 1 21 11.5z"/></svg></span><p>Order alerts<small>via WhatsApp</small></p><span class="tog"></span></div>
+                <div class="auto"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></span><p>MIS report<small>Daily · 6 PM</small></p><span class="tog"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="float-card a">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 5-5"/></svg></span>
-        <span>Live dashboards<small>Real-time KPIs</small></span>
+        <span>Approval automated<small>PO #4821 · just now</small></span>
       </div>
       <div class="float-card b">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10-3-3"/></svg></span>
@@ -737,8 +805,29 @@ footer .logo .b{color:#a5b4fc}
   </div>
 </section>
 
+<!-- ─── INDUSTRIES ─── -->
+<section class="sec alt" id="industries">
+  <div class="container">
+    <div class="sec-head rev">
+      <span class="eyebrow">Industries</span>
+      <h2 class="h2">Built for the way <span class="grad-text">your industry works.</span></h2>
+      <p class="lead">Automation and control systems tuned to the workflows and rules of each sector.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind card rev"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg></span><div><h3>Healthcare</h3><p>Hospital ERPs, patient flow and MIS.</p></div></div>
+      <div class="ind card rev"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V10l5 3V10l5 3V6l6 4v10"/></svg></span><div><h3>Manufacturing</h3><p>Production tracking and plant control.</p></div></div>
+      <div class="ind card rev"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg></span><div><h3>Retail &amp; E-commerce</h3><p>Orders, inventory and customer alerts.</p></div></div>
+      <div class="ind card rev"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M14 9h1M9 13h1M14 13h1M9 17h1M14 17h1"/></svg></span><div><h3>Real Estate</h3><p>Lead CRMs, follow-ups and site visits.</p></div></div>
+      <div class="ind card rev"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><div><h3>Education</h3><p>Admissions, fees and student portals.</p></div></div>
+      <div class="ind card rev"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span><div><h3>Logistics</h3><p>Dispatch, tracking and fleet reports.</p></div></div>
+      <div class="ind card rev"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M9 15l2 2 4-4"/></svg></span><div><h3>Events &amp; Weddings</h3><p>Guest lists, RSVPs and vendor payments.</p></div></div>
+      <div class="ind card rev"><span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"/></svg></span><div><h3>Professional Services</h3><p>Client portals, billing and workflows.</p></div></div>
+    </div>
+  </div>
+</section>
+
 <!-- ─── WHY US ─── -->
-<section class="sec alt" id="why">
+<section class="sec" id="why">
   <div class="container">
     <div class="sec-head rev">
       <span class="eyebrow">Why Choose Us</span>
@@ -766,7 +855,7 @@ footer .logo .b{color:#a5b4fc}
 </section>
 
 <!-- ─── PROCESS ─── -->
-<section class="sec" id="process">
+<section class="sec alt" id="process">
   <div class="container">
     <div class="sec-head rev">
       <span class="eyebrow">How We Work</span>
@@ -783,7 +872,7 @@ footer .logo .b{color:#a5b4fc}
 </section>
 
 <!-- ─── FAQ ─── -->
-<section class="sec alt" id="faq">
+<section class="sec" id="faq">
   <div class="container">
     <div class="sec-head rev">
       <span class="eyebrow">FAQ</span>
@@ -801,7 +890,7 @@ footer .logo .b{color:#a5b4fc}
 </section>
 
 <!-- ─── CONTACT ─── -->
-<section class="sec" id="contact">
+<section class="sec alt" id="contact">
   <div class="container">
     <div class="sec-head rev">
       <span class="eyebrow">Contact Us</span>
@@ -1165,7 +1254,7 @@ const countUp = el => {
 };
 
 // Reveal on scroll — staggered within each grid
-document.querySelectorAll('.svc-grid,.prod-grid,.why-grid,.proc-grid').forEach(g =>
+document.querySelectorAll('.svc-grid,.prod-grid,.ind-grid,.why-grid,.proc-grid').forEach(g =>
   [...g.children].forEach((el, i) => el.style.setProperty('--d', (i % 4) * 0.07 + 's')));
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
