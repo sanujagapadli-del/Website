@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>VIVONIX — AI, Automation & Data Solutions</title>
+<title>VIVONIX Digital Solutions: Business Automation &amp; Control Systems</title>
 <meta name="description" content="VIVONIX helps businesses grow with AI agents, process automation, dashboards, custom software, cloud ERP and WhatsApp automation.">
 <meta name="theme-color" content="#4f46e5">
-<meta property="og:title" content="VIVONIX — AI, Automation & Data Solutions">
+<meta property="og:title" content="VIVONIX Digital Solutions: Business Automation &amp; Control Systems">
 <meta property="og:description" content="AI agents, automation, dashboards, web & mobile apps, cloud ERP and integrations — built for growing businesses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,6 +107,9 @@ nav.up .nav-in{background:rgba(255,255,255,.78);backdrop-filter:blur(18px) satur
 .logo-mark{width:32px;height:32px;border-radius:9px;background:var(--grad);display:grid;place-items:center;color:#fff;font-size:.95rem;
   box-shadow:0 6px 16px -4px rgba(79,70,229,.6),inset 0 1px 0 rgba(255,255,255,.3)}
 .logo .b{color:var(--brand)}
+.logo-txt{display:flex;flex-direction:column;line-height:1.05}
+.logo-txt small{font-family:'Inter',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-top:.28rem}
+footer .logo-txt small{color:#94a3b8}
 .nav-links{display:flex;gap:.25rem;list-style:none;padding:.3rem;border-radius:12px}
 .nav-links a{display:block;font-size:.9rem;font-weight:500;color:var(--ink3);padding:.5rem .85rem;border-radius:9px;transition:color var(--t),background var(--t)}
 .nav-links a:hover{color:var(--ink);background:var(--line-soft)}
@@ -137,10 +140,6 @@ nav.up .nav-in{background:rgba(255,255,255,.78);backdrop-filter:blur(18px) satur
 @keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(40px,30px) scale(1.12)}}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:4rem;align-items:center}
 @media(min-width:1000px){.hero-grid{grid-template-columns:1.08fr 1fr}}
-.hero-tag{display:inline-flex;align-items:center;gap:.6rem;font-size:.84rem;font-weight:500;color:var(--ink3);
-  background:rgba(255,255,255,.8);border:1px solid var(--line);padding:.3rem .9rem .3rem .3rem;border-radius:99px;margin-bottom:1.6rem;
-  box-shadow:var(--sh-sm);backdrop-filter:blur(8px)}
-.hero-tag b{background:var(--grad);color:#fff;font-size:.7rem;font-weight:600;letter-spacing:.06em;padding:.25rem .6rem;border-radius:99px;text-transform:uppercase}
 .hero-h1{font-size:clamp(2.4rem,5.2vw,3.9rem);font-weight:800;margin-bottom:1.4rem;line-height:1.06;letter-spacing:-.035em}
 .hero-sub{font-size:clamp(1.02rem,1.3vw,1.18rem);color:var(--muted);max-width:52ch;margin-bottom:2.2rem;line-height:1.75}
 .hero-acts{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:2.5rem}
@@ -391,6 +390,7 @@ footer::after{content:'';position:absolute;top:-200px;left:50%;width:600px;heigh
 .foot-grid{display:grid;grid-template-columns:1.6fr 1.2fr 1fr 1fr;gap:2.5rem;margin-bottom:3rem}
 footer .logo{color:#fff;margin-bottom:1.1rem}
 footer .logo .b{color:#a5b4fc}
+.foot-line{font-family:var(--display);font-weight:600;color:#e2e8f0;font-size:.98rem;line-height:1.45;margin-bottom:.75rem}
 .foot-tag{font-size:.93rem;line-height:1.7;max-width:34ch;color:#94a3b8}
 .foot-col h4{color:#fff;font-size:.95rem;margin-bottom:1.1rem;font-weight:600}
 .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
@@ -597,7 +597,7 @@ footer .logo .b{color:#a5b4fc}
 <!-- ─── NAV ─── -->
 <nav id="nav">
   <div class="container nav-in">
-    <a href="#hero" class="logo"><span class="logo-mark">V</span><span>VIVO<span class="b">NIX</span></span></a>
+    <a href="#hero" class="logo"><span class="logo-mark">V</span><span class="logo-txt"><span>VIVO<span class="b">NIX</span></span><small>Business Automation &amp; Control Systems</small></span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
@@ -628,7 +628,6 @@ footer .logo .b{color:#a5b4fc}
   <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
   <div class="container hero-grid">
     <div>
-      <div class="hero-tag rev"><b>New</b>AI agents for WhatsApp &amp; web</div>
       <h1 class="hero-h1 rev" style="--d:.08s">Transform your business with <span class="grad-text">AI&#8209;driven automation.</span></h1>
       <p class="hero-sub rev" style="--d:.16s">We build AI agents, dashboards, automations and custom software that turn messy data and manual work into clear, fast decisions.</p>
       <div class="hero-acts rev" style="--d:.24s">
@@ -867,7 +866,8 @@ footer .logo .b{color:#a5b4fc}
   <div class="container">
     <div class="foot-grid">
       <div>
-        <a href="#hero" class="logo"><span class="logo-mark">V</span><span>VIVO<span class="b">NIX</span></span></a>
+        <a href="#hero" class="logo"><span class="logo-mark">V</span><span class="logo-txt"><span>VIVO<span class="b">NIX</span></span><small>Business Automation &amp; Control Systems</small></span></a>
+        <p class="foot-line">VIVONIX Digital Solutions:<br>Business Automation &amp; Control Systems</p>
         <p class="foot-tag">Empowering businesses with AI-driven data intelligence and workflow automation.</p>
       </div>
       <div class="foot-col">
